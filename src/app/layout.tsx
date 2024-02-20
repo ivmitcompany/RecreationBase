@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { inter } from './fonts'
+import { manrope, luxurious } from './fonts'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +14,7 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ua">
-      <body className={inter.className}>
+      <body className={`${manrope.variable} ${luxurious.variable}`}>
         <header></header>
         <main>{children}</main>
         <footer></footer>
