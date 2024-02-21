@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import Footer from '@/components/layout/footer/Footer'
 import Header from '@/components/layout/header/Header'
 import Providers from '@/store/providers'
 import { cn } from '@/utils'
@@ -23,7 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Providers>
           <Header />
           <main>{children}</main>
-          <footer></footer>
+          <Footer />
         </Providers>
       </body>
     </html>
