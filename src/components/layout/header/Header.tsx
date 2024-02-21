@@ -26,7 +26,7 @@ const Header: FC<HeaderProps> = ({ className, ...props }) => {
         <HeaderContacts className="hidden md:flex" />
         <HeaderMenuIcon className="md:hidden" />
       </Content>
-      <HeaderMenuMobile className="translate-x-full md:hidden" />
+      <HeaderMenuMobile className="md:hidden" />
     </header>
   )
 }
