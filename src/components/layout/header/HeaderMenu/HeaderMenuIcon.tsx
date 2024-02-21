@@ -1,11 +1,14 @@
 'use client'
 
 import { Icons } from '@/components/ui/Icons'
-import { FC } from 'react'
+import { cn } from '@/utils'
+import { ButtonHTMLAttributes, FC } from 'react'
 
-const HeaderMenuIcon: FC = () => {
+interface HeaderMenuIconProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+
+const HeaderMenuIcon: FC<HeaderMenuIconProps> = ({ className, ...props }) => {
   return (
-    <button className="p-1.5">
+    <button className={cn('p-1.5', className)} {...props}>
       <Icons.burger />
       <Icons.cross />
     </button>
