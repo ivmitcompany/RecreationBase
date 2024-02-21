@@ -19,6 +19,9 @@ const config: Config = {
         accent: 'var(--font-accent)',
         default: 'var(--font-default)',
       },
+      padding: {
+        header: 'var(--header-height)',
+      },
     },
   },
 }
