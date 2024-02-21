@@ -1,8 +1,12 @@
+import IconSize, { ICON_SIZE } from '@/types/enums/IconSize'
 import { HTMLAttributes } from 'react'
 
-const ICON_SIZE = 16
+const getIconDimension = (size?: IconSize) =>
+  size ? ICON_SIZE[size] : ICON_SIZE['sm']
 
-interface IconProps extends HTMLAttributes<SVGElement> {}
+interface IconProps extends HTMLAttributes<SVGElement> {
+  size?: IconSize
+}
 
 export const Icons = {
   logo: (props: IconProps) => (
@@ -22,4 +26,30 @@ export const Icons = {
       />
     </svg>
   ),
+  cross: ({ size, ...props }: IconProps) => {
+    const dimension = getIconDimension(size)
+    return (
+      <svg
+        width={dimension}
+        height={dimension}
+        viewBox="0 0 17 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+      >
+        <rect
+          width="22.9494"
+          height="1.09283"
+          transform="matrix(-0.707108 -0.707105 0.707108 -0.707105 16.2271 17.0001)"
+          fill="currentColor"
+        />
+        <rect
+          width="22.9494"
+          height="1.09283"
+          transform="matrix(0.707108 -0.707105 0.707108 0.707105 -0.000488281 16.2276)"
+          fill="currentColor"
+        />
+      </svg>
+    )
+  },
 }
