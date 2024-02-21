@@ -1,25 +1,26 @@
 import Content from '@/components/ui/Content'
-import Logo from '@/components/ui/Logo'
-import { cn } from '@/utils'
-import { FC, HTMLAttributes } from 'react'
+import { FC } from 'react'
 import HeaderContacts from './HeaderContacts'
 import HeaderMenu from './HeaderMenu/HeaderMenu'
 import HeaderMenuMobile from './HeaderMenu/HeaderMenuMobile'
 import HeaderMenuIcon from './HeaderMenu/HeaderMenuIcon'
-
-interface HeaderProps extends HTMLAttributes<HTMLDivElement> {}
+import { cn } from '@/utils'
+import HeaderLogo from './HeaderLogo'
+import HeaderContainer, {
+  HeaderContainerProps as HeaderProps,
+} from './HeaderContainer'
 
 const Header: FC<HeaderProps> = ({ className, ...props }) => {
   return (
-    <header
+    <HeaderContainer
       className={cn(
-        'fixed left-0 right-0 top-0 bg-transparent pt-10',
+        'absolute left-0 right-0 top-0 bg-transparent pt-10',
         className
       )}
       {...props}
     >
       <Content className="relative z-10 flex items-center justify-between gap-10">
-        <Logo />
+        <HeaderLogo />
         <nav className="hidden md:block">
           <HeaderMenu className="gap-10" />
         </nav>
@@ -27,7 +28,7 @@ const Header: FC<HeaderProps> = ({ className, ...props }) => {
         <HeaderMenuIcon className="md:hidden" />
       </Content>
       <HeaderMenuMobile className="md:hidden" />
-    </header>
+    </HeaderContainer>
   )
 }
 
