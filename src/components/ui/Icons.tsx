@@ -1,10 +1,10 @@
 import IconSize, { ICON_SIZE } from '@/types/enums/IconSize'
-import { HTMLAttributes } from 'react'
+import { SVGAttributes } from 'react'
 
 const getIconDimension = (size?: IconSize) =>
   size ? ICON_SIZE[size] : ICON_SIZE['sm']
 
-interface IconProps extends HTMLAttributes<SVGElement> {
+interface IconProps extends SVGAttributes<SVGElement> {
   size?: IconSize
 }
 
@@ -49,6 +49,24 @@ export const Icons = {
           transform="matrix(0.707108 -0.707105 0.707108 0.707105 -0.000488281 16.2276)"
           fill="currentColor"
         />
+      </svg>
+    )
+  },
+  burger: ({ size, ...props }: IconProps) => {
+    const dimension = getIconDimension(size)
+    const WIDTH_SHIFT = 4
+    return (
+      <svg
+        width={dimension + WIDTH_SHIFT}
+        height={dimension}
+        viewBox="0 0 20 15"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+      >
+        <rect width="20" height="1" fill="currentColor" />
+        <rect x="6" y="7" width="14" height="1" fill="currentColor" />
+        <rect y="14" width="20" height="1" fill="currentColor" />
       </svg>
     )
   },
