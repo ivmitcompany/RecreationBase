@@ -8,9 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "prettier:write": "prettier --write .",
-	"eslint:write": "eslint --fix ."
+    "eslint:write": "eslint --fix ."
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "next": "14.1.0",
     "react": "^18",
