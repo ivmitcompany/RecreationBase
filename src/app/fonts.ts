@@ -1,15 +1,15 @@
-import { Manrope, Luxurious_Script } from 'next/font/google'
+import { Luxurious_Script, Manrope } from 'next/font/google'
 
 export const manrope = Manrope({
-  weight: ['200', '300', '400'],
-  subsets: ['latin'],
   display: 'swap',
+  subsets: ['latin'],
   variable: '--font-default',
+  weight: ['200', '300', '400'],
 })
 
 export const luxurious = Luxurious_Script({
-  weight: '400',
-  subsets: ['latin'],
   display: 'swap',
+  subsets: ['latin'],
   variable: '--font-accent',
+  weight: '400',
 })

@@ -1,11 +1,12 @@
 'use client'
 
-import { FC, HTMLAttributes, useContext } from 'react'
-import HeaderMenu from './HeaderMenu'
-import HeaderContacts from '../HeaderContacts'
-import { cn } from '@/utils'
 import Content from '@/components/ui/Content'
 import HeaderContext from '@/store/header-context'
+import { cn } from '@/utils'
+import { FC, HTMLAttributes, useContext } from 'react'
+
+import HeaderContacts from '../HeaderContacts'
+import HeaderMenu from './HeaderMenu'
 
 interface HeaderMenuMobileProps extends HTMLAttributes<HTMLDivElement> {}
 

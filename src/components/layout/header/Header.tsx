@@ -1,14 +1,15 @@
 import Content from '@/components/ui/Content'
-import { FC } from 'react'
-import HeaderContacts from './HeaderContacts'
-import HeaderMenu from './menu/HeaderMenu'
-import HeaderMenuMobile from './menu/HeaderMenuMobile'
-import HeaderMenuIcon from './menu/HeaderMenuIcon'
 import { cn } from '@/utils'
-import HeaderLogo from './HeaderLogo'
+import { FC } from 'react'
+
+import HeaderContacts from './HeaderContacts'
 import HeaderContainer, {
   HeaderContainerProps as HeaderProps,
 } from './HeaderContainer'
+import HeaderLogo from './HeaderLogo'
+import HeaderMenu from './menu/HeaderMenu'
+import HeaderMenuIcon from './menu/HeaderMenuIcon'
+import HeaderMenuMobile from './menu/HeaderMenuMobile'
 
 const Header: FC<HeaderProps> = ({ className, ...props }) => {
   return (

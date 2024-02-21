@@ -8,7 +8,7 @@ import { ButtonHTMLAttributes, FC, useContext } from 'react'
 interface HeaderMenuIconProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const HeaderMenuIcon: FC<HeaderMenuIconProps> = ({ className, ...props }) => {
-  const { openMenu, closeMenu, isMenuOpened } = useContext(HeaderContext)
+  const { closeMenu, isMenuOpened, openMenu } = useContext(HeaderContext)
 
   return (
     <button

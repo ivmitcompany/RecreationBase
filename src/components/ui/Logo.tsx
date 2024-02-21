@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { AnchorHTMLAttributes, FC } from 'react'
+
 import { Icons } from './Icons'
 
 export interface LogoProps extends AnchorHTMLAttributes<HTMLAnchorElement> {}

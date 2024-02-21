@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier:write": "prettier --write ."
+    "prettier:write": "prettier --write .",
+	"eslint:write": "eslint --fix ."
   },
   "dependencies": {
     "clsx": "^2.1.0",

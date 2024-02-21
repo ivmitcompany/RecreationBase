@@ -10,8 +10,8 @@ interface HeaderMenuItemProps extends LiHTMLAttributes<HTMLLIElement> {
 }
 
 const HeaderMenuItem: FC<HeaderMenuItemProps> = ({
-  className,
   children,
+  className,
   href = '/',
   ...props
 }) => {

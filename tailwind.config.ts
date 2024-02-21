@@ -6,20 +6,20 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  plugins: [],
   theme: {
     extend: {
-      fontFamily: {
-        default: 'var(--font-default)',
-        accent: 'var(--font-accent)',
-      },
       colors: {
-        dark: '#231f20',
-        light: '#f3f3f3',
-        graphite: '#363333',
         accent: '#a10702',
+        dark: '#231f20',
+        graphite: '#363333',
+        light: '#f3f3f3',
+      },
+      fontFamily: {
+        accent: 'var(--font-accent)',
+        default: 'var(--font-default)',
       },
     },
   },
-  plugins: [],
 }
 export default config
