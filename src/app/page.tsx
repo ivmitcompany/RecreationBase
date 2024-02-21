@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between bg-graphite p-24 text-light">
+    <div className="pt-header flex min-h-screen flex-col items-center justify-between bg-graphite px-24 text-light">
       <p className="text-6xl font-light uppercase leading-[5.125rem] first-letter:mr-5 first-letter:font-accent first-letter:text-[7.5rem] first-letter:leading-[9rem]">
         Mеню
       </p>

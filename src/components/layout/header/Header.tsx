@@ -1,17 +1,13 @@
-// TODO: Move HeaderMenu styles to the component itself
-// TODO: Try to utilize the Contacts component instead of HeaderContacts
-// TODO: Add header-height variable
-
+import Contacts from '@/components/ui/Contacts'
 import Content from '@/components/ui/Content'
+import Menu from '@/components/ui/menu/Menu'
 import { cn } from '@/utils'
 import { FC } from 'react'
 
-import HeaderContacts from './HeaderContacts'
 import HeaderContainer, {
   HeaderContainerProps as HeaderProps,
 } from './HeaderContainer'
 import HeaderLogo from './HeaderLogo'
-import HeaderMenu from './menu/HeaderMenu'
 import HeaderMenuIcon from './menu/HeaderMenuIcon'
 import HeaderMenuMobile from './menu/HeaderMenuMobile'
 
@@ -27,9 +23,9 @@ const Header: FC<HeaderProps> = ({ className, ...props }) => {
       <Content className="relative z-10 flex items-center justify-between gap-10">
         <HeaderLogo />
         <nav className="hidden md:block">
-          <HeaderMenu className="gap-10" />
+          <Menu />
         </nav>
-        <HeaderContacts className="hidden md:flex" />
+        <Contacts className="hidden md:flex" short />
         <HeaderMenuIcon className="md:hidden" />
       </Content>
       <HeaderMenuMobile className="md:hidden" />
