@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { manrope, luxurious } from './fonts'
 import Header from '@/components/layout/header/Header'
+import Providers from '@/store/providers'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,9 +17,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ua">
       <body className={`${manrope.variable} ${luxurious.variable}`}>
-        <Header />
-        <main>{children}</main>
-        <footer></footer>
+        <Providers>
+          <Header />
+          <main>{children}</main>
+          <footer></footer>
+        </Providers>
       </body>
     </html>
   )
