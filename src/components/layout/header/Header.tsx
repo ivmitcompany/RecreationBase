@@ -1,3 +1,7 @@
+// TODO: Move HeaderMenu styles to the component itself
+// TODO: Try to utilize the Contacts component instead of HeaderContacts
+// TODO: Add header-height variable
+
 import Content from '@/components/ui/Content'
 import { cn } from '@/utils'
 import { FC } from 'react'
