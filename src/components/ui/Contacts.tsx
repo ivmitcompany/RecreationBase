@@ -1,7 +1,7 @@
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
-interface ContactsProps extends HTMLAttributes<HTMLDivElement> {
+export interface ContactsProps extends HTMLAttributes<HTMLDivElement> {
   short?: boolean
 }
 
@@ -17,7 +17,10 @@ const Contacts: FC<ContactsProps> = ({
     )}
     {...props}
   >
-    <a className="transition-colors hover:text-accent" href="tel:380678279007">
+    <a
+      className="transition-colors md:hover:text-accent"
+      href="tel:380678279007"
+    >
       +380678279007
     </a>
     <p className={cn(short && 'sr-only')}>с.Рокосово, вул.Виноградна 14</p>
