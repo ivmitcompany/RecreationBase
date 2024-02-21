@@ -1,12 +1,11 @@
 'use client'
 
+import Contacts from '@/components/ui/Contacts'
 import Content from '@/components/ui/Content'
+import Menu from '@/components/ui/menu/Menu'
 import HeaderContext from '@/store/header-context'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes, useContext } from 'react'
-
-import HeaderContacts from '../HeaderContacts'
-import HeaderMenu from './HeaderMenu'
 
 interface HeaderMenuMobileProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -26,9 +25,9 @@ const HeaderMenuMobile: FC<HeaderMenuMobileProps> = ({
       {...props}
     >
       <nav>
-        <HeaderMenu className="flex-col items-start gap-[3.75rem]" />
+        <Menu itemSize="lg" spacing="wide" underline />
       </nav>
-      <HeaderContacts className="absolute bottom-10 left-0 right-0" />
+      <Contacts className="absolute bottom-10 left-0 right-0 items-center" />
     </Content>
   )
 }
