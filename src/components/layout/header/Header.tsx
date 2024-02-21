@@ -1,9 +1,9 @@
 import Content from '@/components/ui/Content'
 import { FC } from 'react'
 import HeaderContacts from './HeaderContacts'
-import HeaderMenu from './HeaderMenu/HeaderMenu'
-import HeaderMenuMobile from './HeaderMenu/HeaderMenuMobile'
-import HeaderMenuIcon from './HeaderMenu/HeaderMenuIcon'
+import HeaderMenu from './menu/HeaderMenu'
+import HeaderMenuMobile from './menu/HeaderMenuMobile'
+import HeaderMenuIcon from './menu/HeaderMenuIcon'
 import { cn } from '@/utils'
 import HeaderLogo from './HeaderLogo'
 import HeaderContainer, {
