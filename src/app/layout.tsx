@@ -3,6 +3,7 @@ import './globals.css'
 import { manrope, luxurious } from './fonts'
 import Header from '@/components/layout/header/Header'
 import Providers from '@/store/providers'
+import { cn } from '@/utils'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +17,7 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ua">
-      <body className={`${manrope.variable} ${luxurious.variable}`}>
+      <body className={cn('relative', manrope.variable, luxurious.variable)}>
         <Providers>
           <Header />
           <main>{children}</main>
