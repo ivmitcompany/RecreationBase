@@ -17,6 +17,9 @@ const HeaderMenuIcon: FC<HeaderMenuIconProps> = ({ className, ...props }) => {
       {...props}
     >
       {isMenuOpened ? <Icons.cross /> : <Icons.burger />}
+      <span className="sr-only">
+        {isMenuOpened ? 'Закрити меню' : 'Відкрити меню'}
+      </span>
     </button>
   )
 }
