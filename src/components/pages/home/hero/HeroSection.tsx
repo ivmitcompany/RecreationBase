@@ -19,6 +19,7 @@ const HeroSection: FC<HeroSectionProps> = ({ className }) => {
                 alt="База відпочинку Logindariy"
                 className="mx-auto object-cover object-center"
                 fill
+                priority
                 sizes="(max-width: 767.98px) 335px, 500px"
                 src="/hero-img.jpg"
               />
