@@ -2,7 +2,6 @@ import Content from '@/components/ui/Content'
 import LinkButton from '@/components/ui/LinkButton'
 import { cn } from '@/utils'
 import Image from 'next/image'
-import Link from 'next/link'
 import { FC, HTMLAttributes } from 'react'
 
 import HeroHeading from './HeroHeading'
@@ -25,7 +24,7 @@ const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
                 className="mx-auto object-cover object-center"
                 fill
                 priority
-                sizes="(max-width: 767.98px) 335px, 500px"
+                sizes="(max-width: 767px) 335px, 500px"
                 src="/hero-img.jpg"
               />
               <LinkButton
