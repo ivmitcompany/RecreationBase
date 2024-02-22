@@ -4,7 +4,7 @@ import { SVGAttributes } from 'react'
 const getIconDimension = (size?: IconSize) =>
   size ? ICON_SIZE[size] : ICON_SIZE['sm']
 
-interface IconProps extends SVGAttributes<SVGElement> {
+export interface IconProps extends SVGAttributes<SVGElement> {
   size?: IconSize
 }
 
@@ -70,4 +70,78 @@ export const Icons = {
       />
     </svg>
   ),
+  photos: ({ size, ...props }: IconProps) => {
+    const dimension = getIconDimension(size)
+    return (
+      <svg
+        fill="none"
+        height={dimension}
+        viewBox="0 0 17 17"
+        width={dimension}
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+      >
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(1 0 4.72045e-06 1 0 0)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-4.37114e-08 1 -1 4.67674e-06 17 0)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-1 -8.74228e-08 -4.63302e-06 -1 17 17)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-4.37114e-08 1 -1 4.67674e-06 1 0)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-1 -8.74228e-08 -4.63302e-06 -1 17 1)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(1.31134e-07 -1 1 -4.58931e-06 16 17)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-4.37114e-08 1 -1 4.67674e-06 1 11)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-1 -8.74228e-08 -4.63302e-06 -1 12 9)"
+          width="7"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-4.37114e-08 1 -1 4.67674e-06 9 5)"
+          width="7"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-1 -8.74228e-08 -4.63302e-06 -1 6 17)"
+          width="6"
+        />
+      </svg>
+    )
+  },
 }
