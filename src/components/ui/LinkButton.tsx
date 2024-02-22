@@ -4,7 +4,7 @@ import Link, { LinkProps } from 'next/link'
 import { FC, HTMLAttributes } from 'react'
 
 export const linkButtonVariants = cva(
-  'flex items-center justify-center text-center break-words border active:scale-95 border-accent transition-all leading-[1.2] rounded-full font-light uppercase',
+  'flex items-center justify-center text-center break-words border border-accent transition-colors leading-[1.2] rounded-full font-light uppercase',
   {
     defaultVariants: { color: 'default', size: 'default' },
     variants: {
@@ -31,15 +31,13 @@ const LinkButton: FC<ButtonProps> = ({
   color,
   size,
   ...props
-}) => {
-  return (
-    <Link
-      className={cn(linkButtonVariants({ color, size }), className)}
-      {...props}
-    >
-      {children}
-    </Link>
-  )
-}
+}) => (
+  <Link
+    className={cn(linkButtonVariants({ color, size }), className)}
+    {...props}
+  >
+    {children}
+  </Link>
+)
 
 export default LinkButton
