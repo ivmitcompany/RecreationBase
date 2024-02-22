@@ -1,6 +1,8 @@
 import Content from '@/components/ui/Content'
+import LinkButton from '@/components/ui/LinkButton'
 import { cn } from '@/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FC, HTMLAttributes } from 'react'
 
 import HeroHeading from './HeroHeading'
@@ -26,6 +28,13 @@ const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
                 sizes="(max-width: 767.98px) 335px, 500px"
                 src="/hero-img.jpg"
               />
+              <LinkButton
+                className="absolute bottom-3 right-[0.3125rem] md:bottom-[16%] md:right-0 md:translate-x-1/2"
+                color="light"
+                href="/"
+              >
+                Детальніше
+              </LinkButton>
             </div>
             <p className="mt-5 text-center md:text-xl">
               сімейна база відпочинку, розташована посеред мальовничих гір
