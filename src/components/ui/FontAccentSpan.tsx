@@ -21,8 +21,13 @@ const FontAccentSpan: FC<FontAccentSpanProps> = ({
   children,
   className,
   size,
+  ...props
 }) => (
-  <span className={cn(fontAccentSpanVariants({ size }), className)} role="text">
+  <span
+    className={cn(fontAccentSpanVariants({ size }), className)}
+    role="text"
+    {...props}
+  >
     {children}
   </span>
 )

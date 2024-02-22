@@ -7,9 +7,12 @@ import HeroHeading from './HeroHeading'
 
 interface HeroSectionProps extends HTMLAttributes<HTMLDivElement> {}
 
-const HeroSection: FC<HeroSectionProps> = ({ className }) => {
+const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
   return (
-    <div className={cn('bg-graphite pt-header text-light', className)}>
+    <div
+      className={cn('bg-graphite pt-header text-light', className)}
+      {...props}
+    >
       <Content className="pt-10">
         <section>
           <HeroHeading />

@@ -6,13 +6,14 @@ import HeroHeadingItem from './HeroHeadingItem'
 
 interface HeroHeadingProps extends HTMLAttributes<HTMLHeadingElement> {}
 
-const HeroHeading: FC<HeroHeadingProps> = ({ className }) => {
+const HeroHeading: FC<HeroHeadingProps> = ({ className, ...props }) => {
   return (
     <h1
       className={cn(
         'mx-auto flex max-w-80 flex-col flex-wrap items-baseline justify-center gap-x-10 text-3xl font-light uppercase leading-[2.5625rem] md:max-w-none md:flex-row md:text-6xl md:leading-[5.125rem]',
         className
       )}
+      {...props}
     >
       <HeroHeadingItem className="gap-1">
         <FontAccentSpan>B</FontAccentSpan>аш
