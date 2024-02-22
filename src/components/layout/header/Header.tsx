@@ -20,7 +20,7 @@ const Header: FC<HeaderProps> = ({ className, ...props }) => {
       )}
       {...props}
     >
-      <Content className="relative z-10 flex items-center justify-between gap-10">
+      <Content className="relative z-50 flex items-center justify-between gap-10">
         <HeaderLogo />
         <nav className="hidden md:block">
           <Menu />
@@ -28,7 +28,7 @@ const Header: FC<HeaderProps> = ({ className, ...props }) => {
         <Contacts className="hidden md:flex" short />
         <HeaderMenuIcon className="md:hidden" />
       </Content>
-      <HeaderMenuMobile className="md:hidden" />
+      <HeaderMenuMobile className="z-10 md:hidden" />
     </HeaderContainer>
   )
 }
