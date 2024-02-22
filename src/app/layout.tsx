@@ -20,10 +20,16 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ua">
-      <body className={cn('relative', manrope.variable, luxurious.variable)}>
+      <body
+        className={cn(
+          'relative flex min-h-screen flex-col',
+          manrope.variable,
+          luxurious.variable
+        )}
+      >
         <Providers>
           <Header />
-          <main>{children}</main>
+          <main className="flex-shrink flex-grow basis-0">{children}</main>
           <Footer />
         </Providers>
       </body>

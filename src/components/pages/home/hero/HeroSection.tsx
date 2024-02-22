@@ -1,0 +1,38 @@
+import Content from '@/components/ui/Content'
+import { cn } from '@/utils'
+import Image from 'next/image'
+import { FC, HTMLAttributes } from 'react'
+
+import HeroHeading from './HeroHeading'
+
+interface HeroSectionProps extends HTMLAttributes<HTMLDivElement> {}
+
+const HeroSection: FC<HeroSectionProps> = ({ className }) => {
+  return (
+    <div className={cn('bg-graphite pt-header text-light', className)}>
+      <Content className="pt-10">
+        <section>
+          <HeroHeading />
+          <article className="mx-auto max-w-[20.9375rem] md:max-w-[31.25rem]">
+            <div className="relative mx-auto aspect-[0.84/1] max-h-[25rem] md:aspect-square md:max-h-none">
+              <Image
+                alt="База відпочинку Logindariy"
+                className="mx-auto object-cover object-center"
+                fill
+                priority
+                sizes="(max-width: 767.98px) 335px, 500px"
+                src="/hero-img.jpg"
+              />
+            </div>
+            <p className="mt-5 text-center md:text-xl">
+              сімейна база відпочинку, розташована посеред мальовничих гір
+              Закарпаття
+            </p>
+          </article>
+        </section>
+      </Content>
+    </div>
+  )
+}
+
+export default HeroSection
