@@ -2,13 +2,14 @@ import { cn } from '@/utils'
 import { VariantProps, cva } from 'class-variance-authority'
 import { FC, HTMLAttributes } from 'react'
 
-const fontAccentSpanVariants = cva('inline-block font-accent', {
+export const fontAccentSpanVariants = cva('inline-block font-accent', {
   defaultVariants: { size: 'default' },
   variants: {
     size: {
       default: 'text-6xl leading-[1.2] md:text-[7.5rem]',
       md: 'text-6xl leading-[1.2] md:text-[5.75rem]',
       sm: 'text-6xl leading-[0.5] md:text-[5.625rem]',
+      xs: 'text-[3.125rem] md:text-6xl leading-[1.2]',
     },
   },
 })
