@@ -9,6 +9,23 @@ export interface IconProps extends SVGAttributes<SVGElement> {
 }
 
 export const Icons = {
+  arrow: ({ size, ...props }: IconProps) => {
+    const dimension = getIconDimension(size)
+    const WIDTH_SHIFT = 68
+    return (
+      <svg
+        fill="none"
+        height={dimension}
+        viewBox="0 0 84 15"
+        width={dimension + WIDTH_SHIFT}
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+      >
+        <rect fill="currentColor" height="2" width="80" y="6.5" />
+        <path d="M63 1L81 7.5L63 14" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    )
+  },
   burger: ({ size, ...props }: IconProps) => {
     const dimension = getIconDimension(size)
     const WIDTH_SHIFT = 4
