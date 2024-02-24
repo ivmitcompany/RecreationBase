@@ -18,7 +18,7 @@ const IconButton: FC<IconButtonProps> = ({
 }) => (
   <button
     className={cn(
-      'block bg-light p-1.5 text-accent transition-opacity hover:opacity-70',
+      'block bg-light p-1.5 text-accent transition-opacity hover:opacity-70 disabled:opacity-70',
       className
     )}
     {...props}
