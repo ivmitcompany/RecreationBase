@@ -3,7 +3,8 @@ import { ButtonHTMLAttributes, ComponentType, FC } from 'react'
 
 import { IconProps } from './Icons'
 
-interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   Icon: ComponentType<IconProps>
   label: string
 }
