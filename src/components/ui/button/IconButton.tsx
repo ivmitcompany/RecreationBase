@@ -1,7 +1,7 @@
 import { cn } from '@/utils'
 import { ButtonHTMLAttributes, ComponentType, FC } from 'react'
 
-import { IconProps } from './Icons'
+import { IconProps } from '../Icons'
 
 export interface IconButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
