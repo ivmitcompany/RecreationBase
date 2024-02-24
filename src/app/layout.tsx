@@ -4,6 +4,8 @@ import Footer from '@/components/layout/footer/Footer'
 import Header from '@/components/layout/header/Header'
 import Providers from '@/store/providers'
 import { cn } from '@/utils'
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 import { luxurious, manrope } from './fonts'
 import './globals.css'
