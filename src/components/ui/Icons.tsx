@@ -4,11 +4,28 @@ import { SVGAttributes } from 'react'
 const getIconDimension = (size?: IconSize) =>
   size ? ICON_SIZE[size] : ICON_SIZE['sm']
 
-interface IconProps extends SVGAttributes<SVGElement> {
+export interface IconProps extends SVGAttributes<SVGElement> {
   size?: IconSize
 }
 
 export const Icons = {
+  arrow: ({ size, ...props }: IconProps) => {
+    const dimension = getIconDimension(size)
+    const WIDTH_SHIFT = 68
+    return (
+      <svg
+        fill="none"
+        height={dimension}
+        viewBox="0 0 84 15"
+        width={dimension + WIDTH_SHIFT}
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+      >
+        <rect fill="currentColor" height="2" width="80" y="6.5" />
+        <path d="M63 1L81 7.5L63 14" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    )
+  },
   burger: ({ size, ...props }: IconProps) => {
     const dimension = getIconDimension(size)
     const WIDTH_SHIFT = 4
@@ -70,4 +87,105 @@ export const Icons = {
       />
     </svg>
   ),
+  mountain: (props: IconProps) => (
+    <svg
+      fill="none"
+      height="28"
+      viewBox="0 0 72 28"
+      width="72"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M1 27L17.1151 13.2353L23.6619 15.7843L28.6978 10.6863L33.2302 11.1961L38.7698 1L50.3525 14.2549"
+        stroke="currentColor"
+      />
+      <path
+        d="M44.813 18.3334L55.8921 9.66669L71 26.4902"
+        stroke="currentColor"
+      />
+      <path
+        d="M40.2805 25.4706L51.3597 19.8627L55.892 10.1765"
+        stroke="currentColor"
+      />
+      <path
+        d="M17.115 13.7451L20.1366 19.3529L19.633 25.4706L29.2013 15.2745L33.2301 21.902L37.2589 13.7451L38.7697 1"
+        stroke="currentColor"
+      />
+    </svg>
+  ),
+  photos: ({ size, ...props }: IconProps) => {
+    const dimension = getIconDimension(size)
+    return (
+      <svg
+        fill="none"
+        height={dimension}
+        viewBox="0 0 17 17"
+        width={dimension}
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+      >
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(1 0 4.72045e-06 1 0 0)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-4.37114e-08 1 -1 4.67674e-06 17 0)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-1 -8.74228e-08 -4.63302e-06 -1 17 17)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-4.37114e-08 1 -1 4.67674e-06 1 0)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-1 -8.74228e-08 -4.63302e-06 -1 17 1)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(1.31134e-07 -1 1 -4.58931e-06 16 17)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-4.37114e-08 1 -1 4.67674e-06 1 11)"
+          width="6"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-1 -8.74228e-08 -4.63302e-06 -1 12 9)"
+          width="7"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-4.37114e-08 1 -1 4.67674e-06 9 5)"
+          width="7"
+        />
+        <rect
+          fill="currentColor"
+          height="1"
+          transform="matrix(-1 -8.74228e-08 -4.63302e-06 -1 6 17)"
+          width="6"
+        />
+      </svg>
+    )
+  },
 }

@@ -1,4 +1,5 @@
 import Content from '@/components/ui/Content'
+import LinkButton from '@/components/ui/button/LinkButton'
 import { cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
@@ -7,9 +8,12 @@ import HeroHeading from './HeroHeading'
 
 interface HeroSectionProps extends HTMLAttributes<HTMLDivElement> {}
 
-const HeroSection: FC<HeroSectionProps> = ({ className }) => {
+const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
   return (
-    <div className={cn('bg-graphite pt-header text-light', className)}>
+    <div
+      className={cn('bg-graphite pt-header text-light', className)}
+      {...props}
+    >
       <Content className="pt-10">
         <section>
           <HeroHeading />
@@ -20,9 +24,16 @@ const HeroSection: FC<HeroSectionProps> = ({ className }) => {
                 className="mx-auto object-cover object-center"
                 fill
                 priority
-                sizes="(max-width: 767.98px) 335px, 500px"
+                sizes="(max-width: 767px) 335px, 500px"
                 src="/hero-img.jpg"
               />
+              <LinkButton
+                className="absolute bottom-3 right-[0.3125rem] md:bottom-[16%] md:right-0 md:translate-x-1/2"
+                color="light"
+                href="/"
+              >
+                Детальніше
+              </LinkButton>
             </div>
             <p className="mt-5 text-center md:text-xl">
               сімейна база відпочинку, розташована посеред мальовничих гір

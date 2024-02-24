@@ -3,7 +3,11 @@ import { FC, HTMLAttributes } from 'react'
 
 interface HeroHeadingItemProps extends HTMLAttributes<HTMLSpanElement> {}
 
-const HeroHeadingItem: FC<HeroHeadingItemProps> = ({ children, className }) => {
+const HeroHeadingItem: FC<HeroHeadingItemProps> = ({
+  children,
+  className,
+  ...props
+}) => {
   return (
     <span
       className={cn(
@@ -11,6 +15,7 @@ const HeroHeadingItem: FC<HeroHeadingItemProps> = ({ children, className }) => {
         className
       )}
       role="text"
+      {...props}
     >
       {children}
     </span>
