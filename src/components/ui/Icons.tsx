@@ -70,6 +70,33 @@ export const Icons = {
       />
     </svg>
   ),
+  mountain: (props: IconProps) => (
+    <svg
+      fill="none"
+      height="28"
+      viewBox="0 0 72 28"
+      width="72"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M1 27L17.1151 13.2353L23.6619 15.7843L28.6978 10.6863L33.2302 11.1961L38.7698 1L50.3525 14.2549"
+        stroke="currentColor"
+      />
+      <path
+        d="M44.813 18.3334L55.8921 9.66669L71 26.4902"
+        stroke="currentColor"
+      />
+      <path
+        d="M40.2805 25.4706L51.3597 19.8627L55.892 10.1765"
+        stroke="currentColor"
+      />
+      <path
+        d="M17.115 13.7451L20.1366 19.3529L19.633 25.4706L29.2013 15.2745L33.2301 21.902L37.2589 13.7451L38.7697 1"
+        stroke="currentColor"
+      />
+    </svg>
+  ),
   photos: ({ size, ...props }: IconProps) => {
     const dimension = getIconDimension(size)
     return (
