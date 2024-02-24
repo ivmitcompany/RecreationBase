@@ -1,5 +1,5 @@
 import Content from '@/components/ui/Content'
-import LinkButton from '@/components/ui/LinkButton'
+import LinkButton from '@/components/ui/button/LinkButton'
 import { cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
