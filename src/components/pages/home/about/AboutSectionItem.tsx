@@ -83,7 +83,6 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
           isOpen={imagesModalIsOpen}
           onClose={closeImagesModal}
           size="screen"
-          wrapperId="about-images-modal"
         >
           <ImageSlider className="h-full w-full" images={images!} />
         </Modal>
