@@ -2,7 +2,7 @@
 
 import { cn } from '@/utils'
 import { VariantProps, cva } from 'class-variance-authority'
-import React, { FC, HTMLAttributes, useEffect, useRef } from 'react'
+import React, { FC, HTMLAttributes, useRef } from 'react'
 
 import { Icons } from './Icons'
 import Portal from './Portal'
@@ -13,7 +13,7 @@ const modalVariants = cva('fixed z-[100] top-0 left-0 right-0 bottom-0', {
   variants: {
     size: {
       default:
-        'w-screen h-screen flex items-center justify-center md:py-16 md:px-[5.625rem] md:bg-graphite md:bg-opacity-50',
+        'w-screen h-screen md:flex md:items-center md:justify-center md:px-[2.8125rem] md:py-8 lg:py-16 lg:px-[5.625rem] md:bg-graphite md:bg-opacity-50',
       screen: 'w-screen h-screen',
     },
   },
@@ -25,7 +25,7 @@ const modalBodyVariants = cva(
     defaultVariants: { size: 'default' },
     variants: {
       size: {
-        default: 'px-5 py-20 md:p-[3.75rem]',
+        default: 'w-full h-full px-5 py-20 md:p-[3.75rem]',
         screen:
           'w-full h-full px-5 py-[1.625rem] md:px-[3.75rem] md:py-[2.625rem]',
       },
@@ -50,7 +50,7 @@ interface ModalProps
     VariantProps<typeof modalCloseButtonVariants> {
   isOpen: boolean
   onClose: () => void
-  wrapperId: string
+  wrapperId?: string
 }
 
 const Modal: FC<ModalProps> = ({
@@ -63,16 +63,6 @@ const Modal: FC<ModalProps> = ({
   ...props
 }) => {
   const modalRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add('no-scroll')
-    }
-
-    return () => {
-      document.body.classList.remove('no-scroll')
-    }
-  }, [isOpen, onClose])
 
   return (
     <>
