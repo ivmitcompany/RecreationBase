@@ -6,7 +6,7 @@ import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import ImageSlider from '@/components/ui/ImageSlider'
 import Modal from '@/components/ui/Modal'
 import IconButton from '@/components/ui/button/IconButton'
-import { cn, zeroPad } from '@/utils'
+import { arrayIsNotEmpty, cn, getArrayLength, zeroPad } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes, useState } from 'react'
 
@@ -22,8 +22,8 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
   ...props
 }) => {
   const [imagesModalIsOpen, setImagesModalIsOpen] = useState<boolean>(false)
-  const imagesArePresent = !!images?.length
-  const imagesCount = images?.length || 0
+  const imagesArePresent = arrayIsNotEmpty(images)
+  const imagesCount = getArrayLength(images)
 
   const openImagesModal = () => {
     setImagesModalIsOpen(true)
@@ -62,7 +62,7 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
                 fill
                 quality={80}
                 sizes="(max-width: 767px) 100vw, (max-width: 894x) 50vw, 387px"
-                src={images[0].src}
+                src={images![0].src}
               />
               {imagesCount > 1 && (
                 <IconButton
@@ -83,9 +83,8 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
           isOpen={imagesModalIsOpen}
           onClose={closeImagesModal}
           size="screen"
-          wrapperId="about-images-modal"
         >
-          <ImageSlider className="h-full w-full" images={images} />
+          <ImageSlider className="h-full w-full" images={images!} />
         </Modal>
       )}
     </>

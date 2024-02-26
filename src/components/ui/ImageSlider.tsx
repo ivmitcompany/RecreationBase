@@ -6,13 +6,13 @@ import { FC } from 'react'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react'
 
-import { AboutItemImage } from '../pages/home/about/AboutSection'
+import { ImageItem } from '../pages/home/about/AboutSection'
 import { fontAccentSpanVariants } from './FontAccentSpan'
 import { Icons } from './Icons'
 import IconButton from './button/IconButton'
 
 interface ImageSliderProps extends SwiperProps {
-  images: AboutItemImage[]
+  images: ImageItem[]
 }
 
 const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {

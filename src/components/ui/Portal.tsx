@@ -11,10 +11,10 @@ function createWrapperAndAppendToBody(wrapperId: string) {
 
 type PortalProps = {
   children: ReactElement
-  wrapperId: string
+  wrapperId?: string
 }
 
-const Portal: FC<PortalProps> = ({ children, wrapperId }) => {
+const Portal: FC<PortalProps> = ({ children, wrapperId = 'modals-root' }) => {
   const [wrapperElement, setWrapperElement] = useState<HTMLElement>()
 
   useLayoutEffect(() => {
@@ -24,6 +24,7 @@ const Portal: FC<PortalProps> = ({ children, wrapperId }) => {
     if (!element) {
       element = createWrapperAndAppendToBody(wrapperId)
       systemCreated = true
+      document.body.classList.add('no-scroll')
     }
 
     setWrapperElement(element!)
@@ -31,6 +32,7 @@ const Portal: FC<PortalProps> = ({ children, wrapperId }) => {
     return () => {
       if (systemCreated && element?.parentNode) {
         element.parentNode.removeChild(element)
+        document.body.classList.remove('no-scroll')
       }
     }
   }, [wrapperId])
