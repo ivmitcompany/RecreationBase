@@ -19,19 +19,17 @@ const modalVariants = cva('fixed z-[100] top-0 left-0 right-0 bottom-0', {
   },
 })
 
-const modalBodyVariants = cva(
-  'relative max-h-full max-w-full bg-light text-dark',
-  {
-    defaultVariants: { size: 'default' },
-    variants: {
-      size: {
-        default: 'w-full h-full px-5 py-20 md:p-[3.75rem]',
-        screen:
-          'w-full h-full px-5 py-[1.625rem] md:px-[3.75rem] md:py-[2.625rem]',
-      },
+const modalBodyVariants = cva('relative bg-light text-dark', {
+  defaultVariants: { size: 'default' },
+  variants: {
+    size: {
+      default:
+        'w-full h-full max-h-full max-w-full md:max-h-[45rem] md:max-w-[68.75rem] overflow-y-auto md:overflow-hidden px-5 py-20 md:py-[3.75rem] md:px-[3.25rem]',
+      screen:
+        'w-full h-full max-h-full max-w-full px-5 py-[1.625rem] md:px-[3.75rem] md:py-[2.625rem]',
     },
-  }
-)
+  },
+})
 
 const modalCloseButtonVariants = cva('z-50 absolute  text-accent', {
   defaultVariants: { size: 'default' },
