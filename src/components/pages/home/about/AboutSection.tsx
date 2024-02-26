@@ -1,8 +1,8 @@
 import Content from '@/components/ui/Content'
+import SectionHeading from '@/components/ui/SectionHeading'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
-import AboutHeading from './AboutHeading'
 import AboutSectionItem from './AboutSectionItem'
 
 export type AboutItemImage = {
@@ -43,7 +43,7 @@ const AboutSection: FC<AboutSectionProps> = ({ className, ...props }) => {
     <div className={cn('bg-graphite text-light', className)} {...props}>
       <Content>
         <section>
-          <AboutHeading />
+          <SectionHeading level={2}>Про нас</SectionHeading>
           <div className="mt-[3.75rem] grid gap-[3.75rem] md:mt-20 md:gap-20">
             {MOCK_ITEMS.map((item) => (
               <AboutSectionItem data={item} key={item.id} />
