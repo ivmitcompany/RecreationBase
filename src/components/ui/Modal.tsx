@@ -13,8 +13,8 @@ const modalVariants = cva('fixed z-[100] top-0 left-0 right-0 bottom-0', {
   variants: {
     size: {
       default:
-        'w-screen h-screen md:flex md:items-center md:justify-center md:px-[2.8125rem] md:py-8 lg:py-16 lg:px-[5.625rem] md:bg-graphite md:bg-opacity-50',
-      screen: 'w-screen h-screen',
+        'w-screen h-dvh md:flex md:items-center md:justify-center md:px-[2.8125rem] md:py-8 lg:py-16 lg:px-[5.625rem] md:bg-graphite md:bg-opacity-50',
+      screen: 'w-screen h-dvh',
     },
   },
 })
@@ -24,7 +24,7 @@ const modalBodyVariants = cva('relative bg-light text-dark', {
   variants: {
     size: {
       default:
-        'w-full h-full max-h-full max-w-full md:max-h-[45rem] md:max-w-[68.75rem] overflow-y-auto md:overflow-hidden px-5 py-20 md:py-[3.75rem] md:px-[3.25rem]',
+        'w-full h-full max-h-full max-w-full md:max-h-[43.75rem] md:max-w-[68.75rem] overflow-y-auto md:overflow-hidden px-5 py-20 md:py-[3.75rem] md:px-[3.25rem]',
       screen:
         'w-full h-full max-h-full max-w-full px-5 py-[1.625rem] md:px-[3.75rem] md:py-[2.625rem]',
     },
