@@ -5,14 +5,14 @@ import { FC, HTMLAttributes } from 'react'
 
 import AboutSectionItem from './AboutSectionItem'
 
-export type AboutItemImage = {
+export type ImageItem = {
   direction: 'horizontal' | 'vertical'
   src: string
 }
 
 export type AboutItem = {
   id: number
-  images?: AboutItemImage[]
+  images?: ImageItem[]
   title: string
 }
 
