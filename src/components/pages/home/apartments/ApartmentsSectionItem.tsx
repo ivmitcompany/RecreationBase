@@ -8,8 +8,8 @@ import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes, useState } from 'react'
 
+import ApartmentDetails from './ApartmentDetails'
 import { Apartment } from './ApartmentsSection'
-import ApartmentDetails from './details/ApartmentDetails'
 
 interface ApartmentsSectionItemProps extends HTMLAttributes<HTMLDivElement> {
   data: Apartment

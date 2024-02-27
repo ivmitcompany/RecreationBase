@@ -11,7 +11,7 @@ import Image from 'next/image'
 import { title } from 'process'
 import { FC, HTMLAttributes, useState } from 'react'
 
-import { Apartment } from '../ApartmentsSection'
+import { Apartment } from './ApartmentsSection'
 
 interface ApartmentDetailsProps extends HTMLAttributes<HTMLDivElement> {
   data: Apartment
