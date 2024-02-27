@@ -10,6 +10,7 @@ export const fontAccentSpanVariants = cva('inline-block font-accent', {
       md: 'text-6xl leading-[1.2] md:text-[5.75rem]',
       sm: 'text-6xl leading-[0.5] md:text-[5.625rem]',
       xs: 'text-[3.125rem] md:text-6xl leading-[1.2]',
+      xxs: 'text-3xl',
     },
   },
 })
