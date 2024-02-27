@@ -1,14 +1,15 @@
 'use client'
 
+import FontAccentSpan from '@/components/ui/FontAccentSpan'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import Modal from '@/components/ui/Modal'
+import Button from '@/components/ui/button/Button'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes, useState } from 'react'
 
 import { Apartment } from './ApartmentsSection'
 import ApartmentDetails from './details/ApartmentDetails'
-import ApartmentDetailsButton from './details/ApartmentDetailsButton'
 
 interface ApartmentsSectionItemProps extends HTMLAttributes<HTMLDivElement> {
   data: Apartment
@@ -56,10 +57,12 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
             <ImagePlaceholder className="h-full w-full" />
           )}
         </div>
-        <ApartmentDetailsButton
-          className="ml-auto mt-2.5 md:mt-5"
-          onClick={openDetailsModal}
-        />
+        <Button className="ml-auto mt-2.5 md:mt-5" onClick={openDetailsModal}>
+          Детальніш
+          <FontAccentSpan className="ml-[0.0625rem] uppercase" size="xs">
+            e
+          </FontAccentSpan>
+        </Button>
       </article>
       <Modal isOpen={detailsModalIsOpen} onClose={closeDetailsModal}>
         <ApartmentDetails className="w-full md:h-full" data={data} />
