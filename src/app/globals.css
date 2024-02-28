@@ -6,6 +6,10 @@
   --header-height: 5rem;
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
   @apply font-default text-dark;
 }
