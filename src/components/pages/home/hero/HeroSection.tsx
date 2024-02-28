@@ -1,7 +1,8 @@
 import Content from '@/components/ui/Content'
-import LinkButton from '@/components/ui/button/LinkButton'
+import { buttonCircleVariants } from '@/components/ui/button/Button'
 import { cn } from '@/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FC, HTMLAttributes } from 'react'
 
 import HeroHeading from './HeroHeading'
@@ -24,13 +25,15 @@ const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
                 sizes="(max-width: 767px) 335px, 500px"
                 src="/hero-img.jpg"
               />
-              <LinkButton
-                className="absolute bottom-3 right-[0.3125rem] md:bottom-[16%] md:right-0 md:translate-x-1/2"
-                color="light"
+              <Link
+                className={cn(
+                  'absolute bottom-3 right-[0.3125rem] md:bottom-[16%] md:right-0 md:translate-x-1/2',
+                  buttonCircleVariants({ circleColor: 'light' })
+                )}
                 href="/"
               >
                 Детальніше
-              </LinkButton>
+              </Link>
             </div>
             <p className="mt-5 text-center md:text-xl">
               сімейна база відпочинку, розташована посеред мальовничих гір

@@ -8,19 +8,19 @@ import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes, useState } from 'react'
 
-import ApartmentDetails from './ApartmentDetails'
-import { Apartment } from './ApartmentsSection'
+import ServiceDetails from './ServiceDetails'
+import { Service } from './ServicesSection'
 
-interface ApartmentsSectionItemProps extends HTMLAttributes<HTMLDivElement> {
-  data: Apartment
+interface ServicesSectionItemProps extends HTMLAttributes<HTMLDivElement> {
+  data: Service
 }
 
-const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
+const ServicesSectionItem: FC<ServicesSectionItemProps> = ({
   className,
   data,
   ...props
 }) => {
-  const { images, name } = data
+  const { images, title } = data
   const [detailsModalIsOpen, setDetailsModalIsOpen] = useState<boolean>(false)
   const imagesArePresent = arrayIsNotEmpty(images)
 
@@ -35,17 +35,14 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
   return (
     <>
       <article
-        className={cn('group/item md:even:mt-[11.25rem]', className)}
+        className="group flex flex-col-reverse gap-2.5 md:flex-col"
         {...props}
       >
-        <h3 className="text-[2.5rem] font-light uppercase leading-[1.35] first-letter:text-accent group-even/item:text-end xl:text-[3.75rem] xl:leading-[1.4]">
-          {name}
-        </h3>
-        <div className="relative mt-2.5 aspect-square">
+        <div className="relative aspect-[0.96/1] md:aspect-[0.79/1]">
           {imagesArePresent ? (
             <>
               <Image
-                alt={name}
+                alt={title}
                 className="object-cover object-center"
                 fill
                 quality={80}
@@ -56,19 +53,28 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
           ) : (
             <ImagePlaceholder className="h-full w-full" />
           )}
+          <Button
+            buttonSize="sm"
+            circleColor={imagesArePresent ? 'light' : 'default'}
+            circleSize="xs"
+            circleSpacing="tight"
+            className={cn(
+              'absolute bottom-2.5 uppercase group-odd:left-2.5 group-even:right-2.5 md:bottom-auto md:group-odd:left-auto md:group-odd:right-2.5 md:group-odd:top-2.5 md:group-even:bottom-2.5',
+              imagesArePresent ? 'text-light' : 'text-dark'
+            )}
+            onClick={openDetailsModal}
+          >
+            Детальніш
+            <FontAccentSpan size="xxs">e</FontAccentSpan>
+          </Button>
         </div>
-        <Button className="ml-auto mt-2.5 md:mt-5" onClick={openDetailsModal}>
-          Детальніш
-          <FontAccentSpan className="ml-[0.0625rem] uppercase" size="xs">
-            e
-          </FontAccentSpan>
-        </Button>
+        <h3 className="text-lg uppercase md:text-base">{title}</h3>
       </article>
       <Modal isOpen={detailsModalIsOpen} onClose={closeDetailsModal}>
-        <ApartmentDetails data={data} images={images} imgAlt={name} />
+        <ServiceDetails data={data} images={images} imgAlt={title} />
       </Modal>
     </>
   )
 }
 
-export default ApartmentsSectionItem
+export default ServicesSectionItem
