@@ -18,7 +18,7 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
 
   return (
     <DetailsModal className={className} {...props}>
-      <div className="flex flex-col">
+      <div className="flex h-full flex-col">
         <h3 className="text-[1.875rem] font-light uppercase leading-[1.35]">
           {name}
         </h3>

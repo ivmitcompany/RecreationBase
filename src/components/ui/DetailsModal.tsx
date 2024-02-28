@@ -44,7 +44,7 @@ const DetailsModal: FC<DetailsModalProps> = ({
         )}
         {...props}
       >
-        <div className="relative aspect-square w-full md:aspect-[0.68/1] lg:aspect-[0.9/1] xl:aspect-[1.02/1]">
+        <div className="relative aspect-square w-full md:aspect-[0.68/1] md:basis-0 lg:aspect-[0.9/1] xl:aspect-[1.02/1]">
           {imagesArePresent ? (
             <>
               <Image
