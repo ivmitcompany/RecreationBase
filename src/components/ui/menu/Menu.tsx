@@ -42,7 +42,9 @@ const Menu: FC<MenuProps> = ({
     {...props}
   >
     <MenuItem underline={underline}>Головна</MenuItem>
-    <MenuItem underline={underline}>Апартаменти</MenuItem>
+    <MenuItem href="/#apartments" underline={underline}>
+      Апартаменти
+    </MenuItem>
     <MenuItem underline={underline}>Меню</MenuItem>
   </ul>
 )
