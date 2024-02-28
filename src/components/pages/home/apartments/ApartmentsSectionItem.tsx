@@ -65,7 +65,7 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
         </Button>
       </article>
       <Modal isOpen={detailsModalIsOpen} onClose={closeDetailsModal}>
-        <ApartmentDetails className="w-full md:h-full" data={data} />
+        <ApartmentDetails data={data} images={images} imgAlt={name} />
       </Modal>
     </>
   )
