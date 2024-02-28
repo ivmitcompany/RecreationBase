@@ -1,6 +1,5 @@
 import Content from '@/components/ui/Content'
 import SectionHeading from '@/components/ui/SectionHeading'
-import { cn } from '@/utils'
 import React, { FC, HTMLAttributes } from 'react'
 
 import { ImageItem } from '../about/AboutSection'
@@ -93,7 +92,7 @@ const ApartmentsSection: FC<ApartmentsSectionProps> = ({
   ...props
 }) => {
   return (
-    <div className={className} {...props}>
+    <div className={className} id="apartments" {...props}>
       <Content>
         <section>
           <SectionHeading level={2} position="end">
