@@ -6,6 +6,7 @@ import Providers from '@/store/providers'
 import { cn } from '@/utils'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 import { luxurious, manrope } from './fonts'
 import './globals.css'
