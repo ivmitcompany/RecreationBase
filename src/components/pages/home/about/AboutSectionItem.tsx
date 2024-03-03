@@ -83,15 +83,13 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
           )}
         </div>
       </article>
-      {imagesArePresent && imagesCount > 1 && (
-        <Modal
-          isOpen={imagesModalIsOpen}
-          onClose={closeImagesModal}
-          size="screen"
-        >
-          <ImageSlider className="h-full w-full" images={images!} />
-        </Modal>
-      )}
+      <Modal
+        isOpen={imagesModalIsOpen}
+        onClose={closeImagesModal}
+        size="screen"
+      >
+        <ImageSlider className="h-full w-full" images={images!} />
+      </Modal>
     </>
   )
 }
