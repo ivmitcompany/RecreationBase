@@ -26,26 +26,26 @@ const menuVariants = cva('flex flex-col flex-wrap md:flex-row', {
 interface NavMenuProps
   extends HTMLAttributes<HTMLUListElement>,
     VariantProps<typeof menuVariants> {
-  underline?: boolean
+  itemsUnderline?: boolean
 }
 
 const NavMenu: FC<NavMenuProps> = ({
   align,
   className,
   itemSize,
+  itemsUnderline = false,
   spacing,
-  underline,
   ...props
 }) => (
   <ul
     className={cn(menuVariants({ align, itemSize, spacing }), className)}
     {...props}
   >
-    <MenuItem underline={underline}>Головна</MenuItem>
-    <MenuItem href="/#apartments" underline={underline}>
+    <MenuItem isUnderline={itemsUnderline}>Головна</MenuItem>
+    <MenuItem href="/#apartments" isUnderline={itemsUnderline}>
       Апартаменти
     </MenuItem>
-    <MenuItem underline={underline}>Меню</MenuItem>
+    <MenuItem isUnderline={itemsUnderline}>Меню</MenuItem>
   </ul>
 )
 
