@@ -12,3 +12,7 @@ export const zeroPadSingleDigit = (num: number) => {
   return num.toString()
 }
 
+export const disablePageScroll = () => document.body.classList.add('no-scroll')
+
+export const enablePageScroll = () =>
+  document.body.classList.remove('no-scroll')
