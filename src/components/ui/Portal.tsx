@@ -1,3 +1,4 @@
+import { disablePageScroll, enablePageScroll } from '@/utils'
 import { FC, ReactElement, useLayoutEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
@@ -24,7 +25,7 @@ const Portal: FC<PortalProps> = ({ children, wrapperId = 'modals-root' }) => {
     if (!element) {
       element = createWrapperAndAppendToBody(wrapperId)
       systemCreated = true
-      document.body.classList.add('no-scroll')
+      disablePageScroll()
     }
 
     setWrapperElement(element!)
@@ -32,7 +33,7 @@ const Portal: FC<PortalProps> = ({ children, wrapperId = 'modals-root' }) => {
     return () => {
       if (systemCreated && element?.parentNode) {
         element.parentNode.removeChild(element)
-        document.body.classList.remove('no-scroll')
+        enablePageScroll()
       }
     }
   }, [wrapperId])
