@@ -61,13 +61,13 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
             </div>
             <div className="flex w-full items-center justify-between md:px-[5.125rem] lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:px-0 xl:px-[5.125rem]">
               <IconButton
-                Icon={Icons.arrow}
                 className="rotate-180"
+                icon={Icons.arrow}
                 id={prevSlideButtonId}
                 label="Стрілка вліво"
               />
               <IconButton
-                Icon={Icons.arrow}
+                icon={Icons.arrow}
                 id={nextSlideButtonId}
                 label="Стрілка вправо"
               />

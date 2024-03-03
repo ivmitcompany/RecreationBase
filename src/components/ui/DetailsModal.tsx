@@ -57,8 +57,8 @@ const DetailsModal: FC<DetailsModalProps> = ({
               />
               {imagesCount > 1 && (
                 <IconButton
-                  Icon={Icons.photos}
                   className="absolute bottom-5 right-5 md:left-5 md:right-auto"
+                  icon={Icons.photos}
                   label="Переглянути більше фото"
                   onClick={openImagesModal}
                 />

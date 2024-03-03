@@ -71,8 +71,8 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
               />
               {imagesCount > 1 && (
                 <IconButton
-                  Icon={Icons.photos}
                   className="absolute bottom-4 right-4"
+                  icon={Icons.photos}
                   label="Переглянути більше фото"
                   onClick={openImagesModal}
                 />
