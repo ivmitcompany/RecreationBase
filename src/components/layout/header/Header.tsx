@@ -25,7 +25,7 @@ const Header: FC<HeaderProps> = ({ className, ...props }) => {
         <nav className="hidden md:block">
           <Menu />
         </nav>
-        <Contacts className="hidden md:flex" short />
+        <Contacts areShort className="hidden md:flex" />
         <HeaderMenuIcon className="md:hidden" />
       </Content>
       <HeaderMenuMobile className="z-10 md:hidden" />
