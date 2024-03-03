@@ -66,7 +66,12 @@ const ServicesSection: FC<ServicesSectionProps> = ({ className, ...props }) => {
             </div>
             <article className="flex flex-col-reverse gap-2.5 md:flex-col">
               <div className="relative aspect-[0.96/1] md:aspect-[0.79/1]">
-                <Image alt="Ресторан" fill src="/restaurant.jpg" />
+                <Image
+                  alt="Ресторан"
+                  fill
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw"
+                  src="/restaurant.jpg"
+                />
               </div>
               <h3 className="text-lg uppercase md:text-base">Ресторан</h3>
             </article>
