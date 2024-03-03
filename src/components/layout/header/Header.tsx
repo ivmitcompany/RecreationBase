@@ -1,6 +1,6 @@
 import Contacts from '@/components/ui/Contacts'
 import Content from '@/components/ui/Content'
-import Menu from '@/components/ui/menu/Menu'
+import Menu from '@/components/ui/nav-menu/Menu'
 import { cn } from '@/utils'
 import { FC } from 'react'
 

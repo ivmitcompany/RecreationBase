@@ -1,7 +1,7 @@
 import Contacts from '@/components/ui/Contacts'
 import Content from '@/components/ui/Content'
 import Logo from '@/components/ui/Logo'
-import Menu from '@/components/ui/menu/Menu'
+import Menu from '@/components/ui/nav-menu/Menu'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
