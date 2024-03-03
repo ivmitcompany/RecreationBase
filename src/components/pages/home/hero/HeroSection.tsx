@@ -12,8 +12,8 @@ interface HeroSectionProps extends HTMLAttributes<HTMLDivElement> {}
 const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
   return (
     <div className={cn('bg-graphite text-light', className)} {...props}>
-      <Content className="pt-10">
-        <section>
+      <Content>
+        <section className="pt-10">
           <HeroHeading />
           <article className="mx-auto max-w-[20.9375rem] md:max-w-[31.25rem]">
             <div className="relative mx-auto aspect-[0.84/1] max-h-[25rem] md:aspect-square md:max-h-none">
