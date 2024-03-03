@@ -7,14 +7,14 @@ import { FC, LiHTMLAttributes, useContext } from 'react'
 
 interface NavMenuItemProps extends LiHTMLAttributes<HTMLLIElement> {
   href?: string
-  underline?: boolean
+  isUnderline?: boolean
 }
 
 const NavMenuItem: FC<NavMenuItemProps> = ({
   children,
   className,
   href = '/',
-  underline,
+  isUnderline,
   ...props
 }) => {
   const { closeMenu } = useContext(HeaderContext)
@@ -23,14 +23,14 @@ const NavMenuItem: FC<NavMenuItemProps> = ({
     <li
       className={cn(
         'uppercase transition-colors md:hover:text-accent',
-        underline && 'flex w-full items-end md:w-fit',
+        isUnderline && 'flex w-full items-end md:w-fit',
         className
       )}
       onClick={closeMenu}
       {...props}
     >
       <Link href={href}>{children}</Link>
-      {underline && (
+      {isUnderline && (
         <span
           aria-hidden
           className="-mb-1.5 block h-0.5 w-full bg-light md:hidden"
