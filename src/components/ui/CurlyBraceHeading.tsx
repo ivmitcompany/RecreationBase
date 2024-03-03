@@ -3,7 +3,7 @@ import { cn } from '@/utils'
 import { VariantProps, cva } from 'class-variance-authority'
 import { FC, HTMLAttributes } from 'react'
 
-export const sectionHeadingVariants = cva(
+export const curlyBraceHeadingVariants = cva(
   'flex items-baseline font-light uppercase',
   {
     defaultVariants: { position: 'start', size: 'default' },
@@ -21,7 +21,7 @@ export const sectionHeadingVariants = cva(
   }
 )
 
-const sectionHeadingTextVariants = cva('', {
+const curlyBraceHeadingTextVariants = cva('', {
   defaultVariants: { size: 'default' },
   variants: {
     size: {
@@ -31,14 +31,14 @@ const sectionHeadingTextVariants = cva('', {
   },
 })
 
-interface SectionHeadingProps
+interface CurlyBraceHeadingProps
   extends HTMLAttributes<HTMLHeadingElement>,
-    VariantProps<typeof sectionHeadingVariants>,
-    VariantProps<typeof sectionHeadingTextVariants> {
+    VariantProps<typeof curlyBraceHeadingVariants>,
+    VariantProps<typeof curlyBraceHeadingTextVariants> {
   level: 1 | 2 | 3 | 4 | 5 | 6
 }
 
-const SectionHeading: FC<SectionHeadingProps> = ({
+const CurlyBraceHeading: FC<CurlyBraceHeadingProps> = ({
   children,
   className,
   level,
@@ -52,7 +52,7 @@ const SectionHeading: FC<SectionHeadingProps> = ({
   return (
     <HeadingTag
       className={cn(
-        sectionHeadingVariants({ position, size: headingSize }),
+        curlyBraceHeadingVariants({ position, size: headingSize }),
         className
       )}
       {...props}
@@ -64,7 +64,7 @@ const SectionHeading: FC<SectionHeadingProps> = ({
         &#123;
       </FontAccentSpan>{' '}
       <span
-        className={sectionHeadingTextVariants({ size: headingSize })}
+        className={curlyBraceHeadingTextVariants({ size: headingSize })}
         role="text"
       >
         {children}
@@ -79,4 +79,4 @@ const SectionHeading: FC<SectionHeadingProps> = ({
   )
 }
 
-export default SectionHeading
+export default CurlyBraceHeading
