@@ -2,12 +2,12 @@ import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
 export interface ContactsProps extends HTMLAttributes<HTMLDivElement> {
-  short?: boolean
+  areShort?: boolean
 }
 
 const Contacts: FC<ContactsProps> = ({
+  areShort = false,
   className,
-  short = false,
   ...props
 }) => (
   <address
@@ -23,7 +23,7 @@ const Contacts: FC<ContactsProps> = ({
     >
       +380678279007
     </a>
-    <p className={cn(short && 'sr-only')}>с.Рокосово, вул.Виноградна 14</p>
+    <p className={cn(areShort && 'sr-only')}>с.Рокосово, вул.Виноградна 14</p>
   </address>
 )
 

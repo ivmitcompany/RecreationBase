@@ -73,8 +73,8 @@ const Modal: FC<ModalProps> = ({
           >
             <div className={modalBodyVariants({ size })}>
               <IconButton
-                Icon={Icons.cross}
                 className={modalCloseButtonVariants({ size })}
+                icon={Icons.cross}
                 label="Закрити модальне вікно"
                 onClick={onClose}
               />

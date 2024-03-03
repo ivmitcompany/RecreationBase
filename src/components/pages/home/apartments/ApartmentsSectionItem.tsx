@@ -4,12 +4,12 @@ import FontAccentSpan from '@/components/ui/FontAccentSpan'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/button/Button'
+import { Apartment } from '@/types/Apartment'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes, useState } from 'react'
 
 import ApartmentDetails from './ApartmentDetails'
-import { Apartment } from './ApartmentsSection'
 
 interface ApartmentsSectionItemProps extends HTMLAttributes<HTMLDivElement> {
   data: Apartment
@@ -65,7 +65,7 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
         </Button>
       </article>
       <Modal isOpen={detailsModalIsOpen} onClose={closeDetailsModal}>
-        <ApartmentDetails data={data} images={images} imgAlt={name} />
+        <ApartmentDetails data={data} images={images} previewImgAlt={name} />
       </Modal>
     </>
   )

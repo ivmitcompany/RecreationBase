@@ -1,7 +1,7 @@
 import Contacts from '@/components/ui/Contacts'
 import Content from '@/components/ui/Content'
 import Logo from '@/components/ui/Logo'
-import Menu from '@/components/ui/menu/Menu'
+import NavMenu from '@/components/ui/nav-menu/NavMenu'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
@@ -18,7 +18,7 @@ const Footer: FC<FooterProps> = ({ className, ...props }) => {
     >
       <Content className="flex flex-col items-center justify-between gap-10 md:flex-row">
         <Logo className="md:basis-1/4" />
-        <Menu align="center" />
+        <NavMenu align="center" />
         <Contacts className="text-center md:basis-1/4 md:text-right" />
       </Content>
     </footer>

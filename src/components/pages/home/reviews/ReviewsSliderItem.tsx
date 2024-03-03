@@ -1,7 +1,6 @@
+import { Review } from '@/types/Review'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
-
-import { Review } from './ReviewsSection'
 
 interface ReviewsSliderItemProps extends HTMLAttributes<HTMLDivElement> {
   data: Review
@@ -9,7 +8,7 @@ interface ReviewsSliderItemProps extends HTMLAttributes<HTMLDivElement> {
 
 const ReviewsSliderItem: FC<ReviewsSliderItemProps> = ({
   className,
-  data: { author, date, text },
+  data: { author, date, review },
   ...props
 }) => {
   return (
@@ -22,7 +21,7 @@ const ReviewsSliderItem: FC<ReviewsSliderItemProps> = ({
         {author}
         <span>&#93;</span>
       </h3>
-      <p className="relative mt-[3.75rem] pb-[1.875rem] md:text-lg">{text}</p>
+      <p className="relative mt-[3.75rem] pb-[1.875rem] md:text-lg">{review}</p>
       <span className="relative mt-auto block pt-2.5 text-end after:absolute after:left-0 after:right-0 after:top-0 after:h-[0.0625rem] after:w-full after:bg-light">
         {date}
       </span>

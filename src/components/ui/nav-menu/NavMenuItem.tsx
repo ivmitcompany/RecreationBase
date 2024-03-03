@@ -5,16 +5,16 @@ import { cn } from '@/utils'
 import Link from 'next/link'
 import { FC, LiHTMLAttributes, useContext } from 'react'
 
-interface MenuItemProps extends LiHTMLAttributes<HTMLLIElement> {
+interface NavMenuItemProps extends LiHTMLAttributes<HTMLLIElement> {
   href?: string
-  underline?: boolean
+  isUnderline?: boolean
 }
 
-const MenuItem: FC<MenuItemProps> = ({
+const NavMenuItem: FC<NavMenuItemProps> = ({
   children,
   className,
   href = '/',
-  underline,
+  isUnderline,
   ...props
 }) => {
   const { closeMenu } = useContext(HeaderContext)
@@ -23,14 +23,14 @@ const MenuItem: FC<MenuItemProps> = ({
     <li
       className={cn(
         'uppercase transition-colors md:hover:text-accent',
-        underline && 'flex w-full items-end md:w-fit',
+        isUnderline && 'flex w-full items-end md:w-fit',
         className
       )}
       onClick={closeMenu}
       {...props}
     >
       <Link href={href}>{children}</Link>
-      {underline && (
+      {isUnderline && (
         <span
           aria-hidden
           className="-mb-1.5 block h-0.5 w-full bg-light md:hidden"
@@ -40,4 +40,4 @@ const MenuItem: FC<MenuItemProps> = ({
   )
 }
 
-export default MenuItem
+export default NavMenuItem

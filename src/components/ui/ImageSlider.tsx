@@ -1,36 +1,44 @@
 'use client'
 
+import { ImageInfo } from '@/types/ImageInfo'
 import { cn } from '@/utils'
 import Image from 'next/image'
 import { FC } from 'react'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react'
 
-import { ImageItem } from '../pages/home/about/AboutSection'
 import { fontAccentSpanVariants } from './FontAccentSpan'
 import { Icons } from './Icons'
 import IconButton from './button/IconButton'
 
+const nextSlideButtonId = 'next-slide-button'
+const prevSlideButtonId = 'prev-slide-button'
+const paginationId = 'pagination'
+
+const sliderSettings: SwiperProps = {
+  modules: [Navigation, Pagination],
+  navigation: {
+    nextEl: `#${nextSlideButtonId}`,
+    prevEl: `#${prevSlideButtonId}`,
+  },
+  pagination: {
+    el: `#${paginationId}`,
+    renderCustom: function (_, current, total) {
+      return current + '/' + total
+    },
+    type: 'custom',
+  },
+}
+
 interface ImageSliderProps extends SwiperProps {
-  images: ImageItem[]
+  images: ImageInfo[]
 }
 
 const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
   return (
     <Swiper
       className={cn('relative', className)}
-      modules={[Navigation, Pagination]}
-      navigation={{
-        nextEl: '#next-slide-button',
-        prevEl: '#prev-slide-button',
-      }}
-      pagination={{
-        el: '#pagination',
-        renderCustom: function (_, current, total) {
-          return current + '/' + total
-        },
-        type: 'custom',
-      }}
+      {...sliderSettings}
       {...props}
     >
       {images.map((image, index) => (
@@ -53,14 +61,14 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
             </div>
             <div className="flex w-full items-center justify-between md:px-[5.125rem] lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:px-0 xl:px-[5.125rem]">
               <IconButton
-                Icon={Icons.arrow}
                 className="rotate-180"
-                id="prev-slide-button"
+                icon={Icons.arrow}
+                id={prevSlideButtonId}
                 label="Стрілка вліво"
               />
               <IconButton
-                Icon={Icons.arrow}
-                id="next-slide-button"
+                icon={Icons.arrow}
+                id={nextSlideButtonId}
                 label="Стрілка вправо"
               />
             </div>
@@ -72,7 +80,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
           'absolute bottom-0 left-0 z-[100] bg-light text-accent',
           fontAccentSpanVariants({ size: 'xs' })
         )}
-        id="pagination"
+        id={paginationId}
       />
     </Swiper>
   )

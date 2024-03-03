@@ -2,7 +2,7 @@ import { cn } from '@/utils'
 import { VariantProps, cva } from 'class-variance-authority'
 import { FC, HTMLAttributes } from 'react'
 
-import MenuItem from './MenuItem'
+import MenuItem from './NavMenuItem'
 
 const menuVariants = cva('flex flex-col flex-wrap md:flex-row', {
   defaultVariants: {
@@ -23,30 +23,30 @@ const menuVariants = cva('flex flex-col flex-wrap md:flex-row', {
   },
 })
 
-interface MenuProps
+interface NavMenuProps
   extends HTMLAttributes<HTMLUListElement>,
     VariantProps<typeof menuVariants> {
-  underline?: boolean
+  itemsUnderline?: boolean
 }
 
-const Menu: FC<MenuProps> = ({
+const NavMenu: FC<NavMenuProps> = ({
   align,
   className,
   itemSize,
+  itemsUnderline = false,
   spacing,
-  underline,
   ...props
 }) => (
   <ul
     className={cn(menuVariants({ align, itemSize, spacing }), className)}
     {...props}
   >
-    <MenuItem underline={underline}>Головна</MenuItem>
-    <MenuItem href="/#apartments" underline={underline}>
+    <MenuItem isUnderline={itemsUnderline}>Головна</MenuItem>
+    <MenuItem href="/#apartments" isUnderline={itemsUnderline}>
       Апартаменти
     </MenuItem>
-    <MenuItem underline={underline}>Меню</MenuItem>
+    <MenuItem isUnderline={itemsUnderline}>Меню</MenuItem>
   </ul>
 )
 
-export default Menu
+export default NavMenu

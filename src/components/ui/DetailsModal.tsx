@@ -1,10 +1,10 @@
 'use client'
 
+import { ImageInfo } from '@/types/ImageInfo'
 import { arrayIsNotEmpty, cn, getArrayLength } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes, useState } from 'react'
 
-import { ImageItem } from '../pages/home/about/AboutSection'
 import { Icons } from './Icons'
 import ImagePlaceholder from './ImagePlaceholder'
 import ImageSlider from './ImageSlider'
@@ -12,15 +12,15 @@ import Modal from './Modal'
 import IconButton from './button/IconButton'
 
 export interface DetailsModalProps extends HTMLAttributes<HTMLDivElement> {
-  images?: ImageItem[]
-  imgAlt: string
+  images?: ImageInfo[]
+  previewImgAlt: string
 }
 
 const DetailsModal: FC<DetailsModalProps> = ({
   children,
   className,
   images,
-  imgAlt,
+  previewImgAlt,
   ...props
 }) => {
   const [imagesModalIsOpen, setImagesModalIsOpen] = useState<boolean>(false)
@@ -48,7 +48,7 @@ const DetailsModal: FC<DetailsModalProps> = ({
           {imagesArePresent ? (
             <>
               <Image
-                alt={imgAlt}
+                alt={previewImgAlt}
                 className="object-cover object-center"
                 fill
                 quality={80}
@@ -57,8 +57,8 @@ const DetailsModal: FC<DetailsModalProps> = ({
               />
               {imagesCount > 1 && (
                 <IconButton
-                  Icon={Icons.photos}
                   className="absolute bottom-5 right-5 md:left-5 md:right-auto"
+                  icon={Icons.photos}
                   label="Переглянути більше фото"
                   onClick={openImagesModal}
                 />

@@ -4,15 +4,15 @@ import FontAccentSpan from '@/components/ui/FontAccentSpan'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/button/Button'
+import { CompanyService } from '@/types/CompanyService'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes, useState } from 'react'
 
 import ServiceDetails from './ServiceDetails'
-import { Service } from './ServicesSection'
 
 interface ServicesSectionItemProps extends HTMLAttributes<HTMLDivElement> {
-  data: Service
+  data: CompanyService
 }
 
 const ServicesSectionItem: FC<ServicesSectionItemProps> = ({
@@ -71,7 +71,7 @@ const ServicesSectionItem: FC<ServicesSectionItemProps> = ({
         <h3 className="text-lg uppercase md:text-base">{title}</h3>
       </article>
       <Modal isOpen={detailsModalIsOpen} onClose={closeDetailsModal}>
-        <ServiceDetails data={data} images={images} imgAlt={title} />
+        <ServiceDetails data={data} images={images} previewImgAlt={title} />
       </Modal>
     </>
   )

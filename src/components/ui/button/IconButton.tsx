@@ -5,14 +5,14 @@ import { IconProps } from '../Icons'
 
 export interface IconButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
-  Icon: ComponentType<IconProps>
+  icon: ComponentType<IconProps>
   label: string
 }
 
 const IconButton: FC<IconButtonProps> = ({
-  Icon,
   children,
   className,
+  icon: Icon,
   label,
   ...props
 }) => (

@@ -6,7 +6,12 @@ import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import ImageSlider from '@/components/ui/ImageSlider'
 import Modal from '@/components/ui/Modal'
 import IconButton from '@/components/ui/button/IconButton'
-import { arrayIsNotEmpty, cn, getArrayLength, zeroPad } from '@/utils'
+import {
+  arrayIsNotEmpty,
+  cn,
+  getArrayLength,
+  zeroPadSingleDigit,
+} from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes, useState } from 'react'
 
@@ -50,7 +55,7 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
             className="md:absolute md:bottom-0 md:right-0"
             size="sm"
           >
-            {zeroPad(id)}
+            {zeroPadSingleDigit(id)}
           </FontAccentSpan>
         </div>
         <div className="relative aspect-[1.55/1]">
@@ -66,8 +71,8 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
               />
               {imagesCount > 1 && (
                 <IconButton
-                  Icon={Icons.photos}
                   className="absolute bottom-4 right-4"
+                  icon={Icons.photos}
                   label="Переглянути більше фото"
                   onClick={openImagesModal}
                 />
@@ -78,15 +83,13 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
           )}
         </div>
       </article>
-      {imagesArePresent && imagesCount > 1 && (
-        <Modal
-          isOpen={imagesModalIsOpen}
-          onClose={closeImagesModal}
-          size="screen"
-        >
-          <ImageSlider className="h-full w-full" images={images!} />
-        </Modal>
-      )}
+      <Modal
+        isOpen={imagesModalIsOpen}
+        onClose={closeImagesModal}
+        size="screen"
+      >
+        <ImageSlider className="h-full w-full" images={images!} />
+      </Modal>
     </>
   )
 }

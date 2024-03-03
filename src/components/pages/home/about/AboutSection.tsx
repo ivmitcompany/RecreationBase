@@ -1,22 +1,18 @@
 import Content from '@/components/ui/Content'
-import SectionHeading from '@/components/ui/SectionHeading'
+import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
+import { ImageInfo } from '@/types/ImageInfo'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
 import AboutSectionItem from './AboutSectionItem'
 
-export type ImageItem = {
-  direction: 'horizontal' | 'vertical'
-  src: string
-}
-
 export type AboutItem = {
   id: number
-  images?: ImageItem[]
+  images?: ImageInfo[]
   title: string
 }
 
-const MOCK_ITEMS: AboutItem[] = [
+const aboutItems: AboutItem[] = [
   {
     id: 9,
     images: [
@@ -30,7 +26,7 @@ const MOCK_ITEMS: AboutItem[] = [
     title: 'святкування банкетів та виїзних церемоній',
   },
   {
-    id: 10,
+    id: 11,
     images: [{ direction: 'vertical', src: '/hero-img.jpg' }],
     title: 'святкування банкетів та виїзних церемоній',
   },
@@ -43,9 +39,9 @@ const AboutSection: FC<AboutSectionProps> = ({ className, ...props }) => {
     <div className={cn('bg-graphite text-light', className)} {...props}>
       <Content>
         <section>
-          <SectionHeading level={2}>Про нас</SectionHeading>
+          <CurlyBraceHeading level={2}>Про нас</CurlyBraceHeading>
           <div className="mt-[3.75rem] grid gap-[3.75rem] md:mt-20 md:gap-20">
-            {MOCK_ITEMS.map((item) => (
+            {aboutItems.map((item) => (
               <AboutSectionItem data={item} key={item.id} />
             ))}
           </div>

@@ -65,7 +65,7 @@ const Button: FC<ButtonProps> = ({
         buttonCircleVariants({ circleColor, circleSize, circleSpacing })
       )}
     >
-      <Icons.arrow />
+      <Icons.arrow aria-hidden />
       <span className="sr-only">Стрілка вліво</span>
     </span>
   </button>

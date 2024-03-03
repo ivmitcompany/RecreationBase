@@ -2,7 +2,7 @@
 
 import useMediaQuery from '@/hooks/use-media-query'
 import HeaderContext from '@/store/header-context'
-import { MOBILE_BREAKPOINT } from '@/utils'
+import { MOBILE_BREAKPOINT, disablePageScroll, enablePageScroll } from '@/utils'
 import { FC, ReactNode, useEffect, useState } from 'react'
 
 type HeaderProviderProps = {
@@ -14,12 +14,12 @@ const HeaderProvider: FC<HeaderProviderProps> = ({ children }) => {
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false)
 
   const openMenu = () => {
-    document.body.classList.add('no-scroll')
+    disablePageScroll()
     setIsMenuOpened(true)
   }
 
   const closeMenu = () => {
-    document.body.classList.remove('no-scroll')
+    enablePageScroll()
     setIsMenuOpened(false)
   }
 

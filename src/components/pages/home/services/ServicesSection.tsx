@@ -1,25 +1,14 @@
 import Content from '@/components/ui/Content'
+import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import FontAccentSpan from '@/components/ui/FontAccentSpan'
-import SectionHeading from '@/components/ui/SectionHeading'
 import LinkButton from '@/components/ui/button/LinkButton'
+import { CompanyService } from '@/types/CompanyService'
 import Image from 'next/image'
 import React, { FC, HTMLAttributes } from 'react'
 
-import { ImageItem } from '../about/AboutSection'
 import ServicesSectionItem from './ServicesSectionItem'
 
-export type Service = {
-  description?: string
-  excess_time_price: number
-  id: number
-  images?: ImageItem[]
-  min_order_time: number
-  note?: string
-  price: number
-  title: string
-}
-
-const SERVICES: Service[] = [
+const services: CompanyService[] = [
   {
     description:
       'в сауні знаходиться кімната відпочинку, рушники та халати також надаються',
@@ -52,9 +41,9 @@ const ServicesSection: FC<ServicesSectionProps> = ({ className, ...props }) => {
     <div className={className} {...props}>
       <Content>
         <section>
-          <SectionHeading level={2}>Послуги</SectionHeading>
+          <CurlyBraceHeading level={2}>Послуги</CurlyBraceHeading>
           <div className="mt-11 grid gap-[3.75rem] md:mt-16 md:grid-cols-2 md:gap-5 lg:grid-cols-3 xl:grid-cols-4">
-            {SERVICES.map((item) => (
+            {services.map((item) => (
               <ServicesSectionItem data={item} key={item.id} />
             ))}
             <div className="flex aspect-[1.8/1] flex-col gap-5 sm:aspect-[2.25/1] md:aspect-[0.79/1]">
@@ -77,7 +66,12 @@ const ServicesSection: FC<ServicesSectionProps> = ({ className, ...props }) => {
             </div>
             <article className="flex flex-col-reverse gap-2.5 md:flex-col">
               <div className="relative aspect-[0.96/1] md:aspect-[0.79/1]">
-                <Image alt="Ресторан" fill src="/restaurant.jpg" />
+                <Image
+                  alt="Ресторан"
+                  fill
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw"
+                  src="/restaurant.jpg"
+                />
               </div>
               <h3 className="text-lg uppercase md:text-base">Ресторан</h3>
             </article>
