@@ -26,7 +26,7 @@ const aboutItems: AboutItem[] = [
     title: 'святкування банкетів та виїзних церемоній',
   },
   {
-    id: 10,
+    id: 11,
     images: [{ direction: 'vertical', src: '/hero-img.jpg' }],
     title: 'святкування банкетів та виїзних церемоній',
   },
