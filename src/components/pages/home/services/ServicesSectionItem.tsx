@@ -71,7 +71,7 @@ const ServicesSectionItem: FC<ServicesSectionItemProps> = ({
         <h3 className="text-lg uppercase md:text-base">{title}</h3>
       </article>
       <Modal isOpen={detailsModalIsOpen} onClose={closeDetailsModal}>
-        <ServiceDetails data={data} images={images} imgAlt={title} />
+        <ServiceDetails data={data} images={images} previewImgAlt={title} />
       </Modal>
     </>
   )
