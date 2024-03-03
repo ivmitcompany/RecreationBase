@@ -2,7 +2,7 @@ import { cn } from '@/utils'
 import { VariantProps, cva } from 'class-variance-authority'
 import { FC, HTMLAttributes } from 'react'
 
-import MenuItem from './MenuItem'
+import MenuItem from './NavMenuItem'
 
 const menuVariants = cva('flex flex-col flex-wrap md:flex-row', {
   defaultVariants: {
@@ -23,13 +23,13 @@ const menuVariants = cva('flex flex-col flex-wrap md:flex-row', {
   },
 })
 
-interface MenuProps
+interface NavMenuProps
   extends HTMLAttributes<HTMLUListElement>,
     VariantProps<typeof menuVariants> {
   underline?: boolean
 }
 
-const Menu: FC<MenuProps> = ({
+const NavMenu: FC<NavMenuProps> = ({
   align,
   className,
   itemSize,
@@ -49,4 +49,4 @@ const Menu: FC<MenuProps> = ({
   </ul>
 )
 
-export default Menu
+export default NavMenu
