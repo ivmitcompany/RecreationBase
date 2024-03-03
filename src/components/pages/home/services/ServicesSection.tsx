@@ -1,6 +1,6 @@
 import Content from '@/components/ui/Content'
+import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import FontAccentSpan from '@/components/ui/FontAccentSpan'
-import SectionHeading from '@/components/ui/SectionHeading'
 import LinkButton from '@/components/ui/button/LinkButton'
 import Image from 'next/image'
 import React, { FC, HTMLAttributes } from 'react'
@@ -52,7 +52,7 @@ const ServicesSection: FC<ServicesSectionProps> = ({ className, ...props }) => {
     <div className={className} {...props}>
       <Content>
         <section>
-          <SectionHeading level={2}>Послуги</SectionHeading>
+          <CurlyBraceHeading level={2}>Послуги</CurlyBraceHeading>
           <div className="mt-11 grid gap-[3.75rem] md:mt-16 md:grid-cols-2 md:gap-5 lg:grid-cols-3 xl:grid-cols-4">
             {SERVICES.map((item) => (
               <ServicesSectionItem data={item} key={item.id} />

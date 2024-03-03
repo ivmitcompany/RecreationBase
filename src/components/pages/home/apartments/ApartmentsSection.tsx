@@ -1,5 +1,5 @@
 import Content from '@/components/ui/Content'
-import SectionHeading from '@/components/ui/SectionHeading'
+import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import React, { FC, HTMLAttributes } from 'react'
 
 import { ImageItem } from '../about/AboutSection'
@@ -95,9 +95,9 @@ const ApartmentsSection: FC<ApartmentsSectionProps> = ({
     <div className={className} id="apartments" {...props}>
       <Content>
         <section>
-          <SectionHeading level={2} position="end">
+          <CurlyBraceHeading level={2} position="end">
             Наші апартаменти
-          </SectionHeading>
+          </CurlyBraceHeading>
           <div className="mt-16 grid gap-[3.75rem] md:grid-cols-2 md:gap-x-28 md:gap-y-0 lg:gap-x-56">
             {MOCK_APARTMENTS.map((item) => (
               <ApartmentsSectionItem data={item} key={item.id} />

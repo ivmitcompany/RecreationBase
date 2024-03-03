@@ -1,5 +1,5 @@
 import Content from '@/components/ui/Content'
-import SectionHeading from '@/components/ui/SectionHeading'
+import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
@@ -43,7 +43,7 @@ const AboutSection: FC<AboutSectionProps> = ({ className, ...props }) => {
     <div className={cn('bg-graphite text-light', className)} {...props}>
       <Content>
         <section>
-          <SectionHeading level={2}>Про нас</SectionHeading>
+          <CurlyBraceHeading level={2}>Про нас</CurlyBraceHeading>
           <div className="mt-[3.75rem] grid gap-[3.75rem] md:mt-20 md:gap-20">
             {MOCK_ITEMS.map((item) => (
               <AboutSectionItem data={item} key={item.id} />

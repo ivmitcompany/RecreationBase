@@ -1,5 +1,5 @@
 import Content from '@/components/ui/Content'
-import SectionHeading from '@/components/ui/SectionHeading'
+import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import { cn } from '@/utils'
 import React, { FC, HTMLAttributes } from 'react'
 
@@ -52,9 +52,9 @@ const ReviewsSection: FC<ReviewsSectionProps> = ({ className, ...props }) => {
     <div className={cn('bg-graphite text-light', className)} {...props}>
       <Content>
         <section className="px-4 md:px-0">
-          <SectionHeading level={2} position="center">
+          <CurlyBraceHeading level={2} position="center">
             Відгуки
-          </SectionHeading>
+          </CurlyBraceHeading>
           <ReviewsSlider className="mt-16" data={REVIEWS} />
         </section>
       </Content>
