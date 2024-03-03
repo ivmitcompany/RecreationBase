@@ -1,8 +1,15 @@
 import IconSize, { ICON_SIZE } from '@/types/enums/IconSize'
 import { SVGAttributes } from 'react'
 
-const getIconDimension = (size?: IconSize) =>
-  size ? ICON_SIZE[size] : ICON_SIZE['sm']
+const getIconDimension = (size?: IconSize) => {
+  const defaultSize: IconSize = 'sm'
+
+  if (size) {
+    return ICON_SIZE[size]
+  }
+
+  return ICON_SIZE[defaultSize]
+}
 
 export interface IconProps extends SVGAttributes<SVGElement> {
   size?: IconSize
