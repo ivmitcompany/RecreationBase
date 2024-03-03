@@ -1,6 +1,6 @@
 import Contacts from '@/components/ui/Contacts'
 import Content from '@/components/ui/Content'
-import Menu from '@/components/ui/nav-menu/Menu'
+import NavMenu from '@/components/ui/nav-menu/NavMenu'
 import { cn } from '@/utils'
 import { FC } from 'react'
 
@@ -23,7 +23,7 @@ const Header: FC<HeaderProps> = ({ className, ...props }) => {
       <Content className="relative z-50 flex items-center justify-between gap-10">
         <HeaderLogo />
         <nav className="hidden md:block">
-          <Menu />
+          <NavMenu />
         </nav>
         <Contacts areShort className="hidden md:flex" />
         <HeaderMenuIcon className="md:hidden" />

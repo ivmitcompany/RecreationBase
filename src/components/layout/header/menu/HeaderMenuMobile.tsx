@@ -2,7 +2,7 @@
 
 import Contacts from '@/components/ui/Contacts'
 import Content from '@/components/ui/Content'
-import Menu from '@/components/ui/nav-menu/Menu'
+import NavMenu from '@/components/ui/nav-menu/NavMenu'
 import HeaderContext from '@/store/header-context'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes, useContext } from 'react'
@@ -25,7 +25,7 @@ const HeaderMenuMobile: FC<HeaderMenuMobileProps> = ({
       {...props}
     >
       <nav>
-        <Menu itemSize="lg" spacing="wide" underline />
+        <NavMenu itemSize="lg" spacing="wide" underline />
       </nav>
       <Contacts className="absolute bottom-10 left-0 right-0 items-center" />
     </Content>
