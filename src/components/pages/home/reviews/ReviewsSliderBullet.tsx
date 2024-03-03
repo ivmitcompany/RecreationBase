@@ -18,8 +18,11 @@ const ReviewsSliderBullet: FC<ReviewsSliderBulletProps> = ({
     )}
     {...props}
   >
-    <Icons.tilda className="absolute left-0 top-0 h-full w-full transition-colors" />
-    <span className="sr-only">{index} розділ слайдеру</span>
+    <Icons.tilda
+      aria-hidden
+      className="absolute left-0 top-0 h-full w-full transition-colors"
+    />
+    <span className="sr-only">{index} розділ слайдера</span>
   </span>
 )
 

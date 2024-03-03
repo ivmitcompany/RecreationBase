@@ -16,7 +16,7 @@ const ImagePlaceholder: FC<ImagePlaceholderProps> = ({
     )}
     {...props}
   >
-    <Icons.mountain />
+    <Icons.mountain aria-hidden />
     <span className="sr-only">Зображення відсутнє</span>
   </div>
 )
