@@ -1,19 +1,11 @@
 import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
-import { ImageInfo } from '@/types/ImageInfo'
+import { Apartment } from '@/types/Apartment'
 import React, { FC, HTMLAttributes } from 'react'
 
 import ApartmentsSectionItem from './ApartmentsSectionItem'
 
-export type Apartment = {
-  additions?: string[]
-  id: number
-  images?: ImageInfo[]
-  name: string
-  price: number
-}
-
-const MOCK_APARTMENTS: Apartment[] = [
+const apartments: Apartment[] = [
   {
     additions: [
       'Власна ванна кміната',
@@ -99,7 +91,7 @@ const ApartmentsSection: FC<ApartmentsSectionProps> = ({
             Наші апартаменти
           </CurlyBraceHeading>
           <div className="mt-16 grid gap-[3.75rem] md:grid-cols-2 md:gap-x-28 md:gap-y-0 lg:gap-x-56">
-            {MOCK_APARTMENTS.map((item) => (
+            {apartments.map((item) => (
               <ApartmentsSectionItem data={item} key={item.id} />
             ))}
           </div>
