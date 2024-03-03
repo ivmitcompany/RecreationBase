@@ -4,7 +4,9 @@ import Logo, { LogoProps } from '@/components/ui/Logo'
 import HeaderContext from '@/store/header-context'
 import { FC, useContext } from 'react'
 
-const HeaderLogo: FC<LogoProps> = ({ ...props }) => {
+interface HeaderLogoProps extends LogoProps {}
+
+const HeaderLogo: FC<HeaderLogoProps> = ({ ...props }) => {
   const { closeMenu } = useContext(HeaderContext)
 
   return <Logo onClick={closeMenu} {...props} />
