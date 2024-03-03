@@ -11,6 +11,25 @@ import { fontAccentSpanVariants } from './FontAccentSpan'
 import { Icons } from './Icons'
 import IconButton from './button/IconButton'
 
+const nextSlideButtonId = 'next-slide-button'
+const prevSlideButtonId = 'prev-slide-button'
+const paginationId = 'pagination'
+
+const sliderSettings: SwiperProps = {
+  modules: [Navigation, Pagination],
+  navigation: {
+    nextEl: `#${nextSlideButtonId}`,
+    prevEl: `#${prevSlideButtonId}`,
+  },
+  pagination: {
+    el: `#${paginationId}`,
+    renderCustom: function (_, current, total) {
+      return current + '/' + total
+    },
+    type: 'custom',
+  },
+}
+
 interface ImageSliderProps extends SwiperProps {
   images: ImageItem[]
 }
@@ -19,18 +38,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
   return (
     <Swiper
       className={cn('relative', className)}
-      modules={[Navigation, Pagination]}
-      navigation={{
-        nextEl: '#next-slide-button',
-        prevEl: '#prev-slide-button',
-      }}
-      pagination={{
-        el: '#pagination',
-        renderCustom: function (_, current, total) {
-          return current + '/' + total
-        },
-        type: 'custom',
-      }}
+      {...sliderSettings}
       {...props}
     >
       {images.map((image, index) => (
@@ -55,12 +63,12 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
               <IconButton
                 Icon={Icons.arrow}
                 className="rotate-180"
-                id="prev-slide-button"
+                id={prevSlideButtonId}
                 label="Стрілка вліво"
               />
               <IconButton
                 Icon={Icons.arrow}
-                id="next-slide-button"
+                id={nextSlideButtonId}
                 label="Стрілка вправо"
               />
             </div>
@@ -72,7 +80,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
           'absolute bottom-0 left-0 z-[100] bg-light text-accent',
           fontAccentSpanVariants({ size: 'xs' })
         )}
-        id="pagination"
+        id={paginationId}
       />
     </Swiper>
   )
