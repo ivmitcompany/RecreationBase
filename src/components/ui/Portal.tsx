@@ -2,11 +2,15 @@ import { disablePageScroll, enablePageScroll } from '@/utils'
 import { FC, ReactElement, useLayoutEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-function createWrapperAndAppendToBody(wrapperId: string) {
+const createWrapperAndAppendToBody = (
+  wrapperId: string
+): HTMLElement | null => {
   if (!document) return null
+
   const wrapperElement = document.createElement('div')
   wrapperElement.setAttribute('id', wrapperId)
   document.body.appendChild(wrapperElement)
+  
   return wrapperElement
 }
 
