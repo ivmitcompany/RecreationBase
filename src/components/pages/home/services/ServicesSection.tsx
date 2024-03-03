@@ -2,17 +2,17 @@ import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import FontAccentSpan from '@/components/ui/FontAccentSpan'
 import LinkButton from '@/components/ui/button/LinkButton'
+import { ImageInfo } from '@/types/ImageInfo'
 import Image from 'next/image'
 import React, { FC, HTMLAttributes } from 'react'
 
-import { ImageItem } from '../about/AboutSection'
 import ServicesSectionItem from './ServicesSectionItem'
 
 export type Service = {
   description?: string
   excess_time_price: number
   id: number
-  images?: ImageItem[]
+  images?: ImageInfo[]
   min_order_time: number
   note?: string
   price: number

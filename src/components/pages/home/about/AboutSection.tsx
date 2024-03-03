@@ -1,22 +1,18 @@
 import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
+import { ImageInfo } from '@/types/ImageInfo'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
 import AboutSectionItem from './AboutSectionItem'
 
-export type ImageItem = {
-  direction: 'horizontal' | 'vertical'
-  src: string
-}
-
 export type AboutItem = {
   id: number
-  images?: ImageItem[]
+  images?: ImageInfo[]
   title: string
 }
 
-const MOCK_ITEMS: AboutItem[] = [
+const aboutItems: AboutItem[] = [
   {
     id: 9,
     images: [
@@ -45,7 +41,7 @@ const AboutSection: FC<AboutSectionProps> = ({ className, ...props }) => {
         <section>
           <CurlyBraceHeading level={2}>Про нас</CurlyBraceHeading>
           <div className="mt-[3.75rem] grid gap-[3.75rem] md:mt-20 md:gap-20">
-            {MOCK_ITEMS.map((item) => (
+            {aboutItems.map((item) => (
               <AboutSectionItem data={item} key={item.id} />
             ))}
           </div>

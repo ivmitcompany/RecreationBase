@@ -1,10 +1,10 @@
 'use client'
 
+import { ImageInfo } from '@/types/ImageInfo'
 import { arrayIsNotEmpty, cn, getArrayLength } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes, useState } from 'react'
 
-import { ImageItem } from '../pages/home/about/AboutSection'
 import { Icons } from './Icons'
 import ImagePlaceholder from './ImagePlaceholder'
 import ImageSlider from './ImageSlider'
@@ -12,7 +12,7 @@ import Modal from './Modal'
 import IconButton from './button/IconButton'
 
 export interface DetailsModalProps extends HTMLAttributes<HTMLDivElement> {
-  images?: ImageItem[]
+  images?: ImageInfo[]
   previewImgAlt: string
 }
 

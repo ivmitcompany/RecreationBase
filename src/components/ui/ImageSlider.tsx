@@ -1,12 +1,12 @@
 'use client'
 
+import { ImageInfo } from '@/types/ImageInfo'
 import { cn } from '@/utils'
 import Image from 'next/image'
 import { FC } from 'react'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react'
 
-import { ImageItem } from '../pages/home/about/AboutSection'
 import { fontAccentSpanVariants } from './FontAccentSpan'
 import { Icons } from './Icons'
 import IconButton from './button/IconButton'
@@ -31,7 +31,7 @@ const sliderSettings: SwiperProps = {
 }
 
 interface ImageSliderProps extends SwiperProps {
-  images: ImageItem[]
+  images: ImageInfo[]
 }
 
 const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {

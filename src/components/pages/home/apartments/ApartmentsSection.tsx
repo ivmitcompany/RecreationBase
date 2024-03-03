@@ -1,14 +1,14 @@
 import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
+import { ImageInfo } from '@/types/ImageInfo'
 import React, { FC, HTMLAttributes } from 'react'
 
-import { ImageItem } from '../about/AboutSection'
 import ApartmentsSectionItem from './ApartmentsSectionItem'
 
 export type Apartment = {
   additions?: string[]
   id: number
-  images?: ImageItem[]
+  images?: ImageInfo[]
   name: string
   price: number
 }
