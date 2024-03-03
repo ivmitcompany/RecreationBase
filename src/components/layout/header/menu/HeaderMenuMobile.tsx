@@ -25,7 +25,7 @@ const HeaderMenuMobile: FC<HeaderMenuMobileProps> = ({
       {...props}
     >
       <nav>
-        <NavMenu itemSize="lg" spacing="wide" underline />
+        <NavMenu itemSize="lg" itemsUnderline spacing="wide" />
       </nav>
       <Contacts className="absolute bottom-10 left-0 right-0 items-center" />
     </Content>
