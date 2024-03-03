@@ -14,7 +14,6 @@ const HeroHeadingItem: FC<HeroHeadingItemProps> = ({
         'inline-flex w-full items-baseline justify-center whitespace-nowrap',
         className
       )}
-      role="text"
       {...props}
     >
       {children}
