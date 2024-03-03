@@ -43,35 +43,29 @@ const CurlyBraceHeading: FC<CurlyBraceHeadingProps> = ({
   className,
   level,
   position,
-  size: headingSize,
+  size,
   ...props
 }) => {
-  const headingSizeIsDefault = !headingSize || headingSize === 'default'
+  const sizeIsDefault = !size || size === 'default'
   const HeadingTag: keyof JSX.IntrinsicElements = `h${level}`
 
   return (
     <HeadingTag
-      className={cn(
-        curlyBraceHeadingVariants({ position, size: headingSize }),
-        className
-      )}
+      className={cn(curlyBraceHeadingVariants({ position, size }), className)}
       {...props}
     >
       <FontAccentSpan
         className="mr-5 text-accent md:mr-[2.1875rem]"
-        size={headingSizeIsDefault ? 'md' : 'xs'}
+        size={sizeIsDefault ? 'md' : 'xs'}
       >
         &#123;
       </FontAccentSpan>{' '}
-      <span
-        className={curlyBraceHeadingTextVariants({ size: headingSize })}
-        role="text"
-      >
+      <span className={curlyBraceHeadingTextVariants({ size })} role="text">
         {children}
       </span>{' '}
       <FontAccentSpan
         className="ml-2.5 text-accent md:ml-5"
-        size={headingSizeIsDefault ? 'md' : 'xs'}
+        size={sizeIsDefault ? 'md' : 'xs'}
       >
         &#125;
       </FontAccentSpan>
