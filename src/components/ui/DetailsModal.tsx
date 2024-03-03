@@ -13,14 +13,14 @@ import IconButton from './button/IconButton'
 
 export interface DetailsModalProps extends HTMLAttributes<HTMLDivElement> {
   images?: ImageItem[]
-  imgAlt: string
+  previewImgAlt: string
 }
 
 const DetailsModal: FC<DetailsModalProps> = ({
   children,
   className,
   images,
-  imgAlt,
+  previewImgAlt,
   ...props
 }) => {
   const [imagesModalIsOpen, setImagesModalIsOpen] = useState<boolean>(false)
@@ -48,7 +48,7 @@ const DetailsModal: FC<DetailsModalProps> = ({
           {imagesArePresent ? (
             <>
               <Image
-                alt={imgAlt}
+                alt={previewImgAlt}
                 className="object-cover object-center"
                 fill
                 quality={80}
