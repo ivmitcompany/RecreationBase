@@ -4,6 +4,7 @@ import Footer from '@/components/layout/footer/Footer'
 import Header from '@/components/layout/header/Header'
 import Providers from '@/store/providers'
 import { cn } from '@/utils'
+import { ReactNode } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 }
 
 type RootLayoutProps = Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>
 
 export default function RootLayout({ children }: RootLayoutProps) {
