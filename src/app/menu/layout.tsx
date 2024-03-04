@@ -1,4 +1,4 @@
-import MenuInfo from '@/components/pages/menu/info/MenuInfo'
+import CompanyInfo from '@/components/pages/menu/company/info/CompanyInfo'
 import Content from '@/components/ui/Content'
 import { ReactNode } from 'react'
 
@@ -14,7 +14,7 @@ export default function MenuLayout({ children, navigation }: MenuLayoutProps) {
         <div className="flex gap-[3.125rem]">
           {navigation}
           {children}
-          <MenuInfo />
+          <CompanyInfo />
         </div>
       </Content>
     </div>
