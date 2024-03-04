@@ -3,8 +3,8 @@ import MenuInfoSocials from '@/components/pages/menu/company/socials/MenuInfoSoc
 import { cn } from '@/utils'
 import React, { FC, HTMLAttributes } from 'react'
 
-interface MenuInfoProps extends HTMLAttributes<HTMLDivElement> {}
-const MenuInfo: FC<MenuInfoProps> = ({ className, ...props }) => {
+interface CompanyInfoProps extends HTMLAttributes<HTMLDivElement> {}
+const CompanyInfo: FC<CompanyInfoProps> = ({ className, ...props }) => {
   return (
     <div className={cn('space-y-10', className)} {...props}>
       <div className="space-y-5">
@@ -15,4 +15,4 @@ const MenuInfo: FC<MenuInfoProps> = ({ className, ...props }) => {
   )
 }
 
-export default MenuInfo
+export default CompanyInfo
