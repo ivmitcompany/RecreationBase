@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/utils'
+import { cn, isHomePage } from '@/utils'
 import { usePathname } from 'next/navigation'
 import { FC, HTMLAttributes } from 'react'
 
@@ -12,10 +12,12 @@ const HeaderContainer: FC<HeaderContainerProps> = ({
   ...props
 }) => {
   const pathname = usePathname()
-  const isHomePage = pathname === '/'
 
   return (
-    <header className={cn(isHomePage && 'text-light', className)} {...props}>
+    <header
+      className={cn(isHomePage(pathname) && 'text-light', className)}
+      {...props}
+    >
       {children}
     </header>
   )
