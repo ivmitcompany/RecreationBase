@@ -8,14 +8,15 @@ import { FC, useContext } from 'react'
 
 interface HeaderLogoProps extends LogoProps {}
 
-const HeaderLogo: FC<HeaderLogoProps> = ({ ...props }) => {
+const HeaderLogo: FC<HeaderLogoProps> = ({ className, ...props }) => {
   const { closeMenu, isMenuOpened } = useContext(HeaderContext)
   const pathname = usePathname()
 
   return (
     <Logo
       className={cn(
-        isMenuOpened && !isHomePage(pathname) && 'text-light transition-colors'
+        isMenuOpened && !isHomePage(pathname) && 'text-light transition-colors',
+        className
       )}
       onClick={closeMenu}
       {...props}
