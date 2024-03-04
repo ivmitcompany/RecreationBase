@@ -121,6 +121,120 @@ export const Icons = {
       />
     </svg>
   ),
+  order: ({ size, ...props }: IconProps) => {
+    const dimension = getIconDimension(size)
+    const HEIGHT_SHIFT = 3
+    return (
+      <svg
+        fill="none"
+        height={dimension + HEIGHT_SHIFT}
+        viewBox="0 0 16 19"
+        width={dimension}
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+      >
+        <g filter="url(#filter0_iiii_741_103)">
+          <path
+            d="M0.5 4.49996L3 1.16663H13L15.5 4.49996M0.5 4.49996V16.1666C0.5 16.6087 0.675595 17.0326 0.988155 17.3451C1.30072 17.6577 1.72464 17.8333 2.16667 17.8333H13.8333C14.2754 17.8333 14.6993 17.6577 15.0118 17.3451C15.3244 17.0326 15.5 16.6087 15.5 16.1666V4.49996M0.5 4.49996H15.5M11.3333 7.83329C11.3333 8.71735 10.9821 9.56519 10.357 10.1903C9.7319 10.8154 8.88405 11.1666 8 11.1666C7.11594 11.1666 6.2681 10.8154 5.64298 10.1903C5.01786 9.56519 4.66667 8.71735 4.66667 7.83329"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
+        <defs>
+          <filter
+            colorInterpolationFilters="sRGB"
+            filterUnits="userSpaceOnUse"
+            height="18.6666"
+            id="filter0_iiii_741_103"
+            width="19"
+            x="-1"
+            y="0.666626"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              mode="normal"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="0.25" />
+            <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.3 0"
+            />
+            <feBlend
+              in2="shape"
+              mode="normal"
+              result="effect1_innerShadow_741_103"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dx="-1" dy="1" />
+            <feGaussianBlur stdDeviation="1" />
+            <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+            />
+            <feBlend
+              in2="effect1_innerShadow_741_103"
+              mode="normal"
+              result="effect2_innerShadow_741_103"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dx="2" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0.220833 0 0 0 0 0.220833 0 0 0 0 0.220833 0 0 0 0.28 0"
+            />
+            <feBlend
+              in2="effect2_innerShadow_741_103"
+              mode="normal"
+              result="effect3_innerShadow_741_103"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dx="1" dy="1" />
+            <feGaussianBlur stdDeviation="1.5" />
+            <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0.2 0 0 0 0 0.199167 0 0 0 0 0.199217 0 0 0 0.1 0"
+            />
+            <feBlend
+              in2="effect3_innerShadow_741_103"
+              mode="normal"
+              result="effect4_innerShadow_741_103"
+            />
+          </filter>
+        </defs>
+      </svg>
+    )
+  },
   phone: ({ size, ...props }: IconProps) => {
     const dimension = getIconDimension(size)
     return (
