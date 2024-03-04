@@ -2,22 +2,25 @@
 
 import { cn } from '@/utils'
 import { VariantProps, cva } from 'class-variance-authority'
-import React, { FC, HTMLAttributes, useRef } from 'react'
+import React, { FC, HTMLAttributes, MouseEvent, useRef } from 'react'
 
 import { Icons } from './Icons'
 import Portal from './Portal'
 import IconButton from './button/IconButton'
 
-const modalVariants = cva('fixed z-[100] top-0 left-0 right-0 bottom-0', {
-  defaultVariants: { size: 'default' },
-  variants: {
-    size: {
-      default:
-        'w-screen h-dvh md:flex md:items-center md:justify-center md:px-[2.8125rem] md:py-8 lg:py-16 lg:px-[5.625rem] md:bg-graphite md:bg-opacity-50',
-      screen: 'w-screen h-dvh',
+const modalVariants = cva(
+  'animate-fadeIn fixed z-[100] top-0 left-0 right-0 bottom-0',
+  {
+    defaultVariants: { size: 'default' },
+    variants: {
+      size: {
+        default:
+          'w-screen h-dvh md:flex md:items-center md:justify-center md:px-[2.8125rem] md:py-8 lg:py-16 lg:px-[5.625rem] md:bg-graphite md:bg-opacity-50',
+        screen: 'w-screen h-dvh',
+      },
     },
-  },
-})
+  }
+)
 
 const modalBodyVariants = cva('relative bg-light text-dark', {
   defaultVariants: { size: 'default' },
@@ -62,16 +65,23 @@ const Modal: FC<ModalProps> = ({
 }) => {
   const modalRef = useRef<HTMLDivElement | null>(null)
 
+  const onCloseInternal = (e: MouseEvent<HTMLDivElement>) => {
+    if (e.target === modalRef.current) {
+      onClose()
+    }
+  }
+
   return (
     <>
       {isOpen ? (
         <Portal wrapperId={wrapperId}>
           <div
             className={cn(modalVariants({ size }), className)}
+            onClick={onCloseInternal}
             ref={modalRef}
             {...props}
           >
-            <div className={modalBodyVariants({ size })}>
+            <div className={modalBodyVariants({ size })} id="modal-body">
               <IconButton
                 className={modalCloseButtonVariants({ size })}
                 icon={Icons.cross}

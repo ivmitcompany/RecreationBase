@@ -9,6 +9,7 @@ const config: Config = {
   plugins: [],
   theme: {
     extend: {
+      animation: { fadeIn: 'fadeIn 0.2s ease-in-out' },
       colors: {
         accent: '#a10702',
         dark: '#231f20',
@@ -18,6 +19,12 @@ const config: Config = {
       fontFamily: {
         accent: 'var(--font-accent)',
         default: 'var(--font-default)',
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
       },
       padding: {
         header: 'var(--header-height)',

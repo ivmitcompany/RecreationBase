@@ -17,7 +17,7 @@ const HeaderMenuIcon: FC<HeaderMenuIconProps> = ({ className, ...props }) => {
       {...props}
     >
       {isMenuOpened ? (
-        <Icons.cross aria-hidden />
+        <Icons.cross aria-hidden className={cn(isMenuOpened && 'text-light')} />
       ) : (
         <Icons.burger aria-hidden />
       )}

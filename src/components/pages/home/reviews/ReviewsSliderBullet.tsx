@@ -18,7 +18,7 @@ const ReviewsSliderBullet: FC<ReviewsSliderBulletProps> = ({
     )}
     {...props}
   >
-    <Icons.tilda
+    <Icons.tilda.solid
       aria-hidden
       className="absolute left-0 top-0 h-full w-full transition-colors"
     />

@@ -45,7 +45,9 @@ const NavMenu: FC<NavMenuProps> = ({
     <MenuItem href="/#apartments" isUnderline={itemsUnderline}>
       Апартаменти
     </MenuItem>
-    <MenuItem isUnderline={itemsUnderline}>Меню</MenuItem>
+    <MenuItem href="/menu" isUnderline={itemsUnderline}>
+      Меню
+    </MenuItem>
   </ul>
 )
 
