@@ -2,12 +2,12 @@ import { IconProps } from '@/components/ui/Icons'
 import { cn } from '@/utils'
 import React, { ComponentType, FC, HTMLAttributes } from 'react'
 
-interface MenuInfoSocialsItemProps extends HTMLAttributes<HTMLLIElement> {
+interface CompanySocialsItemProps extends HTMLAttributes<HTMLLIElement> {
   href: string
   icon: ComponentType<IconProps>
   label: string
 }
-const MenuInfoSocialsItem: FC<MenuInfoSocialsItemProps> = ({
+const CompanySocialsItem: FC<CompanySocialsItemProps> = ({
   children,
   className,
   href,
@@ -33,4 +33,4 @@ const MenuInfoSocialsItem: FC<MenuInfoSocialsItemProps> = ({
   </li>
 )
 
-export default MenuInfoSocialsItem
+export default CompanySocialsItem
