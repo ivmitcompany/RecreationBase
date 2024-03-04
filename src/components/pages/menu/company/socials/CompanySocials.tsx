@@ -1,12 +1,13 @@
 // TODO: Update socials hrefs
 
-import MenuInfoSocialsItem from '@/components/pages/menu/info/socials/MenuInfoSocialsItem'
 import { Icons } from '@/components/ui/Icons'
 import { cn } from '@/utils'
 import React, { FC, HTMLAttributes } from 'react'
 
-interface MenuInfoSocialsProps extends HTMLAttributes<HTMLUListElement> {}
-const MenuInfoSocials: FC<MenuInfoSocialsProps> = ({ className, ...props }) => {
+import MenuInfoSocialsItem from './MenuInfoSocialsItem'
+
+interface CompanySocialsProps extends HTMLAttributes<HTMLUListElement> {}
+const CompanySocials: FC<CompanySocialsProps> = ({ className, ...props }) => {
   return (
     <ul className={cn('flex flex-col gap-4', className)} {...props}>
       <MenuInfoSocialsItem
@@ -33,4 +34,4 @@ const MenuInfoSocials: FC<MenuInfoSocialsProps> = ({ className, ...props }) => {
   )
 }
 
-export default MenuInfoSocials
+export default CompanySocials
