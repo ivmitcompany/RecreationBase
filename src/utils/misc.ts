@@ -16,3 +16,5 @@ export const disablePageScroll = () => document.body.classList.add('no-scroll')
 
 export const enablePageScroll = () =>
   document.body.classList.remove('no-scroll')
+
+export const isHomePage = (pathname: string) => pathname === '/'
