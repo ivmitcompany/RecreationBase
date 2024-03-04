@@ -7,6 +7,7 @@ import React, { FC, HTMLAttributes } from 'react'
 import CompanySocialsItem from './CompanySocialsItem'
 
 interface CompanySocialsProps extends HTMLAttributes<HTMLUListElement> {}
+
 const CompanySocials: FC<CompanySocialsProps> = ({ className, ...props }) => {
   return (
     <ul className={cn('flex flex-col gap-4', className)} {...props}>

@@ -7,6 +7,7 @@ interface CompanySocialsItemProps extends HTMLAttributes<HTMLLIElement> {
   icon: ComponentType<IconProps>
   label: string
 }
+
 const CompanySocialsItem: FC<CompanySocialsItemProps> = ({
   children,
   className,
