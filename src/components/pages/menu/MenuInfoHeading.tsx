@@ -1,9 +1,9 @@
 import { cn } from '@/utils'
 import React, { FC, HTMLAttributes } from 'react'
 
-interface CompanyInfoHeadingProps extends HTMLAttributes<HTMLHeadingElement> {}
+interface MenuInfoHeadingProps extends HTMLAttributes<HTMLHeadingElement> {}
 
-const CompanyInfoHeading: FC<CompanyInfoHeadingProps> = ({
+const MenuInfoHeading: FC<MenuInfoHeadingProps> = ({
   children,
   className,
   ...props
@@ -13,4 +13,4 @@ const CompanyInfoHeading: FC<CompanyInfoHeadingProps> = ({
   </h4>
 )
 
-export default CompanyInfoHeading
+export default MenuInfoHeading
