@@ -16,9 +16,7 @@ export default function MenuLayout({ children, navigation }: MenuLayoutProps) {
           <MenuHeading className="mx-auto" />
           <div className="mt-14 flex gap-10 md:mt-8">
             <aside className="basis-[17.8125rem]">{navigation}</aside>
-            <section className="flex-shrink flex-grow basis-0">
-              {children}
-            </section>
+            <div className="flex-shrink flex-grow basis-0">{children}</div>
             <CompanyInfo className="basis-[17.8125rem]" />
           </div>
         </section>
