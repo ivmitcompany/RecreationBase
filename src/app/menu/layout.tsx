@@ -1,5 +1,5 @@
 import MenuHeading from '@/components/pages/menu/MenuHeading'
-import CompanyInfo from '@/components/pages/menu/company/info/CompanyInfo'
+import CompanyInfo from '@/components/pages/menu/company/CompanyInfo'
 import Content from '@/components/ui/Content'
 import { ReactNode } from 'react'
 
