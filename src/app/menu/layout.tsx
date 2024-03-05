@@ -12,15 +12,17 @@ export default function MenuLayout({ children, navigation }: MenuLayoutProps) {
   return (
     <div className="pt-header">
       <Content>
-        <section className="pb-7 pt-5 md:pb-[7.1875rem] md:pt-9">
+        <section className="pb-12 pt-5 md:pb-[7.1875rem] md:pt-9">
           <MenuHeading className="mx-auto" />
-          <div className="mt-14 flex flex-col gap-10 md:mt-8 md:flex-row">
-            <aside className="basis-[17.8125rem]">
+          <div className="mt-10 flex flex-col md:mt-8 md:flex-row md:gap-10">
+            <aside className="md:basis-[17.8125rem]">
               {navigation}
-              <CompanyInfo className="lg:hidden" />
+              <CompanyInfo className="hidden md:block lg:hidden" />
             </aside>
-            <div className="flex-shrink flex-grow basis-0">{children}</div>
-            <CompanyInfo className="hidden basis-[17.8125rem] lg:block" />
+            <div className="mt-14 flex-shrink flex-grow basis-0 md:mt-0">
+              {children}
+            </div>
+            <CompanyInfo className="hidden md:basis-[17.8125rem] lg:block" />
           </div>
         </section>
       </Content>
