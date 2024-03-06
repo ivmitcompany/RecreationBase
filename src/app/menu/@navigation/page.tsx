@@ -1,3 +1,10 @@
+import MenuNavigation from '@/components/pages/menu/navigation/MenuNavigation'
+import MenuNavigationList from '@/components/pages/menu/navigation/MenuNavigationList'
+
 export default function Navigation() {
-  return <div>NAVIGATION</div>
+  return (
+    <MenuNavigation>
+      <MenuNavigationList />
+    </MenuNavigation>
+  )
 }

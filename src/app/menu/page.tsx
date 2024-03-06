@@ -56,8 +56,8 @@ export default function Menu() {
   return (
     <>
       <div className="space-y-[3.75rem] ">
-        <MenuCategory />
-        <MenuCategory />
+        <MenuCategory id="snidanki" />
+        <MenuCategory id="holodni-zakuski" />
       </div>
       <MeatInfo className="mt-10" />
       <CompanyInfo className="mt-[6.25rem] md:hidden" />
