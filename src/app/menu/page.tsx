@@ -1,3 +1,4 @@
+import MenuCategory from '@/components/pages/menu/category/MenuCategory'
 import CompanyInfo from '@/components/pages/menu/company/CompanyInfo'
 import MeatInfo from '@/components/pages/menu/meat/MeatInfo'
 
@@ -53,9 +54,13 @@ const kitchenMenu = {
 
 export default function Menu() {
   return (
-    <section>
-      <MeatInfo />
+    <>
+      <div className="space-y-[3.75rem] ">
+        <MenuCategory />
+        <MenuCategory />
+      </div>
+      <MeatInfo className="mt-10" />
       <CompanyInfo className="mt-[6.25rem] md:hidden" />
-    </section>
+    </>
   )
 }
