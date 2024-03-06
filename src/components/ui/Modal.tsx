@@ -14,6 +14,7 @@ const modalVariants = cva(
     defaultVariants: { size: 'default' },
     variants: {
       size: {
+        card: 'w-screen h-dvh flex items-end md:items-center md:justify-center md:px-[2.8125rem] md:py-8 bg-graphite bg-opacity-50',
         default:
           'w-screen h-dvh md:flex md:items-center md:justify-center md:px-[2.8125rem] md:py-8 lg:py-16 lg:px-[5.625rem] md:bg-graphite md:bg-opacity-50',
         screen: 'w-screen h-dvh',
@@ -26,10 +27,11 @@ const modalBodyVariants = cva('relative bg-light text-dark', {
   defaultVariants: { size: 'default' },
   variants: {
     size: {
+      card: 'w-full h-[71%] md:h-full md:max-h-[36.875rem] md:max-w-[36.875rem] overflow-y-auto',
       default:
-        'w-full h-full max-h-full max-w-full md:max-h-[43.75rem] md:max-w-[68.75rem] overflow-y-auto md:overflow-hidden px-5 py-20 md:py-[3.75rem] md:px-[3.25rem]',
+        'w-full h-full md:max-h-[43.75rem] md:max-w-[68.75rem] px-5 py-20 md:py-[3.75rem] md:px-[3.25rem]',
       screen:
-        'w-full h-full max-h-full max-w-full px-5 py-[1.625rem] md:px-[3.75rem] md:py-[2.625rem]',
+        'w-full h-full px-5 py-[1.625rem] md:px-[3.75rem] md:py-[2.625rem]',
     },
   },
 })
@@ -38,6 +40,7 @@ const modalCloseButtonVariants = cva('z-50 absolute  text-accent', {
   defaultVariants: { size: 'default' },
   variants: {
     size: {
+      card: 'right-5 top-5',
       default: 'right-5 top-10 md:right-6 md:top-6',
       screen: 'top-10 right-5 md:top-14 md:right-14',
     },
