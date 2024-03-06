@@ -107,7 +107,7 @@ export const Icons = {
             x="-0.666992"
             y="0.666626"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               in="SourceGraphic"
               in2="BackgroundImageFix"
@@ -221,7 +221,7 @@ export const Icons = {
             x="-0.833008"
             y="0.666626"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               in="SourceGraphic"
               in2="BackgroundImageFix"
