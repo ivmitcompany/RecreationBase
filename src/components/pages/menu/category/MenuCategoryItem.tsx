@@ -36,7 +36,7 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
       >
         <div className="font-light">
           <h3 className="text-lg leading-5">Асорті зі свіжих овочей</h3>
-          <ul className="mt-1 flex flex-wrap gap-1">
+          <ul className="mt-1 flex flex-wrap gap-1 text-sm leading-4">
             <li className="before:content-['('] after:content-[',']">огірок</li>
             <li className="after:content-[',']">помідор</li>
             <li className="after:content-[',']">перець болгарський</li>
