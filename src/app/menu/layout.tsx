@@ -1,14 +1,15 @@
 import MenuHeading from '@/components/pages/menu/MenuHeading'
 import CompanyInfo from '@/components/pages/menu/company/CompanyInfo'
+import MenuNavigation from '@/components/pages/menu/navigation/MenuNavigation'
+import MenuNavigationList from '@/components/pages/menu/navigation/MenuNavigationList'
 import Content from '@/components/ui/Content'
 import { ReactNode } from 'react'
 
 type MenuLayoutProps = Readonly<{
   children: ReactNode
-  navigation: ReactNode
 }>
 
-export default function MenuLayout({ children, navigation }: MenuLayoutProps) {
+export default function MenuLayout({ children }: MenuLayoutProps) {
   return (
     <div className="pt-header">
       <Content>
@@ -16,11 +17,14 @@ export default function MenuLayout({ children, navigation }: MenuLayoutProps) {
           <MenuHeading className="mx-auto" />
           <div className="mt-10 flex flex-col md:mt-3 md:flex-row md:gap-10">
             <aside className="md:sticky-element md:basis-[17.8125rem] md:py-5">
-              {navigation}
+              <MenuNavigation>
+                <MenuNavigationList />
+              </MenuNavigation>
               <CompanyInfo className="mt-5 hidden md:block lg:hidden" />
             </aside>
             <div className="mt-14 flex-shrink flex-grow basis-0 md:mt-0">
               {children}
+              <CompanyInfo className="mt-[6.25rem] md:hidden" />
             </div>
             <CompanyInfo className="md:sticky-element hidden md:basis-[17.8125rem] md:py-5 lg:block" />
           </div>

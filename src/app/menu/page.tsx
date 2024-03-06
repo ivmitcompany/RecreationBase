@@ -1,5 +1,4 @@
 import MenuCategory from '@/components/pages/menu/category/MenuCategory'
-import CompanyInfo from '@/components/pages/menu/company/CompanyInfo'
 import MeatInfo from '@/components/pages/menu/meat/MeatInfo'
 
 const kitchenMenu = {
@@ -60,7 +59,6 @@ export default function Menu() {
         <MenuCategory id="holodni-zakuski" />
       </div>
       <MeatInfo className="mt-10" />
-      <CompanyInfo className="mt-[6.25rem] md:hidden" />
     </>
   )
 }
