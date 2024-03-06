@@ -6,14 +6,21 @@
   --header-height: 5rem;
 }
 
-html {
-  @apply scroll-smooth;
-}
-
-body {
-  @apply font-default text-dark;
-}
-
 .no-scroll {
   @apply overflow-hidden;
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .sticky-element {
+    @apply hide-scrollbar sticky left-0 right-0 top-0 h-fit max-h-dvh overflow-y-auto;
+  }
 }
