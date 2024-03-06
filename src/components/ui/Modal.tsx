@@ -27,9 +27,9 @@ const modalBodyVariants = cva('relative bg-light text-dark', {
   variants: {
     size: {
       default:
-        'w-full h-full max-h-full max-w-full md:max-h-[43.75rem] md:max-w-[68.75rem] overflow-y-auto md:overflow-hidden px-5 py-20 md:py-[3.75rem] md:px-[3.25rem]',
+        'w-full h-full md:max-h-[43.75rem] md:max-w-[68.75rem] overflow-y-auto md:overflow-hidden px-5 py-20 md:py-[3.75rem] md:px-[3.25rem]',
       screen:
-        'w-full h-full max-h-full max-w-full px-5 py-[1.625rem] md:px-[3.75rem] md:py-[2.625rem]',
+        'w-full h-full px-5 py-[1.625rem] md:px-[3.75rem] md:py-[2.625rem]',
     },
   },
 })
