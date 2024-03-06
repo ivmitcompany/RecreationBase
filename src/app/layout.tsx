@@ -23,10 +23,10 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="ua">
+    <html className="scroll-smooth" lang="ua">
       <body
         className={cn(
-          'relative flex min-h-screen flex-col',
+          'relative flex min-h-screen flex-col font-default text-dark',
           manrope.variable,
           luxurious.variable
         )}
