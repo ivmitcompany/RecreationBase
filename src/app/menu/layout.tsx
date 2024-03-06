@@ -17,7 +17,7 @@ export default function MenuLayout({ children, navigation }: MenuLayoutProps) {
           <div className="mt-10 flex flex-col md:mt-3 md:flex-row md:gap-10">
             <aside className="md:sticky-element md:basis-[17.8125rem] md:py-5">
               {navigation}
-              <CompanyInfo className="hidden md:block lg:hidden" />
+              <CompanyInfo className="mt-5 hidden md:block lg:hidden" />
             </aside>
             <div className="mt-14 flex-shrink flex-grow basis-0 md:mt-0">
               {children}
