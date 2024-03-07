@@ -1,6 +1,6 @@
 import DetailsModal, { DetailsModalProps } from '@/components/ui/DetailsModal'
 import FontAccentSpan from '@/components/ui/FontAccentSpan'
-import { Apartment } from '@/types/Apartment'
+import Apartment from '@/types/Apartment'
 import { arrayIsNotEmpty } from '@/utils'
 import { FC } from 'react'
 
