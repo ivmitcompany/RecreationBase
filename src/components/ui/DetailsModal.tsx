@@ -2,7 +2,7 @@
 
 import useModal from '@/hooks/use-modal'
 import ImageInfo from '@/types/ImageInfo'
-import { arrayIsNotEmpty, cn, getArrayLength } from '@/utils'
+import { arrayIsNotEmpty, cn, getArrayLength, getMainImage } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
 
@@ -50,7 +50,7 @@ const DetailsModal: FC<DetailsModalProps> = ({
                 fill
                 quality={80}
                 sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 100vw"
-                src={images![0].image}
+                src={getMainImage(images!)}
               />
               {imagesCount > 1 && (
                 <IconButton
