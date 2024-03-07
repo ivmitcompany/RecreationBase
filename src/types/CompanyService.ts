@@ -1,6 +1,6 @@
-import { ImageInfo } from './ImageInfo'
+import ImageInfo from './ImageInfo'
 
-export type CompanyService = {
+type CompanyService = {
   description?: string
   excess_time_price: number
   id: number
@@ -10,3 +10,5 @@ export type CompanyService = {
   price: number
   title: string
 }
+
+export default CompanyService

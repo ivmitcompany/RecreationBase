@@ -1,7 +1,9 @@
-import { ImageInfo } from './ImageInfo'
+import ImageInfo from './ImageInfo'
 
-export type AboutItem = {
+type AboutItem = {
   description: string
   id: number
   images?: ImageInfo[]
 }
+
+export default AboutItem
