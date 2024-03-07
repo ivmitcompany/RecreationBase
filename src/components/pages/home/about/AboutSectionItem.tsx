@@ -20,11 +20,13 @@ import { FC, HTMLAttributes } from 'react'
 
 interface AboutSectionItemProps extends HTMLAttributes<HTMLDivElement> {
   data: AboutItem
+  index: number
 }
 
 const AboutSectionItem: FC<AboutSectionItemProps> = ({
   className,
-  data: { description, id, images },
+  data: { description, images },
+  index,
   ...props
 }) => {
   const {
@@ -52,7 +54,7 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
             className="md:absolute md:bottom-0 md:right-0"
             size="sm"
           >
-            {zeroPadSingleDigit(id)}
+            {zeroPadSingleDigit(index)}
           </FontAccentSpan>
         </div>
         <div className="relative aspect-[1.55/1]">
