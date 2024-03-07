@@ -41,22 +41,23 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
       {...sliderSettings}
       {...props}
     >
-      {images.map((image, index) => (
+      {images.map((imageObj, index) => (
         <SwiperSlide key={index + 1}>
           <div className="relative flex h-full w-full flex-col items-center justify-center gap-8">
             <div
               className={cn(
                 'relative h-auto w-full',
-                image.direction === 'horizontal'
+                !imageObj.direction || imageObj.direction === 'horizontal'
                   ? 'aspect-[3/2] md:max-h-[26.25rem] md:max-w-[39.375rem]'
                   : 'aspect-[0.67/1] max-h-[31.5rem] max-w-[20.9375rem] md:max-h-[40rem] md:max-w-[26.625rem]'
               )}
             >
               <Image
-                alt="Зображення"
+                alt={imageObj.image}
                 className="object-cover object-center"
                 fill
-                src={image.src}
+                sizes="(max-width: 767px) 100vw, 50vw"
+                src={imageObj.image}
               />
             </div>
             <div className="flex w-full items-center justify-between md:px-[5.125rem] lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:px-0 xl:px-[5.125rem]">

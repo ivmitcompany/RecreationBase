@@ -1,4 +1,5 @@
 export type ImageInfo = {
   direction: 'horizontal' | 'vertical'
-  src: string
+  image: string
+  is_main_image: boolean
 }
