@@ -1,9 +1,10 @@
 'use client'
 
+import useModal from '@/hooks/use-modal'
 import { ImageInfo } from '@/types/ImageInfo'
 import { arrayIsNotEmpty, cn, getArrayLength } from '@/utils'
 import Image from 'next/image'
-import { FC, HTMLAttributes, useState } from 'react'
+import { FC, HTMLAttributes } from 'react'
 
 import { Icons } from './Icons'
 import ImagePlaceholder from './ImagePlaceholder'
@@ -23,17 +24,13 @@ const DetailsModal: FC<DetailsModalProps> = ({
   previewImgAlt,
   ...props
 }) => {
-  const [imagesModalIsOpen, setImagesModalIsOpen] = useState<boolean>(false)
+  const {
+    closeModal: closeImagesModal,
+    modalIsOpened: imagesModalIsOpened,
+    openModal: openImagesModal,
+  } = useModal()
   const imagesArePresent = arrayIsNotEmpty(images)
   const imagesCount = getArrayLength(images)
-
-  const openImagesModal = () => {
-    setImagesModalIsOpen(true)
-  }
-
-  const closeImagesModal = () => {
-    setImagesModalIsOpen(false)
-  }
 
   return (
     <>
@@ -70,15 +67,13 @@ const DetailsModal: FC<DetailsModalProps> = ({
         </div>
         <div className="md:overflow-y-auto">{children}</div>
       </article>
-      {imagesArePresent && imagesCount > 1 && (
-        <Modal
-          isOpen={imagesModalIsOpen}
-          onClose={closeImagesModal}
-          size="screen"
-        >
-          <ImageSlider className="h-full w-full" images={images!} />
-        </Modal>
-      )}
+      <Modal
+        isOpen={imagesModalIsOpened}
+        onClose={closeImagesModal}
+        size="screen"
+      >
+        <ImageSlider className="h-full w-full" images={images!} />
+      </Modal>
     </>
   )
 }

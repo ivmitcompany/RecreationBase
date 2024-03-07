@@ -4,10 +4,11 @@ import FontAccentSpan from '@/components/ui/FontAccentSpan'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/button/Button'
+import useModal from '@/hooks/use-modal'
 import { Apartment } from '@/types/Apartment'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
-import { FC, HTMLAttributes, useState } from 'react'
+import { FC, HTMLAttributes } from 'react'
 
 import ApartmentDetails from './ApartmentDetails'
 
@@ -21,16 +22,12 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
   ...props
 }) => {
   const { images, name } = data
-  const [detailsModalIsOpen, setDetailsModalIsOpen] = useState<boolean>(false)
+  const {
+    closeModal: closeDetailsModal,
+    modalIsOpened: detailsModalIsOpened,
+    openModal: openDetailsModal,
+  } = useModal()
   const imagesArePresent = arrayIsNotEmpty(images)
-
-  const openDetailsModal = () => {
-    setDetailsModalIsOpen(true)
-  }
-
-  const closeDetailsModal = () => {
-    setDetailsModalIsOpen(false)
-  }
 
   return (
     <>
@@ -64,7 +61,7 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
           </FontAccentSpan>
         </Button>
       </article>
-      <Modal isOpen={detailsModalIsOpen} onClose={closeDetailsModal}>
+      <Modal isOpen={detailsModalIsOpened} onClose={closeDetailsModal}>
         <ApartmentDetails data={data} images={images} previewImgAlt={name} />
       </Modal>
     </>

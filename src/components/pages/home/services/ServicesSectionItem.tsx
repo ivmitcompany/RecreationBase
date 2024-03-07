@@ -4,10 +4,11 @@ import FontAccentSpan from '@/components/ui/FontAccentSpan'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/button/Button'
+import useModal from '@/hooks/use-modal'
 import { CompanyService } from '@/types/CompanyService'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
-import { FC, HTMLAttributes, useState } from 'react'
+import { FC, HTMLAttributes } from 'react'
 
 import ServiceDetails from './ServiceDetails'
 
@@ -21,16 +22,12 @@ const ServicesSectionItem: FC<ServicesSectionItemProps> = ({
   ...props
 }) => {
   const { images, title } = data
-  const [detailsModalIsOpen, setDetailsModalIsOpen] = useState<boolean>(false)
+  const {
+    closeModal: closeDetailsModal,
+    modalIsOpened: detailsModalIsOpened,
+    openModal: openDetailsModal,
+  } = useModal()
   const imagesArePresent = arrayIsNotEmpty(images)
-
-  const openDetailsModal = () => {
-    setDetailsModalIsOpen(true)
-  }
-
-  const closeDetailsModal = () => {
-    setDetailsModalIsOpen(false)
-  }
 
   return (
     <>
@@ -70,7 +67,7 @@ const ServicesSectionItem: FC<ServicesSectionItemProps> = ({
         </div>
         <h3 className="text-lg uppercase md:text-base">{title}</h3>
       </article>
-      <Modal isOpen={detailsModalIsOpen} onClose={closeDetailsModal}>
+      <Modal isOpen={detailsModalIsOpened} onClose={closeDetailsModal}>
         <ServiceDetails data={data} images={images} previewImgAlt={title} />
       </Modal>
     </>

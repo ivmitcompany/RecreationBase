@@ -6,6 +6,7 @@ import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import ImageSlider from '@/components/ui/ImageSlider'
 import Modal from '@/components/ui/Modal'
 import IconButton from '@/components/ui/button/IconButton'
+import useModal from '@/hooks/use-modal'
 import {
   arrayIsNotEmpty,
   cn,
@@ -26,17 +27,13 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
   data: { id, images, title },
   ...props
 }) => {
-  const [imagesModalIsOpen, setImagesModalIsOpen] = useState<boolean>(false)
+  const {
+    closeModal: closeImagesModal,
+    modalIsOpened: imagesModalIsOpened,
+    openModal: openImagesModal,
+  } = useModal()
   const imagesArePresent = arrayIsNotEmpty(images)
   const imagesCount = getArrayLength(images)
-
-  const openImagesModal = () => {
-    setImagesModalIsOpen(true)
-  }
-
-  const closeImagesModal = () => {
-    setImagesModalIsOpen(false)
-  }
 
   return (
     <>
@@ -84,7 +81,7 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
         </div>
       </article>
       <Modal
-        isOpen={imagesModalIsOpen}
+        isOpen={imagesModalIsOpened}
         onClose={closeImagesModal}
         size="screen"
       >
