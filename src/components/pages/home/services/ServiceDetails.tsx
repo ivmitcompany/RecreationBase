@@ -28,14 +28,14 @@ const ServiceDetails: FC<ServiceDetailsProps> = ({
           <p>
             мінімальне замовлення –{' '}
             <span className="text-accent" role="text">
-              {min_order_time}
+              {min_order_time || 3}
             </span>{' '}
             години
           </p>
           <p>
             за четверту та наступні години оплата становить{' '}
             <span className="text-accent" role="text">
-              {excess_time_price}
+              {excess_time_price || 1000}
             </span>{' '}
             грн/год
           </p>
