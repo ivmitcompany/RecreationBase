@@ -1,6 +1,6 @@
 'use client'
 
-import { ImageInfo } from '@/types/ImageInfo'
+import ImageInfo from '@/types/ImageInfo'
 import { cn } from '@/utils'
 import Image from 'next/image'
 import { FC } from 'react'

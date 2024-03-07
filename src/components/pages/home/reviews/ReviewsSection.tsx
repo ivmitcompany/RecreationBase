@@ -1,6 +1,6 @@
 import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
-import { Review } from '@/types/Review'
+import Review from '@/types/Review'
 import { cn } from '@/utils'
 import React, { FC, HTMLAttributes } from 'react'
 

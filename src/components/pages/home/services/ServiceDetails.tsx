@@ -1,6 +1,6 @@
 import DetailsModal, { DetailsModalProps } from '@/components/ui/DetailsModal'
 import FontAccentSpan from '@/components/ui/FontAccentSpan'
-import { CompanyService } from '@/types/CompanyService'
+import CompanyService from '@/types/CompanyService'
 import { FC } from 'react'
 
 interface ServiceDetailsProps extends DetailsModalProps {

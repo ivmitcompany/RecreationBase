@@ -1,4 +1,4 @@
-import { Review } from '@/types/Review'
+import Review from '@/types/Review'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 

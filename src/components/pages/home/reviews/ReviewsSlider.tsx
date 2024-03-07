@@ -1,6 +1,6 @@
 'use client'
 
-import { Review } from '@/types/Review'
+import Review from '@/types/Review'
 import { FC } from 'react'
 import * as ReactDOMServer from 'react-dom/server'
 import { Pagination } from 'swiper/modules'

@@ -2,7 +2,7 @@ import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import FontAccentSpan from '@/components/ui/FontAccentSpan'
 import LinkButton from '@/components/ui/button/LinkButton'
-import { CompanyService } from '@/types/CompanyService'
+import CompanyService from '@/types/CompanyService'
 import Image from 'next/image'
 import React, { FC, HTMLAttributes } from 'react'
 
@@ -15,8 +15,16 @@ const services: CompanyService[] = [
     excess_time_price: 1000,
     id: 1,
     images: [
-      { direction: 'horizontal', src: '/apartment-2.jpg' },
-      { direction: 'horizontal', src: '/apartment-3.jpg' },
+      {
+        direction: 'horizontal',
+        image: '/apartment-2.jpg',
+        is_main_image: false,
+      },
+      {
+        direction: 'horizontal',
+        image: '/apartment-3.jpg',
+        is_main_image: false,
+      },
     ],
     min_order_time: 3,
     price: 1300,
@@ -26,7 +34,13 @@ const services: CompanyService[] = [
     description: 'в чан додаються ефірні масла та збір трав',
     excess_time_price: 1000,
     id: 2,
-    images: [{ direction: 'horizontal', src: '/apartment-1.jpg' }],
+    images: [
+      {
+        direction: 'horizontal',
+        image: '/apartment-1.jpg',
+        is_main_image: false,
+      },
+    ],
     min_order_time: 3,
     note: 'чан готується індивідуально для кожної компанії гостей, тому замовлення має бути зроблено завчасно',
     price: 1300,

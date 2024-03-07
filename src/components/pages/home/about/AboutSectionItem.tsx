@@ -7,7 +7,7 @@ import ImageSlider from '@/components/ui/ImageSlider'
 import Modal from '@/components/ui/Modal'
 import IconButton from '@/components/ui/button/IconButton'
 import useModal from '@/hooks/use-modal'
-import { AboutItem } from '@/types/AboutItem'
+import AboutItem from '@/types/AboutItem'
 import {
   arrayIsNotEmpty,
   cn,
