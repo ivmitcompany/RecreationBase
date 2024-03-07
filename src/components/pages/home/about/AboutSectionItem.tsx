@@ -7,16 +7,16 @@ import ImageSlider from '@/components/ui/ImageSlider'
 import Modal from '@/components/ui/Modal'
 import IconButton from '@/components/ui/button/IconButton'
 import useModal from '@/hooks/use-modal'
+import { AboutItem } from '@/types/AboutItem'
 import {
   arrayIsNotEmpty,
   cn,
+  findObjectWithField,
   getArrayLength,
   zeroPadSingleDigit,
 } from '@/utils'
 import Image from 'next/image'
-import { FC, HTMLAttributes, useState } from 'react'
-
-import { AboutItem } from './AboutSection'
+import { FC, HTMLAttributes } from 'react'
 
 interface AboutSectionItemProps extends HTMLAttributes<HTMLDivElement> {
   data: AboutItem
@@ -24,7 +24,7 @@ interface AboutSectionItemProps extends HTMLAttributes<HTMLDivElement> {
 
 const AboutSectionItem: FC<AboutSectionItemProps> = ({
   className,
-  data: { id, images, title },
+  data: { description, id, images },
   ...props
 }) => {
   const {
@@ -46,7 +46,7 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
       >
         <div className="relative flex justify-between gap-10">
           <h3 className="max-w-56 font-medium !leading-[1.2] md:max-w-72 md:text-xl">
-            {title}
+            {description}
           </h3>
           <FontAccentSpan
             className="md:absolute md:bottom-0 md:right-0"
@@ -59,12 +59,15 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
           {imagesArePresent ? (
             <>
               <Image
-                alt={title}
+                alt={description}
                 className="object-cover object-center"
                 fill
                 quality={80}
                 sizes="(max-width: 767px) 100vw, (max-width: 894x) 50vw, 387px"
-                src={images![0].src}
+                src={
+                  findObjectWithField(images!, 'is_main_image')?.image ||
+                  images![0].image
+                }
               />
               {imagesCount > 1 && (
                 <IconButton
