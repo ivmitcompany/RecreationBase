@@ -1,9 +1,10 @@
 'use client'
 
 import Modal from '@/components/ui/Modal'
+import useModal from '@/hooks/use-modal'
 import { cn } from '@/utils'
 import Image from 'next/image'
-import { FC, HTMLAttributes, useState } from 'react'
+import { FC, HTMLAttributes } from 'react'
 
 import MenuCategoryItemDetails from './MenuCategoryItemDetails'
 
@@ -13,15 +14,11 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
   className,
   ...props
 }) => {
-  const [detailsModalIsOpen, setDetailsModalIsOpen] = useState<boolean>(false)
-
-  const openDetailsModal = () => {
-    setDetailsModalIsOpen(true)
-  }
-
-  const closeDetailsModal = () => {
-    setDetailsModalIsOpen(false)
-  }
+  const {
+    closeModal: closeDetailsModal,
+    modalIsOpened: detailsModalIsOpened,
+    openModal: openDetailsModal,
+  } = useModal()
 
   return (
     <>
@@ -58,7 +55,7 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
         </div>
       </div>
       <Modal
-        isOpen={detailsModalIsOpen}
+        isOpen={detailsModalIsOpened}
         onClose={closeDetailsModal}
         size="card"
       >
