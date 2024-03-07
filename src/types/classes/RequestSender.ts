@@ -12,6 +12,7 @@ class RequestSender {
       const response = await fetch(url, {
         headers: { 'Content-type': 'application/json', ...headers },
         method: 'GET',
+        next: { revalidate: 5 },
       })
 
       if (!response.ok) {
