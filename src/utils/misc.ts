@@ -1,5 +1,8 @@
+import ImageInfo from '@/types/ImageInfo'
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+
+import { findObjectWithField } from '.'
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
 
@@ -7,6 +10,9 @@ export const disablePageScroll = () => document.body.classList.add('no-scroll')
 
 export const enablePageScroll = () =>
   document.body.classList.remove('no-scroll')
+
+export const getMainImage = (images: ImageInfo[]) =>
+  findObjectWithField(images, 'is_main_image')?.image || images[0].image
 
 export const isHomePage = (pathname: string) => pathname === '/'
 
