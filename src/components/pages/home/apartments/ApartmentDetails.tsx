@@ -4,13 +4,19 @@ import Apartment from '@/types/Apartment'
 import { arrayIsNotEmpty } from '@/utils'
 import { FC } from 'react'
 
+const getPeopleString = (peopleNumber: number) => {
+  if (peopleNumber === 1) return 'на 1 особу'
+  if (peopleNumber > 1 && peopleNumber < 5) return `на ${peopleNumber} особи`
+  return `на ${peopleNumber} осіб`
+}
+
 interface ApartmentDetailsProps extends DetailsModalProps {
   data: Apartment
 }
 
 const ApartmentDetails: FC<ApartmentDetailsProps> = ({
   className,
-  data: { additions, name, price },
+  data: { additions, description, people_numbers, price, title },
   ...props
 }) => {
   const additionsArePresent = arrayIsNotEmpty(additions)
@@ -19,7 +25,7 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
     <DetailsModal className={className} {...props}>
       <div className="flex h-full flex-col">
         <h3 className="text-[1.875rem] font-light uppercase leading-[1.35]">
-          {name}
+          {title}
         </h3>
         <p className="flex items-baseline gap-3 md:items-center">
           <FontAccentSpan className="leading-[0.5] text-accent" size="xs">
@@ -34,25 +40,22 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
                 <span className="text-lg uppercase md:text-xl" role="text">
                   Зручності в номері
                 </span>{' '}
-                (на 2 особи)
+                ({getPeopleString(people_numbers)})
               </h4>
               <ul className="flex flex-wrap gap-2.5">
-                {additions!.map((addition, index) => (
+                {additions!.map((addition) => (
                   <li
                     className="w-fit rounded-3xl border border-accent px-4 py-1 lowercase"
-                    key={index + 1}
+                    key={addition.name}
                   >
-                    {addition}
+                    {addition.name}
                   </li>
                 ))}
               </ul>
             </div>
           )}
           <div className="space-y-[0.3125rem] md:space-y-2.5">
-            <p>
-              у вартість входять сніданки та можливість користуватись катком
-              взиму й басейном влітку
-            </p>
+            <p>{description}</p>
             <p>на території комплексу також є парковка</p>
           </div>
         </div>
