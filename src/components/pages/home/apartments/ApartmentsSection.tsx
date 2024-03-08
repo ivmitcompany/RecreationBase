@@ -1,7 +1,7 @@
 import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import { arrayIsNotEmpty } from '@/utils'
-import { getApartments } from '@/utils/api/apartments'
+import { getApartments } from '@/utils'
 import React, { FC, HTMLAttributes } from 'react'
 
 import ApartmentsSectionItem from './ApartmentsSectionItem'
