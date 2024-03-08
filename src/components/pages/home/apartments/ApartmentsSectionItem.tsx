@@ -6,7 +6,7 @@ import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/button/Button'
 import useModal from '@/hooks/use-modal'
 import Apartment from '@/types/Apartment'
-import { arrayIsNotEmpty, cn } from '@/utils'
+import { arrayIsNotEmpty, cn, getMainImage } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
 
@@ -21,7 +21,7 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
   data,
   ...props
 }) => {
-  const { images, name } = data
+  const { images, title } = data
   const {
     closeModal: closeDetailsModal,
     modalIsOpened: detailsModalIsOpened,
@@ -36,18 +36,18 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
         {...props}
       >
         <h3 className="text-[2.5rem] font-light uppercase leading-[1.35] first-letter:text-accent group-even/item:text-end xl:text-[3.75rem] xl:leading-[1.4]">
-          {name}
+          {title}
         </h3>
         <div className="relative mt-2.5 aspect-square">
           {imagesArePresent ? (
             <>
               <Image
-                alt={name}
+                alt={title}
                 className="object-cover object-center"
                 fill
                 quality={80}
                 sizes="(max-width: 767px) 100vw, (max-width: 1279) 50vw, 488px"
-                src={images![0].image}
+                src={getMainImage(images!)}
               />
             </>
           ) : (
@@ -62,7 +62,7 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
         </Button>
       </article>
       <Modal isOpen={detailsModalIsOpened} onClose={closeDetailsModal}>
-        <ApartmentDetails data={data} images={images} previewImgAlt={name} />
+        <ApartmentDetails data={data} images={images} previewImgAlt={title} />
       </Modal>
     </>
   )
