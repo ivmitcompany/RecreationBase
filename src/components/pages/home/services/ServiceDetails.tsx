@@ -9,7 +9,7 @@ interface ServiceDetailsProps extends DetailsModalProps {
 
 const ServiceDetails: FC<ServiceDetailsProps> = ({
   className,
-  data: { description, excess_time_price, min_order_time, note, price, title },
+  data: { description, min_order_time, note, order_excess_price, price, title },
   ...props
 }) => {
   return (
@@ -35,7 +35,7 @@ const ServiceDetails: FC<ServiceDetailsProps> = ({
           <p>
             за четверту та наступні години оплата становить{' '}
             <span className="text-accent" role="text">
-              {excess_time_price || 1000}
+              {order_excess_price || 1000}
             </span>{' '}
             грн/год
           </p>
