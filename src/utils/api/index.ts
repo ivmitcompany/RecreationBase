@@ -1,2 +1,2 @@
-export * from './about'
+export * from './about-items'
 export * from './company-services'
