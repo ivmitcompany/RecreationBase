@@ -1,6 +1,6 @@
 import DetailsModal, { DetailsModalProps } from '@/components/ui/DetailsModal'
 import FontAccentSpan from '@/components/ui/FontAccentSpan'
-import { CompanyService } from '@/types/CompanyService'
+import CompanyService from '@/types/CompanyService'
 import { FC } from 'react'
 
 interface ServiceDetailsProps extends DetailsModalProps {
@@ -9,7 +9,7 @@ interface ServiceDetailsProps extends DetailsModalProps {
 
 const ServiceDetails: FC<ServiceDetailsProps> = ({
   className,
-  data: { description, excess_time_price, min_order_time, note, price, title },
+  data: { description, min_order_time, note, order_excess_price, price, title },
   ...props
 }) => {
   return (
@@ -28,14 +28,14 @@ const ServiceDetails: FC<ServiceDetailsProps> = ({
           <p>
             мінімальне замовлення –{' '}
             <span className="text-accent" role="text">
-              {min_order_time}
+              {min_order_time || 3}
             </span>{' '}
             години
           </p>
           <p>
             за четверту та наступні години оплата становить{' '}
             <span className="text-accent" role="text">
-              {excess_time_price}
+              {order_excess_price || 1000}
             </span>{' '}
             грн/год
           </p>

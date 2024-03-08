@@ -5,7 +5,7 @@ import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/button/Button'
 import useModal from '@/hooks/use-modal'
-import { Apartment } from '@/types/Apartment'
+import Apartment from '@/types/Apartment'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
@@ -47,7 +47,7 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
                 fill
                 quality={80}
                 sizes="(max-width: 767px) 100vw, (max-width: 1279) 50vw, 488px"
-                src={images![0].src}
+                src={images![0].image}
               />
             </>
           ) : (

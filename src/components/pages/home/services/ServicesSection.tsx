@@ -2,48 +2,27 @@ import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import FontAccentSpan from '@/components/ui/FontAccentSpan'
 import LinkButton from '@/components/ui/button/LinkButton'
-import { CompanyService } from '@/types/CompanyService'
+import { getCompanyServices } from '@/utils'
 import Image from 'next/image'
 import React, { FC, HTMLAttributes } from 'react'
 
 import ServicesSectionItem from './ServicesSectionItem'
 
-const services: CompanyService[] = [
-  {
-    description:
-      'в сауні знаходиться кімната відпочинку, рушники та халати також надаються',
-    excess_time_price: 1000,
-    id: 1,
-    images: [
-      { direction: 'horizontal', src: '/apartment-2.jpg' },
-      { direction: 'horizontal', src: '/apartment-3.jpg' },
-    ],
-    min_order_time: 3,
-    price: 1300,
-    title: 'Сауна, соляна кімната та хамам',
-  },
-  {
-    description: 'в чан додаються ефірні масла та збір трав',
-    excess_time_price: 1000,
-    id: 2,
-    images: [{ direction: 'horizontal', src: '/apartment-1.jpg' }],
-    min_order_time: 3,
-    note: 'чан готується індивідуально для кожної компанії гостей, тому замовлення має бути зроблено завчасно',
-    price: 1300,
-    title: 'Чан',
-  },
-]
-
 interface ServicesSectionProps extends HTMLAttributes<HTMLDivElement> {}
 
-const ServicesSection: FC<ServicesSectionProps> = ({ className, ...props }) => {
+const ServicesSection: FC<ServicesSectionProps> = async ({
+  className,
+  ...props
+}) => {
+  const companyServices = await getCompanyServices()
+
   return (
     <div className={className} {...props}>
       <Content>
         <section>
           <CurlyBraceHeading level={2}>Послуги</CurlyBraceHeading>
           <div className="mt-11 grid gap-[3.75rem] md:mt-16 md:grid-cols-2 md:gap-5 lg:grid-cols-3 xl:grid-cols-4">
-            {services.map((item) => (
+            {companyServices.map((item) => (
               <ServicesSectionItem data={item} key={item.id} />
             ))}
             <div className="flex aspect-[1.8/1] flex-col gap-5 sm:aspect-[2.25/1] md:aspect-[0.79/1]">

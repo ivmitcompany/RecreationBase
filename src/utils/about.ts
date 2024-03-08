@@ -1,4 +1,4 @@
-import { AboutItem } from '@/types/AboutItem'
+import AboutItem from '@/types/AboutItem'
 import requestSender from '@/types/classes/RequestSender'
 
 export const getAboutItems = async () => {

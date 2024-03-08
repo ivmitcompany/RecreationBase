@@ -1,6 +1,6 @@
 import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
-import { Apartment } from '@/types/Apartment'
+import Apartment from '@/types/Apartment'
 import React, { FC, HTMLAttributes } from 'react'
 
 import ApartmentsSectionItem from './ApartmentsSectionItem'
@@ -18,8 +18,16 @@ const apartments: Apartment[] = [
     ],
     id: 1,
     images: [
-      { direction: 'horizontal', src: '/apartment-1.jpg' },
-      { direction: 'vertical', src: '/apartment-2.jpg' },
+      {
+        direction: 'horizontal',
+        image: '/apartment-1.jpg',
+        is_main_image: true,
+      },
+      {
+        direction: 'vertical',
+        image: '/apartment-2.jpg',
+        is_main_image: false,
+      },
     ],
     name: 'Двомісний номер',
     price: 1600,
@@ -51,7 +59,13 @@ const apartments: Apartment[] = [
       'Мангальна зона',
     ],
     id: 3,
-    images: [{ direction: 'horizontal', src: '/apartment-3.jpg' }],
+    images: [
+      {
+        direction: 'horizontal',
+        image: '/apartment-3.jpg',
+        is_main_image: true,
+      },
+    ],
     name: "Дерев'яний будинок",
     price: 6000,
   },
@@ -69,8 +83,16 @@ const apartments: Apartment[] = [
     ],
     id: 4,
     images: [
-      { direction: 'horizontal', src: '/apartment-4.jpg' },
-      { direction: 'vertical', src: '/apartment-2.jpg' },
+      {
+        direction: 'horizontal',
+        image: '/apartment-4.jpg',
+        is_main_image: false,
+      },
+      {
+        direction: 'vertical',
+        image: '/apartment-2.jpg',
+        is_main_image: false,
+      },
     ],
     name: 'VIP апартаменти',
     price: 8000,

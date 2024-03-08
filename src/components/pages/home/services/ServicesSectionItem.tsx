@@ -5,8 +5,8 @@ import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/button/Button'
 import useModal from '@/hooks/use-modal'
-import { CompanyService } from '@/types/CompanyService'
-import { arrayIsNotEmpty, cn } from '@/utils'
+import CompanyService from '@/types/CompanyService'
+import { arrayIsNotEmpty, cn, getMainImage } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
 
@@ -42,9 +42,8 @@ const ServicesSectionItem: FC<ServicesSectionItemProps> = ({
                 alt={title}
                 className="object-cover object-center"
                 fill
-                quality={80}
                 sizes="(max-width: 767px) 100vw, (max-width: 1279) 50vw, 488px"
-                src={images![0].src}
+                src={getMainImage(images!)}
               />
             </>
           ) : (

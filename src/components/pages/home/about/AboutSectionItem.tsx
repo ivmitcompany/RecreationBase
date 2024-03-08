@@ -7,12 +7,12 @@ import ImageSlider from '@/components/ui/ImageSlider'
 import Modal from '@/components/ui/Modal'
 import IconButton from '@/components/ui/button/IconButton'
 import useModal from '@/hooks/use-modal'
-import { AboutItem } from '@/types/AboutItem'
+import AboutItem from '@/types/AboutItem'
 import {
   arrayIsNotEmpty,
   cn,
-  findObjectWithField,
   getArrayLength,
+  getMainImage,
   zeroPadSingleDigit,
 } from '@/utils'
 import Image from 'next/image'
@@ -66,10 +66,7 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
                 fill
                 quality={80}
                 sizes="(max-width: 767px) 100vw, (max-width: 894x) 50vw, 387px"
-                src={
-                  findObjectWithField(images!, 'is_main_image')?.image ||
-                  images![0].image
-                }
+                src={getMainImage(images!)}
               />
               {imagesCount > 1 && (
                 <IconButton
