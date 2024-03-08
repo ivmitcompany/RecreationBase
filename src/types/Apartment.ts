@@ -1,11 +1,17 @@
-import  ImageInfo  from './ImageInfo'
+import ImageInfo from './ImageInfo'
 
 type Apartment = {
-  additions?: string[]
+  additions?: ApartmentAddition[]
+  description: string
   id: number
   images?: ImageInfo[]
-  name: string
+  people_numbers: number
   price: number
+  title: string
+}
+
+type ApartmentAddition = {
+  name: string
 }
 
 export default Apartment
