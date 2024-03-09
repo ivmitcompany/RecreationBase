@@ -10,7 +10,8 @@ import { arrayIsNotEmpty, cn, getMainImage } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
 
-import ApartmentDetails from './ApartmentDetails'
+import ApartmentDetails from './apartment/ApartmentDetails'
+import ApartmentHeading from './apartment/ApartmentHeading'
 
 interface ApartmentsSectionItemProps extends HTMLAttributes<HTMLDivElement> {
   data: Apartment
@@ -35,9 +36,7 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
         className={cn('group/item md:even:mt-[11.25rem]', className)}
         {...props}
       >
-        <h3 className="text-[2.5rem] font-light uppercase leading-[1.35] first-letter:text-accent group-even/item:text-end xl:text-[3.75rem] xl:leading-[1.4]">
-          {title}
-        </h3>
+        <ApartmentHeading title={title} />
         <div className="relative mt-2.5 aspect-square">
           {imagesArePresent ? (
             <>

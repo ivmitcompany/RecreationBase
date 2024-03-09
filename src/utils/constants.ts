@@ -1,1 +1,2 @@
+export const DESKTOP_BREAKPOINT = 1279.99
 export const MOBILE_BREAKPOINT = 767.99
