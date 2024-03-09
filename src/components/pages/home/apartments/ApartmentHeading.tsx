@@ -91,6 +91,7 @@ const ApartmentHeading: FC<ApartmentHeadingProps> = ({ title, ...props }) => {
         <ApartmentHeadingWrapper
           className="first-letter:text-accent"
           textPosition="default"
+          {...props}
         >
           {title}
         </ApartmentHeadingWrapper>
