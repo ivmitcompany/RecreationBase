@@ -65,7 +65,7 @@ const DetailsModal: FC<DetailsModalProps> = ({
             <ImagePlaceholder className="h-full w-full" />
           )}
         </div>
-        <div className="md:overflow-y-auto">{children}</div>
+        <div className="w-full md:overflow-y-auto">{children}</div>
       </article>
       <Modal
         isOpen={imagesModalIsOpened}
