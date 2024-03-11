@@ -22,7 +22,7 @@ export type Meal = {
   weight_value: string
 }
 
-type Ingredient = {
+export type Ingredient = {
   id: number
   name: string
 }
