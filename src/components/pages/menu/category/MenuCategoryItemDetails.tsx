@@ -4,6 +4,8 @@ import { cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
 
+import MenuCategoryItemIngredients from './MenuCategoryItemIngredients'
+
 interface MenuCategoryItemDetailsProps extends HTMLAttributes<HTMLDivElement> {
   data: Meal
 }
@@ -34,20 +36,7 @@ const MenuCategoryItemDetails: FC<MenuCategoryItemDetailsProps> = ({
       <div className="flex flex-grow flex-col px-5 py-10">
         <h3 className="text-lg leading-5">{name}</h3>
         {ingredients && (
-          <ul className="mt-1 flex flex-wrap gap-1 text-sm leading-4">
-            {ingredients.map((ingredient, index) => (
-              <li
-                className={cn(
-                  "after:content-[',']",
-                  index === 0 && "before:content-['(']",
-                  index === ingredients.length - 1 && "after:content-[')']"
-                )}
-                key={ingredient.id}
-              >
-                {ingredient.name}
-              </li>
-            ))}
-          </ul>
+          <MenuCategoryItemIngredients className="mt-1" data={ingredients} />
         )}
         <div className="mt-auto space-x-2.5 pt-2.5">
           <span className="text-lg text-accent">{price} грн</span>

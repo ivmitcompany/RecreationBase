@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
 
 import MenuCategoryItemDetails from './MenuCategoryItemDetails'
+import MenuCategoryItemIngredients from './MenuCategoryItemIngredients'
 
 interface MenuCategoryItemProps extends HTMLAttributes<HTMLDivElement> {
   data: Meal
@@ -39,20 +40,7 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
         <div className="font-light">
           <h3 className="text-lg leading-5">{name}</h3>
           {ingredients && (
-            <ul className="mt-1 flex flex-wrap gap-1 text-sm leading-4">
-              {ingredients.map((ingredient, index) => (
-                <li
-                  className={cn(
-                    "after:content-[',']",
-                    index === 0 && "before:content-['(']",
-                    index === ingredients.length - 1 && "after:content-[')']"
-                  )}
-                  key={ingredient.id}
-                >
-                  {ingredient.name}
-                </li>
-              ))}
-            </ul>
+            <MenuCategoryItemIngredients className="mt-1" data={ingredients} />
           )}
           <div className="mt-2.5 space-x-2.5">
             <span className="text-lg text-accent">{price} грн</span>
