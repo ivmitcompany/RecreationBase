@@ -1,7 +1,7 @@
-type KitchenCategory = {
+type MenuCategoryType = {
   additions?: Addition[]
   id: number
-  items?: KitchenCategoryItem[]
+  items?: MenuCategoryItemType[]
   name: string
   note?: string
   slug: string
@@ -13,13 +13,15 @@ export type Addition = {
   price: number
 }
 
-export type KitchenCategoryItem = {
+export type MenuCategoryItemType = {
+  category?: number
+  description?: string
   id: number
   image?: string
   ingredients?: Ingredient[]
   name: string
   price: number
-  serving_type: 'mass' | 'quantity'
+  serving_type?: 'mass' | 'quantity'
   weight_value: string
 }
 
@@ -28,4 +30,4 @@ export type Ingredient = {
   name: string
 }
 
-export default KitchenCategory
+export default MenuCategoryType
