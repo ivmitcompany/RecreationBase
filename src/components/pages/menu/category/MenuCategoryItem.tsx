@@ -48,7 +48,7 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
             <span className="text-lg text-accent">{price} грн</span>
             <span className="pb-0.5 text-sm">
               {weight_value}{' '}
-              {serving_type === 'mass' ? 'г' : 'шт'}
+              {serving_type && (serving_type === 'mass' ? 'г' : 'шт')}
             </span>
           </div>
         </div>
