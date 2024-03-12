@@ -3,7 +3,7 @@
 import Modal from '@/components/ui/Modal'
 import useModal from '@/hooks/use-modal'
 import { KitchenCategoryItem } from '@/types/KitchenCategory'
-import { cn } from '@/utils'
+import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
 
@@ -39,8 +39,8 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
       >
         <div className="font-light">
           <h3 className="text-lg leading-5">{name}</h3>
-          {ingredients && (
-            <MenuCategoryItemIngredients className="mt-1" data={ingredients} />
+          {arrayIsNotEmpty(ingredients) && (
+            <MenuCategoryItemIngredients className="mt-1" data={ingredients!} />
           )}
           <div className="mt-2.5 space-x-2.5">
             <span className="text-lg text-accent">{price} грн</span>

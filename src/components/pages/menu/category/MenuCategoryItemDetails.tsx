@@ -1,6 +1,6 @@
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import { KitchenCategoryItem } from '@/types/KitchenCategory'
-import { cn } from '@/utils'
+import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
 
@@ -35,8 +35,8 @@ const MenuCategoryItemDetails: FC<MenuCategoryItemDetailsProps> = ({
       </div>
       <div className="flex flex-grow flex-col px-5 py-10">
         <h3 className="text-lg leading-5">{name}</h3>
-        {ingredients && (
-          <MenuCategoryItemIngredients className="mt-1" data={ingredients} />
+        {arrayIsNotEmpty(ingredients) && (
+          <MenuCategoryItemIngredients className="mt-1" data={ingredients!} />
         )}
         <div className="mt-auto space-x-2.5 pt-2.5">
           <span className="text-lg text-accent">{price} грн</span>

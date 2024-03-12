@@ -1,6 +1,6 @@
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import KitchenCategory from '@/types/KitchenCategory'
-import { cn } from '@/utils'
+import { arrayIsNotEmpty, cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
 import MenuCategoryItem from './MenuCategoryItem'
@@ -22,14 +22,14 @@ const MenuCategory: FC<MenuCategoryProps> = ({
     <p className="absolute right-0 top-[1.875rem] !mt-0 text-xs font-light md:text-sm">
       {note}
     </p>
-    {items && (
+    {arrayIsNotEmpty(items) && (
       <div className="flex flex-col gap-5">
-        {items.map((item) => (
+        {items!.map((item) => (
           <MenuCategoryItem data={item} key={item.id} />
         ))}
       </div>
     )}
-    {additions && <MenuCategoryAdditions data={additions} />}
+    {arrayIsNotEmpty(additions) && <MenuCategoryAdditions data={additions!} />}
   </section>
 )
 
