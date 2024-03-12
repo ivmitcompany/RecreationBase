@@ -12,7 +12,7 @@ interface MenuCategoryProps extends HTMLAttributes<HTMLDivElement> {
 
 const MenuCategory: FC<MenuCategoryProps> = ({
   className,
-  data: { additions, meals, name },
+  data: { additions, meals, name, note },
   ...props
 }) => (
   <section className={cn('relative space-y-10', className)} {...props}>
@@ -20,7 +20,7 @@ const MenuCategory: FC<MenuCategoryProps> = ({
       {name}
     </CurlyBraceHeading>
     <p className="absolute right-0 top-[1.875rem] !mt-0 text-xs font-light md:text-sm">
-      до 12:00
+      {note}
     </p>
     {meals && (
       <div className="flex flex-col gap-5">

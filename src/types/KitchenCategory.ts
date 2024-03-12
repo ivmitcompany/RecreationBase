@@ -3,6 +3,7 @@ type KitchenCategory = {
   id: number
   meals?: Meal[]
   name: string
+  note?: string
   slug: string
 }
 
