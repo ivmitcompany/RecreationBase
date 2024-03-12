@@ -1,16 +1,20 @@
+import MenuNavPathname from '@/types/MenuNavPathname'
 import { cn } from '@/utils'
-import { getKitchenCategories } from '@/utils/api/menu'
+import { getNavigationCategories } from '@/utils/api/menu'
 import { FC, HTMLAttributes } from 'react'
 
 import MenuNavigationListItem from './MenuNavigationListItem'
 
-interface MenuNavigationListProps extends HTMLAttributes<HTMLOListElement> {}
+interface MenuNavigationListProps extends HTMLAttributes<HTMLOListElement> {
+  pathname: MenuNavPathname
+}
 
 const MenuNavigationList: FC<MenuNavigationListProps> = async ({
   className,
+  pathname,
   ...props
 }) => {
-  const categories = await getKitchenCategories()
+  const categories = await getNavigationCategories(pathname)
 
   return (
     <ol
@@ -22,7 +26,7 @@ const MenuNavigationList: FC<MenuNavigationListProps> = async ({
     >
       {categories.map((category) => (
         <MenuNavigationListItem
-          href={`/menu/#${category.slug}`}
+          href={`${pathname}#${category.slug}`}
           key={category.id}
         >
           {category.name}
