@@ -1,5 +1,5 @@
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
-import KitchenCategory from '@/types/KitchenCategory'
+import MenuCategoryType from '@/types/KitchenCategory'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
@@ -7,7 +7,7 @@ import MenuCategoryItem from './MenuCategoryItem'
 import MenuCategoryAdditions from './additions/MenuCategoryAdditions'
 
 interface MenuCategoryProps extends HTMLAttributes<HTMLDivElement> {
-  data: KitchenCategory
+  data: MenuCategoryType
 }
 
 const MenuCategory: FC<MenuCategoryProps> = ({

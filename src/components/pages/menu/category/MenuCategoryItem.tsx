@@ -2,7 +2,7 @@
 
 import Modal from '@/components/ui/Modal'
 import useModal from '@/hooks/use-modal'
-import { KitchenCategoryItem } from '@/types/KitchenCategory'
+import { MenuCategoryItemType } from '@/types/KitchenCategory'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
@@ -11,7 +11,7 @@ import MenuCategoryItemDetails from './MenuCategoryItemDetails'
 import MenuCategoryItemIngredients from './MenuCategoryItemIngredients'
 
 interface MenuCategoryItemProps extends HTMLAttributes<HTMLDivElement> {
-  data: KitchenCategoryItem
+  data: MenuCategoryItemType
 }
 
 const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
