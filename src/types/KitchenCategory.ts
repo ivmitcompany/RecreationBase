@@ -5,6 +5,7 @@ type MenuCategoryType = {
   name: string
   note?: string
   slug: string
+  subcategories?: MenuSubcategoryType[]
 }
 
 export type Addition = {
@@ -23,6 +24,12 @@ export type MenuCategoryItemType = {
   price: number
   serving_type?: 'mass' | 'quantity'
   weight_value: string
+}
+
+export type MenuSubcategoryType = {
+  id: number
+  items?: MenuCategoryItemType[]
+  name: string
 }
 
 export type Ingredient = {
