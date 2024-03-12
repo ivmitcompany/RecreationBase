@@ -1,5 +1,5 @@
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
-import MenuCategoryType from '@/types/KitchenCategory'
+import MenuCategoryType from '@/types/Menu'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 

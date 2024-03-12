@@ -1,4 +1,4 @@
-import { Addition } from '@/types/KitchenCategory'
+import { Addition } from '@/types/Menu'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 

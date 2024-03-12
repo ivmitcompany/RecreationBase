@@ -1,4 +1,4 @@
-import MenuCategoryType from '@/types/KitchenCategory'
+import MenuCategoryType from '@/types/Menu'
 import MenuNavPathname from '@/types/MenuNavPathname'
 import requestSender from '@/types/classes/RequestSender'
 

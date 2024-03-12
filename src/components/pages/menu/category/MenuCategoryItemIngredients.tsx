@@ -1,4 +1,4 @@
-import { Ingredient } from '@/types/KitchenCategory'
+import { Ingredient } from '@/types/Menu'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 

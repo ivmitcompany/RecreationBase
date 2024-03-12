@@ -1,4 +1,4 @@
-import { MenuCategoryItemType } from '@/types/KitchenCategory'
+import { MenuCategoryItemType } from '@/types/Menu'
 import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
