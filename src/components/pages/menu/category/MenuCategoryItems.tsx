@@ -6,16 +6,18 @@ import MenuCategoryItem from './MenuCategoryItem'
 
 interface MenuCategoryItemsProps extends HTMLAttributes<HTMLDivElement> {
   data: MenuCategoryItemType[]
+  includeModal: boolean
 }
 
 const MenuCategoryItems: FC<MenuCategoryItemsProps> = ({
   className,
   data,
+  includeModal,
   ...props
 }) => (
   <div className={cn('flex flex-col gap-[1.875rem]', className)} {...props}>
     {data.map((item) => (
-      <MenuCategoryItem data={item} key={item.id} />
+      <MenuCategoryItem data={item} includeModal={includeModal} key={item.id} />
     ))}
   </div>
 )

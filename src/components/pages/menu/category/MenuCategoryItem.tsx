@@ -12,11 +12,13 @@ import MenuCategoryItemIngredients from './MenuCategoryItemIngredients'
 
 interface MenuCategoryItemProps extends HTMLAttributes<HTMLDivElement> {
   data: MenuCategoryItemType
+  includeModal: boolean
 }
 
 const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
   className,
   data,
+  includeModal,
   ...props
 }) => {
   const { image, ingredients, name, price, serving_type, weight_value } = data
@@ -30,11 +32,11 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
     <>
       <div
         className={cn(
-          (className =
-            'flex items-center justify-between gap-5 hover:cursor-pointer'),
+          (className = 'flex items-center justify-between gap-5'),
+          includeModal && 'hover:cursor-pointer',
           className
         )}
-        onClick={openDetailsModal}
+        onClick={includeModal ? openDetailsModal : undefined}
         {...props}
       >
         <div className="font-light">

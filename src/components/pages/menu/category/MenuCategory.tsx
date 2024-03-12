@@ -9,11 +9,13 @@ import MenuCategoryAdditions from './additions/MenuCategoryAdditions'
 
 interface MenuCategoryProps extends HTMLAttributes<HTMLDivElement> {
   data: MenuCategoryType
+  includeModal?: boolean
 }
 
 const MenuCategory: FC<MenuCategoryProps> = ({
   className,
   data: { additions, items, name, note, subcategories },
+  includeModal = true,
   ...props
 }) => (
   <section className={cn('relative space-y-10', className)} {...props}>
@@ -27,9 +29,15 @@ const MenuCategory: FC<MenuCategoryProps> = ({
     )}
     {arrayIsNotEmpty(subcategories) &&
       subcategories!.map((subcategory) => (
-        <MenuSubcategory data={subcategory} key={subcategory.id} />
+        <MenuSubcategory
+          data={subcategory}
+          includeModal={includeModal}
+          key={subcategory.id}
+        />
       ))}
-    {arrayIsNotEmpty(items) && <MenuCategoryItems data={items!} />}
+    {arrayIsNotEmpty(items) && (
+      <MenuCategoryItems data={items!} includeModal={includeModal} />
+    )}
     {arrayIsNotEmpty(additions) && <MenuCategoryAdditions data={additions!} />}
   </section>
 )
