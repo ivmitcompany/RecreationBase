@@ -12,7 +12,7 @@ interface MenuCategoryProps extends HTMLAttributes<HTMLDivElement> {
 
 const MenuCategory: FC<MenuCategoryProps> = ({
   className,
-  data: { additions, meals, name, note },
+  data: { additions, items, name, note },
   ...props
 }) => (
   <section className={cn('relative space-y-10', className)} {...props}>
@@ -22,10 +22,10 @@ const MenuCategory: FC<MenuCategoryProps> = ({
     <p className="absolute right-0 top-[1.875rem] !mt-0 text-xs font-light md:text-sm">
       {note}
     </p>
-    {meals && (
+    {items && (
       <div className="flex flex-col gap-5">
-        {meals.map((meal) => (
-          <MenuCategoryItem data={meal} key={meal.id} />
+        {items.map((item) => (
+          <MenuCategoryItem data={item} key={item.id} />
         ))}
       </div>
     )}

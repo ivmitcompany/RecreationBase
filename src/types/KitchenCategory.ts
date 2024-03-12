@@ -1,7 +1,7 @@
 type KitchenCategory = {
   additions?: Addition[]
   id: number
-  items?: Meal[]
+  items?: KitchenCategoryItem[]
   name: string
   note?: string
   slug: string
@@ -13,7 +13,7 @@ export type Addition = {
   price: number
 }
 
-export type Meal = {
+export type KitchenCategoryItem = {
   id: number
   image?: string
   ingredients?: Ingredient[]

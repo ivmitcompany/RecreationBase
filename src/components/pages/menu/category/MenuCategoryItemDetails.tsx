@@ -1,5 +1,5 @@
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
-import { Meal } from '@/types/KitchenCategory'
+import { KitchenCategoryItem } from '@/types/KitchenCategory'
 import { cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
@@ -7,7 +7,7 @@ import { FC, HTMLAttributes } from 'react'
 import MenuCategoryItemIngredients from './MenuCategoryItemIngredients'
 
 interface MenuCategoryItemDetailsProps extends HTMLAttributes<HTMLDivElement> {
-  data: Meal
+  data: KitchenCategoryItem
 }
 
 const MenuCategoryItemDetails: FC<MenuCategoryItemDetailsProps> = ({
