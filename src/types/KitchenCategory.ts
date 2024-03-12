@@ -1,7 +1,7 @@
 type KitchenCategory = {
   additions?: Addition[]
   id: number
-  meals?: Meal[]
+  items?: Meal[]
   name: string
   note?: string
   slug: string
