@@ -1,19 +1,9 @@
 import Review from '@/types/Review'
-import { cn, zeroPadSingleDigit } from '@/utils'
+import { cn } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
 
 const transformLineBreaks = (text: string) => {
   return text.replace(/\r\n/g, '<br />')
-}
-
-const getFormattedDate = (dateString: string) => {
-  const date = new Date(dateString)
-
-  const day = zeroPadSingleDigit(date.getDate())
-  const month = zeroPadSingleDigit(date.getMonth() + 1)
-  const year = date.getFullYear()
-
-  return `${day}.${month}.${year}`
 }
 
 interface ReviewsSliderItemProps extends HTMLAttributes<HTMLDivElement> {
@@ -22,11 +12,10 @@ interface ReviewsSliderItemProps extends HTMLAttributes<HTMLDivElement> {
 
 const ReviewsSliderItem: FC<ReviewsSliderItemProps> = ({
   className,
-  data: { author, date: dateString, review },
+  data: { author, date, review },
   ...props
 }) => {
   const transformedReview = transformLineBreaks(review)
-  const date = getFormattedDate(dateString)
 
   return (
     <div
