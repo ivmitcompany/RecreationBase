@@ -19,8 +19,6 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
   data: { additions, description, people_numbers, price, title },
   ...props
 }) => {
-  const additionsArePresent = arrayIsNotEmpty(additions)
-
   return (
     <DetailsModal className={className} {...props}>
       <div className="flex h-full flex-col">
@@ -34,7 +32,7 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
           грн за годину
         </p>
         <div className="mt-[3.75rem] space-y-5 md:mt-16">
-          {additionsArePresent && (
+          {arrayIsNotEmpty(additions) && (
             <div className="space-y-10">
               <h4 className="md:text-lg">
                 <span className="text-lg uppercase md:text-xl" role="text">
