@@ -21,7 +21,15 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
   includeModal,
   ...props
 }) => {
-  const { image, ingredients, name, price, serving_type, weight_value } = data
+  const {
+    image,
+    ingredients,
+    name,
+    price,
+    serving_type,
+    volume_type,
+    weight_value,
+  } = data
   const {
     closeModal: closeDetailsModal,
     modalIsOpened: detailsModalIsOpened,
@@ -48,7 +56,11 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
             <span className="text-lg text-accent">{price} грн</span>
             <span className="pb-0.5 text-sm">
               {weight_value}{' '}
-              {serving_type && (serving_type === 'mass' ? 'г' : 'шт')}
+              {serving_type
+                ? serving_type === 'mass'
+                  ? 'г'
+                  : 'шт'
+                : volume_type ? volume_type : null}
             </span>
           </div>
         </div>
