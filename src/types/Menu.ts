@@ -23,6 +23,7 @@ export type MenuCategoryItemType = {
   name: string
   price: number
   serving_type?: 'mass' | 'quantity'
+  volume_type?: 'г' | 'мл'
   weight_value: string
 }
 
