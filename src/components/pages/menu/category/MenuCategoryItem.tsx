@@ -22,6 +22,7 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
   ...props
 }) => {
   const {
+    description,
     image,
     ingredients,
     name,
@@ -52,6 +53,7 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
           {arrayIsNotEmpty(ingredients) && (
             <MenuCategoryItemIngredients className="mt-1" data={ingredients!} />
           )}
+          <p className="mt-2.5 text-sm">{description}</p>
           <div className="mt-2.5 space-x-2.5">
             <span className="text-lg text-accent">{price} грн</span>
             <span className="pb-0.5 text-sm">
@@ -60,7 +62,9 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
                 ? serving_type === 'mass'
                   ? 'г'
                   : 'шт'
-                : volume_type ? volume_type : null}
+                : volume_type
+                  ? volume_type
+                  : null}
             </span>
           </div>
         </div>
