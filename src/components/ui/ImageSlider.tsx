@@ -49,7 +49,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
                 'relative h-auto w-full',
                 !imageObj.direction || imageObj.direction === 'horizontal'
                   ? 'aspect-[3/2] md:max-h-[26.25rem] md:max-w-[39.375rem]'
-                  : 'aspect-[0.67/1] max-h-[31.5rem] max-w-[20.9375rem] md:max-h-[40rem] md:max-w-[26.625rem]'
+                  : 'aspect-[0.75/1] max-h-[31.5rem] max-w-[20.9375rem] md:max-h-[40rem] md:max-w-[26.625rem]'
               )}
             >
               <Image

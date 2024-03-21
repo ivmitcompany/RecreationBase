@@ -1,5 +1,5 @@
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
-import { KitchenCategoryItem } from '@/types/KitchenCategory'
+import { MenuCategoryItemType } from '@/types/Menu'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
@@ -7,7 +7,7 @@ import { FC, HTMLAttributes } from 'react'
 import MenuCategoryItemIngredients from './MenuCategoryItemIngredients'
 
 interface MenuCategoryItemDetailsProps extends HTMLAttributes<HTMLDivElement> {
-  data: KitchenCategoryItem
+  data: MenuCategoryItemType
 }
 
 const MenuCategoryItemDetails: FC<MenuCategoryItemDetailsProps> = ({
@@ -15,6 +15,8 @@ const MenuCategoryItemDetails: FC<MenuCategoryItemDetailsProps> = ({
   data: { image, ingredients, name, price, serving_type, weight_value },
   ...props
 }) => {
+  console.log(serving_type)
+
   return (
     <div
       className={cn('flex h-full flex-col font-light', className)}
@@ -41,7 +43,8 @@ const MenuCategoryItemDetails: FC<MenuCategoryItemDetailsProps> = ({
         <div className="mt-auto space-x-2.5 pt-2.5">
           <span className="text-lg text-accent">{price} грн</span>
           <span className="pb-0.5 text-sm">
-            {weight_value} {serving_type === 'mass' ? 'г' : 'шт'}
+            {weight_value}{' '}
+            {serving_type && (serving_type === 'mass' ? 'г' : 'шт')}
           </span>
         </div>
       </div>

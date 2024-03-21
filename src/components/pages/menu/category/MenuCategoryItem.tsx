@@ -2,7 +2,7 @@
 
 import Modal from '@/components/ui/Modal'
 import useModal from '@/hooks/use-modal'
-import { KitchenCategoryItem } from '@/types/KitchenCategory'
+import { MenuCategoryItemType } from '@/types/Menu'
 import { arrayIsNotEmpty, cn } from '@/utils'
 import Image from 'next/image'
 import { FC, HTMLAttributes } from 'react'
@@ -11,15 +11,26 @@ import MenuCategoryItemDetails from './MenuCategoryItemDetails'
 import MenuCategoryItemIngredients from './MenuCategoryItemIngredients'
 
 interface MenuCategoryItemProps extends HTMLAttributes<HTMLDivElement> {
-  data: KitchenCategoryItem
+  data: MenuCategoryItemType
+  includeModal: boolean
 }
 
 const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
   className,
   data,
+  includeModal,
   ...props
 }) => {
-  const { image, ingredients, name, price, serving_type, weight_value } = data
+  const {
+    description,
+    image,
+    ingredients,
+    name,
+    price,
+    serving_type,
+    volume_type,
+    weight_value,
+  } = data
   const {
     closeModal: closeDetailsModal,
     modalIsOpened: detailsModalIsOpened,
@@ -30,11 +41,11 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
     <>
       <div
         className={cn(
-          (className =
-            'flex items-center justify-between gap-5 hover:cursor-pointer'),
+          (className = 'flex items-center justify-between gap-5'),
+          includeModal && 'hover:cursor-pointer',
           className
         )}
-        onClick={openDetailsModal}
+        onClick={includeModal ? openDetailsModal : undefined}
         {...props}
       >
         <div className="font-light">
@@ -42,10 +53,18 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
           {arrayIsNotEmpty(ingredients) && (
             <MenuCategoryItemIngredients className="mt-1" data={ingredients!} />
           )}
+          <p className="mt-2.5 text-sm">{description}</p>
           <div className="mt-2.5 space-x-2.5">
             <span className="text-lg text-accent">{price} грн</span>
             <span className="pb-0.5 text-sm">
-              {weight_value} {serving_type === 'mass' ? 'г' : 'шт'}
+              {weight_value}{' '}
+              {serving_type
+                ? serving_type === 'mass'
+                  ? 'г'
+                  : 'шт'
+                : volume_type
+                  ? volume_type
+                  : null}
             </span>
           </div>
         </div>
