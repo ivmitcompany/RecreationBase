@@ -3,6 +3,11 @@ import CompanyInfo from '@/components/pages/menu/company/CompanyInfo'
 import MenuNavigation from '@/components/pages/menu/navigation/MenuNavigation'
 import MenuNavigationList from '@/components/pages/menu/navigation/MenuNavigationList'
 import { getBarCategories } from '@/utils/api/menu'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Меню · Бар',
+}
 
 export default async function Bar() {
   const categories = await getBarCategories()
