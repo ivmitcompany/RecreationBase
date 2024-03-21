@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/utils'
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -6,19 +7,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       lastModified: new Date(),
       priority: 1,
-      url: 'http://localhost:3000',
+      url: SITE_URL,
     },
     {
       changeFrequency: 'monthly',
       lastModified: new Date(),
       priority: 0.8,
-      url: 'http://localhost:3000/menu',
+      url: `${SITE_URL}/menu`,
     },
     {
       changeFrequency: 'monthly',
       lastModified: new Date(),
       priority: 0.8,
-      url: 'http://localhost:3000/menu/bar',
+      url: `${SITE_URL}/menu/bar`,
     },
   ]
 }
