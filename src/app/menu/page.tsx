@@ -4,6 +4,11 @@ import MeatInfo from '@/components/pages/menu/meat/MeatInfo'
 import MenuNavigation from '@/components/pages/menu/navigation/MenuNavigation'
 import MenuNavigationList from '@/components/pages/menu/navigation/MenuNavigationList'
 import { getKitchenCategories } from '@/utils/api/menu'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Меню · Кухня',
+}
 
 export default async function Menu() {
   const categories = await getKitchenCategories()
