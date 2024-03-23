@@ -30,7 +30,7 @@ const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
                   'absolute bottom-3 right-[0.3125rem] md:bottom-[16%] md:right-0 md:translate-x-1/2',
                   buttonCircleVariants({ circleColor: 'light' })
                 )}
-                href="/"
+                href="/#about"
               >
                 Детальніше
               </Link>
