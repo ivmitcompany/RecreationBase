@@ -18,7 +18,9 @@ const MenuCategoryAdditionsItem: FC<MenuCategoryAdditionsItemProps> = ({
     )}
     {...props}
   >
-    <p className="leading-[1.125] md:leading-5">{name}</p>
+    <p className="leading-[1.125] first-letter:capitalize md:leading-5">
+      {name}
+    </p>
     <span className="leading-[1.2] text-accent md:leading-tight">
       {price} грн
     </span>
