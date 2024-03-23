@@ -6,6 +6,9 @@ import { getBarCategories } from '@/utils/api/menu'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/menu/bar/',
+  },
   title: 'Меню · Бар',
 }
 

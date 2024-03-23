@@ -3,6 +3,13 @@ import ApartmentsSection from '@/components/pages/home/apartments/ApartmentsSect
 import HeroSection from '@/components/pages/home/hero/HeroSection'
 import ReviewsSection from '@/components/pages/home/reviews/ReviewsSection'
 import ServicesSection from '@/components/pages/home/services/ServicesSection'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+}
 
 export default function Home() {
   return (
