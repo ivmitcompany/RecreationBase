@@ -29,7 +29,7 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
           <FontAccentSpan className="leading-[0.5] text-accent" size="xs">
             {price}
           </FontAccentSpan>
-          грн за годину
+          грн за добу
         </p>
         <div className="mt-[3.75rem] space-y-5 md:mt-16">
           {arrayIsNotEmpty(additions) && (
