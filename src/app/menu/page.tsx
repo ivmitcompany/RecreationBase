@@ -30,7 +30,9 @@ export default async function Menu() {
                 id={category.slug}
                 key={category.id}
               />
-              {category.slug === 'snidanki' && <MeatInfo className="!mt-10" />}
+              {category.slug === 'stravi-na-mangali' && (
+                <MeatInfo className="!mt-10" />
+              )}
             </>
           ))}
         </div>
