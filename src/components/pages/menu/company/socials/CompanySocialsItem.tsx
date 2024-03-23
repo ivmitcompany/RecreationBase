@@ -17,7 +17,7 @@ const CompanySocialsItem: FC<CompanySocialsItemProps> = ({
   ...props
 }) => (
   <li className={cn('w-fit font-light', className)} {...props}>
-    <a className="group flex items-center gap-3" href={href}>
+    <a className="group flex items-center gap-3" href={href} target="_blank">
       <Icon aria-hidden className="text-accent" />
       <div className="flex flex-col gap-1">
         <span className="text-xs" role="text">
