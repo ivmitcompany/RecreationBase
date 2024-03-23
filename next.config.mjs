@@ -3,10 +3,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: '127.0.0.1',
+        hostname: 'logindariy-backend-8fa3f50e2bc2.herokuapp.com',
         pathname: '/**',
-        port: '8010',
-        protocol: 'http',
+        port: '',
+        protocol: 'https',
       },
     ],
   },
