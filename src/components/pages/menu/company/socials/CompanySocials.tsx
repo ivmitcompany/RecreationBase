@@ -25,10 +25,18 @@ const CompanySocials: FC<CompanySocialsProps> = ({ className, ...props }) => {
       >
         +38 068 645 15 95
       </CompanySocialsItem>
-      <CompanySocialsItem href="" icon={Icons.instagram} label="instagram">
+      <CompanySocialsItem
+        href="https://www.instagram.com/logindariy_restaurant/"
+        icon={Icons.instagram}
+        label="instagram"
+      >
         @logindariy_restaurant
       </CompanySocialsItem>
-      <CompanySocialsItem href="" icon={Icons.facebook} label="facebook">
+      <CompanySocialsItem
+        href="https://www.facebook.com/p/Logindariy-Restaurant-100042957592191/"
+        icon={Icons.facebook}
+        label="facebook"
+      >
         Logindariy Restaurant
       </CompanySocialsItem>
     </ul>

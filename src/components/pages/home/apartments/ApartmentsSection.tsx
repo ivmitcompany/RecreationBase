@@ -17,7 +17,7 @@ const ApartmentsSection: FC<ApartmentsSectionProps> = async ({
   return (
     <>
       {arrayIsNotEmpty(apartments) && (
-        <div className={className} id="apartments" {...props}>
+        <div className={className} {...props}>
           <Content>
             <section>
               <CurlyBraceHeading level={2} position="end">
