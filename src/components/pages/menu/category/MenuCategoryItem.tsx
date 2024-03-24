@@ -37,6 +37,8 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
     openModal: openDetailsModal,
   } = useModal()
 
+  const isWeightPresent = weight_value && weight_value !== '0'
+
   return (
     <>
       <div
@@ -56,16 +58,18 @@ const MenuCategoryItem: FC<MenuCategoryItemProps> = ({
           <p className="mt-2.5 text-sm">{description}</p>
           <div className="mt-2.5 space-x-2.5">
             <span className="text-lg text-accent">{price} грн</span>
-            <span className="pb-0.5 text-sm">
-              {weight_value}{' '}
-              {serving_type
-                ? serving_type === 'mass'
-                  ? 'г'
-                  : 'шт'
-                : volume_type
-                  ? volume_type
-                  : null}
-            </span>
+            {isWeightPresent && serving_type && (
+              <span className="pb-0.5 text-sm">
+                {weight_value}{' '}
+                {serving_type
+                  ? serving_type === 'mass'
+                    ? 'г'
+                    : 'шт'
+                  : volume_type
+                    ? volume_type
+                    : null}
+              </span>
+            )}
           </div>
         </div>
         {image && (
