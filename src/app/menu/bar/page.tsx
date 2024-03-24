@@ -29,7 +29,6 @@ export default async function Bar() {
             <MenuCategory
               data={category}
               id={category.slug}
-              includeModal={false}
               key={category.id}
             />
           ))}

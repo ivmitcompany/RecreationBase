@@ -19,7 +19,7 @@ const MenuCategoryItemIngredients: FC<MenuCategoryItemIngredientsProps> = ({
     {data.map((ingredient, index) => (
       <li
         className={cn(
-          "lowercase after:content-[',']",
+          "after:content-[',']",
           index === 0 && "before:content-['(']",
           index === data.length - 1 && "after:content-[')']"
         )}
