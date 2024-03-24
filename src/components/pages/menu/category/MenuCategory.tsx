@@ -25,11 +25,11 @@ const MenuCategory: FC<MenuCategoryProps> = ({
         {note}
       </p>
     )}
+    {arrayIsNotEmpty(items) && <MenuCategoryItems data={items!} />}
     {arrayIsNotEmpty(subcategories) &&
       subcategories!.map((subcategory) => (
         <MenuSubcategory data={subcategory} key={subcategory.id} />
       ))}
-    {arrayIsNotEmpty(items) && <MenuCategoryItems data={items!} />}
     {arrayIsNotEmpty(additions) && <MenuCategoryAdditions data={additions!} />}
   </section>
 )
