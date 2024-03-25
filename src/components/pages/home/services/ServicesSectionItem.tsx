@@ -43,7 +43,7 @@ const ServicesSectionItem: FC<ServicesSectionItemProps> = ({
                 className="object-cover object-center"
                 fill
                 sizes="(max-width: 767px) 100vw, (max-width: 1279) 50vw, 488px"
-                src={getMainImage(images!)}
+                src={getMainImage(images)}
               />
             </>
           ) : (

@@ -66,7 +66,7 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
                 fill
                 quality={80}
                 sizes="(max-width: 767px) 100vw, (max-width: 894x) 50vw, 387px"
-                src={getMainImage(images!)}
+                src={getMainImage(images)}
               />
               {imagesCount > 1 && (
                 <IconButton
@@ -87,7 +87,7 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
         onClose={closeImagesModal}
         size="screen"
       >
-        <ImageSlider className="h-full w-full" images={images!} />
+        <ImageSlider className="h-full w-full" images={images} />
       </Modal>
     </>
   )

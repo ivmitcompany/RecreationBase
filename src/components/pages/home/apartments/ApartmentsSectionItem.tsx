@@ -46,7 +46,7 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
                 fill
                 quality={80}
                 sizes="(max-width: 767px) 100vw, (max-width: 1279) 50vw, 488px"
-                src={getMainImage(images!)}
+                src={getMainImage(images)}
               />
             </>
           ) : (
