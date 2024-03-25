@@ -16,6 +16,10 @@ export const getMainImage = (images: ImageInfo[]) =>
 
 export const isHomePage = (pathname: string) => pathname === '/'
 
+export const transformLineBreaks = (text: string) => {
+  return text.replace(/\r\n/g, '<br />')
+}
+
 export const zeroPadSingleDigit = (num: number) => {
   const isSingleDigit = num < 10
 
