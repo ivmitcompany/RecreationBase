@@ -48,8 +48,8 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
               className={cn(
                 'relative h-auto w-full',
                 !imageObj.direction || imageObj.direction === 'horizontal'
-                  ? 'aspect-[3/2] md:max-h-[26.25rem] md:max-w-[39.375rem]'
-                  : 'aspect-[0.75/1] max-h-[31.5rem] max-w-[20.9375rem] md:max-h-[40rem] md:max-w-[26.625rem]'
+                  ? 'aspect-[3/2] md:max-w-[75%] lg:max-w-[60%]'
+                  : 'aspect-[0.75/1] max-md:max-h-[31.5rem] max-md:max-w-[20.9375rem] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[33%]'
               )}
             >
               <Image
@@ -79,7 +79,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
       ))}
       <p
         className={cn(
-          'absolute bottom-0 left-0 z-[100] bg-light text-accent',
+          'absolute bottom-0 left-0 z-[100] bg-transparent text-accent',
           fontAccentSpanVariants({ size: 'xs' })
         )}
         id={paginationId}
