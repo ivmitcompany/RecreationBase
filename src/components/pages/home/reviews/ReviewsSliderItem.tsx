@@ -1,10 +1,6 @@
 import Review from '@/types/Review'
-import { cn } from '@/utils'
+import { cn, transformLineBreaks } from '@/utils'
 import { FC, HTMLAttributes } from 'react'
-
-const transformLineBreaks = (text: string) => {
-  return text.replace(/\r\n/g, '<br />')
-}
 
 interface ReviewsSliderItemProps extends HTMLAttributes<HTMLDivElement> {
   data: Review

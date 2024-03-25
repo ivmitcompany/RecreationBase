@@ -48,8 +48,8 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
               className={cn(
                 'relative h-auto w-full',
                 !imageObj.direction || imageObj.direction === 'horizontal'
-                  ? 'aspect-[3/2] md:max-h-[26.25rem] md:max-w-[39.375rem]'
-                  : 'aspect-[0.75/1] max-h-[31.5rem] max-w-[20.9375rem] md:max-h-[40rem] md:max-w-[26.625rem]'
+                  ? 'aspect-[3/2] md:max-w-[75%] lg:max-w-[60%]'
+                  : 'aspect-[0.75/1] max-md:max-h-[31.5rem] max-md:max-w-[20.9375rem] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[33%]'
               )}
             >
               <Image
@@ -60,14 +60,15 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
                 src={imageObj.image}
               />
             </div>
-            <div className="flex w-full items-center justify-between md:px-[5.125rem] lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:px-0 xl:px-[5.125rem]">
+            <div className="absolute left-0 top-1/2 flex w-full -translate-y-1/2 items-center justify-between max-md:static">
               <IconButton
-                className="rotate-180"
+                className="rotate-180 bg-transparent"
                 icon={Icons.arrow}
                 id={prevSlideButtonId}
                 label="Стрілка вліво"
               />
               <IconButton
+                className="bg-transparent"
                 icon={Icons.arrow}
                 id={nextSlideButtonId}
                 label="Стрілка вправо"
@@ -78,7 +79,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
       ))}
       <p
         className={cn(
-          'absolute bottom-0 left-0 z-[100] bg-light text-accent',
+          'absolute bottom-0 left-0 z-[100] bg-transparent text-accent',
           fontAccentSpanVariants({ size: 'xs' })
         )}
         id={paginationId}

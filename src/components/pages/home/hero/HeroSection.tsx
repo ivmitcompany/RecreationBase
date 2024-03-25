@@ -36,7 +36,7 @@ const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
               </Link>
             </div>
             <p className="mt-5 text-center md:text-xl">
-              сімейна база відпочинку, розташована посеред мальовничих гір
+              Сімейна база відпочинку, розташована посеред мальовничих гір
               Закарпаття
             </p>
           </article>
