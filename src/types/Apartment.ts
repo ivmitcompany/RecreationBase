@@ -4,7 +4,7 @@ type Apartment = {
   additions?: ApartmentAddition[]
   description: string
   id: number
-  images?: ImageInfo[]
+  images: [] | ImageInfo[]
   people_numbers: number
   price: number
   title: string
