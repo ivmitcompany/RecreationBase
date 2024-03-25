@@ -35,7 +35,7 @@ const ServicesSection: FC<ServicesSectionProps> = async ({
                 circleSize="sm"
                 circleSpacing="tight"
                 className="mt-auto self-end"
-                href="/"
+                href="/menu"
               >
                 <FontAccentSpan className="mr-1.5 uppercase" size="xxs">
                   M
