@@ -1,7 +1,7 @@
 import DetailsModal, { DetailsModalProps } from '@/components/ui/DetailsModal'
 import FontAccentSpan from '@/components/ui/FontAccentSpan'
 import Apartment from '@/types/Apartment'
-import { arrayIsNotEmpty } from '@/utils'
+import { arrayIsNotEmpty, transformLineBreaks } from '@/utils'
 import { FC } from 'react'
 
 const getPeopleString = (peopleNumber: number) => {
@@ -19,6 +19,8 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
   data: { additions, description, people_numbers, price, title },
   ...props
 }) => {
+  const transformedDescription = transformLineBreaks(description)
+
   return (
     <DetailsModal className={className} {...props}>
       <div className="flex h-full flex-col">
@@ -52,10 +54,7 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
               </ul>
             </div>
           )}
-          <div className="space-y-[0.3125rem] md:space-y-2.5">
-            <p>{description}</p>
-            <p>на території комплексу також є парковка</p>
-          </div>
+          <p>{transformedDescription}</p>
         </div>
         <a
           className="mt-[3.75rem] block pt-5 text-end text-lg uppercase transition-colors hover:text-accent md:mt-auto"
