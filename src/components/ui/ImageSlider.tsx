@@ -60,7 +60,7 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
                 src={imageObj.image}
               />
             </div>
-            <div className="flex w-full items-center justify-between md:px-[5.125rem] lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 lg:px-0 xl:px-[5.125rem]">
+            <div className="absolute left-0 top-1/2 flex w-full -translate-y-1/2 items-center justify-between max-md:static">
               <IconButton
                 className="rotate-180"
                 icon={Icons.arrow}
