@@ -41,8 +41,8 @@ const ImageSlider: FC<ImageSliderProps> = ({ className, images, ...props }) => {
       {...sliderSettings}
       {...props}
     >
-      {images.map((imageObj, index) => (
-        <SwiperSlide key={index + 1}>
+      {images.map((imageObj) => (
+        <SwiperSlide key={imageObj.id}>
           <div className="relative flex h-full w-full flex-col items-center justify-center gap-8">
             <div
               className={cn(
