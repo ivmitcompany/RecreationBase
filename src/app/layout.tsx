@@ -4,6 +4,7 @@ import Footer from '@/components/layout/footer/Footer'
 import Header from '@/components/layout/header/Header'
 import Providers from '@/store/providers'
 import { SITE_URL, cn } from '@/utils'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { ReactNode } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Footer />
         </Providers>
       </body>
+      <GoogleAnalytics gaId="G-98MEGPHR50" />
     </html>
   )
 }

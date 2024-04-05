@@ -11,9 +11,10 @@
     "eslint:write": "eslint --fix ."
   },
   "dependencies": {
+    "@next/third-parties": "^14.1.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "next": "14.1.0",
+    "next": "^14.1.4",
     "react": "^18",
     "react-dom": "^18",
     "swiper": "^11.0.6",
