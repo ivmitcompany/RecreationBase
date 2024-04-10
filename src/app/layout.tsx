@@ -4,7 +4,7 @@ import Footer from '@/components/layout/footer/Footer'
 import Header from '@/components/layout/header/Header'
 import Providers from '@/store/providers'
 import { SITE_URL, cn } from '@/utils'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { ReactNode } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -53,6 +53,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           luxurious.variable
         )}
       >
+        <GoogleTagManager gtmId="GTM-TCMRDQJ2" />
         <Providers>
           <Header />
           <main className="flex-shrink flex-grow basis-0">{children}</main>
