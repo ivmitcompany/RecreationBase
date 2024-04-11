@@ -33,7 +33,7 @@ const CompanySocials: FC<CompanySocialsProps> = ({ className, ...props }) => {
         @logindariy_restaurant
       </CompanySocialsItem>
       <CompanySocialsItem
-        href="https://www.facebook.com/p/Logindariy-Restaurant-100042957592191/"
+        href="https://www.facebook.com/p/Logindariy-Restaurantt-100063863570860/"
         icon={Icons.facebook}
         label="facebook"
       >
