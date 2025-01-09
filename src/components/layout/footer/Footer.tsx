@@ -1,5 +1,3 @@
-import CompanyInfo from '@/components/pages/menu/company/CompanyInfo'
-import CompanySocials from '@/components/pages/menu/company/socials/CompanySocials'
 import Contacts from '@/components/ui/Contacts'
 import Content from '@/components/ui/Content'
 import Logo from '@/components/ui/Logo'

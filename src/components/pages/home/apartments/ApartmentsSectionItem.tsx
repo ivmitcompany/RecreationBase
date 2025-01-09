@@ -1,6 +1,5 @@
 'use client'
 
-import FontAccentSpan from '@/components/ui/FontAccentSpan'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/button/Button'
@@ -36,7 +35,7 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
         className={cn('group/item md:even:mt-[11.25rem]', className)}
         {...props}
       >
-        <ApartmentHeading title={title} className={'w-full'} />
+        <ApartmentHeading className="w-full" title={title} />
         <div className="relative mt-2.5 aspect-square">
           {imagesArePresent ? (
             <>
