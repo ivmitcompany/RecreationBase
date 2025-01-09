@@ -16,25 +16,25 @@ const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
     >
       <div
         style={{
+          height: '100%',
+          left: 0,
+          overflow: 'hidden',
           position: 'absolute',
           top: 0,
-          left: 0,
           width: '100%',
-          height: '100%',
-          overflow: 'hidden',
         }}
       >
         <iframe
-          src="https://player.vimeo.com/video/1045461131?autoplay=1&loop=1&muted=1&background=1"
-          frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
+          frameBorder="0"
+          src="https://player.vimeo.com/video/1045461131?autoplay=1&loop=1&muted=1&background=1"
           style={{
+            height: '100%',
+            left: 0,
+            objectFit: 'cover',
             position: 'absolute',
             top: 0,
-            left: 0,
             width: '100%',
-            height: '100%',
-            objectFit: 'cover',
           }}
           title="hero-video"
         ></iframe>
