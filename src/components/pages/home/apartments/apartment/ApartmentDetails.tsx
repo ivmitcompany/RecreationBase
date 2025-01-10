@@ -24,20 +24,17 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
   return (
     <DetailsModal className={className} {...props}>
       <div className="flex h-full flex-col">
-        <h3 className="text-[1.875rem] font-light uppercase leading-[1.35]">
+        <h3 className="text-[1.2rem] font-light uppercase leading-[1.35]">
           {title}
         </h3>
-        <p className="flex items-baseline gap-3 md:items-center">
-          <FontAccentSpan className="leading-[0.5] text-accent" size="xs">
-            {price}
-          </FontAccentSpan>
-          грн за добу
+        <p className="flex items-baseline gap-3 md:mt-10 md:items-center">
+          <h1 className="text-lg leading-[0.5]">{price} грн за добу</h1>
         </p>
-        <div className="mt-[3.75rem] space-y-5 md:mt-16">
+        <div className="mt-[3.75rem] space-y-10 md:mt-10">
           {arrayIsNotEmpty(additions) && (
-            <div className="space-y-10">
-              <h4 className="md:text-lg">
-                <span className="text-lg uppercase md:text-xl" role="text">
+            <div className="space-y-5">
+              <h4 className="md:text-sm">
+                <span className="text-lg uppercase md:text-sm" role="text">
                   Зручності в номері
                 </span>{' '}
                 ({getPeopleString(people_numbers)})
@@ -60,8 +57,7 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
           className="mt-[3.75rem] block pt-5 text-end text-lg uppercase transition-colors hover:text-accent md:mt-auto"
           href="tel:380678279007"
         >
-          бронювання <span className="text-accent">&#91;</span>+380678279007
-          <span className="text-accent">&#93;</span>
+          бронювання +380678279007 +380678379007
         </a>
       </div>
     </DetailsModal>

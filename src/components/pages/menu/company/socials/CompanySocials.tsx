@@ -1,5 +1,3 @@
-// TODO: Update socials hrefs
-
 import { Icons } from '@/components/ui/Icons'
 import { cn } from '@/utils'
 import React, { FC, HTMLAttributes } from 'react'
@@ -10,35 +8,22 @@ interface CompanySocialsProps extends HTMLAttributes<HTMLUListElement> {}
 
 const CompanySocials: FC<CompanySocialsProps> = ({ className, ...props }) => {
   return (
-    <ul className={cn('flex flex-col gap-4', className)} {...props}>
+    <ul className={cn('flex justify-center space-x-4', className)} {...props}>
       <CompanySocialsItem
-        href="tel:380678279007"
-        icon={Icons.phone}
-        label="телефон"
-      >
-        +38 067 827 90 07
-      </CompanySocialsItem>
-      <CompanySocialsItem
-        href="tel:380686451595"
-        icon={Icons.order}
-        label="доставка"
-      >
-        +38 068 645 15 95
-      </CompanySocialsItem>
-      <CompanySocialsItem
+        className="hover:text-accent"
         href="https://www.instagram.com/logindariy_restaurant/"
-        icon={Icons.instagram}
         label="instagram"
-      >
-        @logindariy_restaurant
-      </CompanySocialsItem>
+      ></CompanySocialsItem>
       <CompanySocialsItem
+        className="hover:text-accent"
         href="https://www.facebook.com/p/Logindariy-Restaurantt-100063863570860/"
-        icon={Icons.facebook}
         label="facebook"
-      >
-        Logindariy Restaurant
-      </CompanySocialsItem>
+      ></CompanySocialsItem>
+      <CompanySocialsItem
+        className="hover:text-accent"
+        href="https://www.tiktok.com/@logindariy.restaurant?_t=ZM-8svEJLlKAUg&_r=1"
+        label="tiktok"
+      ></CompanySocialsItem>
     </ul>
   )
 }

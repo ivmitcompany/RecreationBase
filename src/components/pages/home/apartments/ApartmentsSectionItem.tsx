@@ -36,7 +36,7 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
         className={cn('group/item md:even:mt-[11.25rem]', className)}
         {...props}
       >
-        <ApartmentHeading title={title} />
+        <ApartmentHeading title={title} className={'w-full'} />
         <div className="relative mt-2.5 aspect-square">
           {imagesArePresent ? (
             <>
@@ -53,11 +53,11 @@ const ApartmentsSectionItem: FC<ApartmentsSectionItemProps> = ({
             <ImagePlaceholder className="h-full w-full" />
           )}
         </div>
-        <Button className="ml-auto mt-2.5 md:mt-5" onClick={openDetailsModal}>
-          Детальніш
-          <FontAccentSpan className="ml-[0.0625rem] uppercase" size="xs">
-            e
-          </FontAccentSpan>
+        <Button
+          className="ml-auto mt-2.5 text-sm md:mt-5"
+          onClick={openDetailsModal}
+        >
+          Детальніше
         </Button>
       </article>
       <Modal isOpen={detailsModalIsOpened} onClose={closeDetailsModal}>

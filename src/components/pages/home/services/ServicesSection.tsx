@@ -1,8 +1,7 @@
 import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
-import FontAccentSpan from '@/components/ui/FontAccentSpan'
-import LinkButton from '@/components/ui/button/LinkButton'
-import { getCompanyServices } from '@/utils'
+import { buttonCircleVariants } from '@/components/ui/button/Button'
+import { cn, getCompanyServices } from '@/utils'
 import Image from 'next/image'
 import React, { FC, HTMLAttributes } from 'react'
 
@@ -17,42 +16,91 @@ const ServicesSection: FC<ServicesSectionProps> = async ({
   const companyServices = await getCompanyServices()
 
   return (
-    <div className={className} {...props}>
+    <div
+      className={cn('mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8', className)}
+      {...props}
+    >
       <Content>
         <section>
-          <CurlyBraceHeading level={2}>Послуги</CurlyBraceHeading>
-          <div className="mt-11 grid gap-[3.75rem] md:mt-16 md:grid-cols-2 md:gap-5 lg:grid-cols-3 xl:grid-cols-4">
+          <CurlyBraceHeading
+            className="text-center text-4xl font-extrabold text-gray-800"
+            level={2}
+          >
+            Послуги
+          </CurlyBraceHeading>
+          <div className="mt-12 grid gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {companyServices.map((item) => (
               <ServicesSectionItem data={item} key={item.id} />
             ))}
-            <div className="flex aspect-[1.8/1] flex-col gap-5 sm:aspect-[2.25/1] md:aspect-[0.79/1]">
-              <p>
-                на території також знаходиться ресторан, де ви можете спробувати
-                страви від нашого шеф кухаря
+            <div className="flex flex-col gap-6 rounded-lg border border-gray-300 bg-white p-6 shadow-sm transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+              <p className="text-gray-600">
+                На території є ресторан, де наш шеф-кухар запропонує страви
+                різних кухонь світу, що подарують незабутні гастрономічні
+                враження.
               </p>
-              <LinkButton
-                buttonSize="sm"
-                circleSize="sm"
-                circleSpacing="tight"
-                className="mt-auto self-end"
-                href="/menu"
+              <a
+                className={buttonCircleVariants({
+                  circleColor: 'accent',
+                  circleSize: 'md',
+                  circleSpacing: 'default',
+                })}
+                href="https://logindariy.choiceqr.com/online-menu"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <FontAccentSpan className="mr-1.5 uppercase" size="xxs">
-                  M
-                </FontAccentSpan>
-                еню
-              </LinkButton>
+                Меню
+              </a>
             </div>
-            <article className="flex flex-col-reverse gap-2.5 md:flex-col">
-              <div className="relative aspect-[0.96/1] md:aspect-[0.79/1]">
+            <article className="flex flex-col gap-4 transition-transform duration-300 hover:scale-105">
+              <div className="relative h-64 overflow-hidden rounded-lg shadow-md md:h-72 lg:h-80">
                 <Image
                   alt="Ресторан"
-                  fill
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw"
+                  className="transition-transform duration-300 hover:scale-110"
+                  layout="fill"
+                  objectFit="cover"
+                  sizes="(max-width: 1024px) 50vw, 33vw"
                   src="/restaurant.jpg"
                 />
               </div>
-              <h3 className="text-lg uppercase md:text-base">Ресторан</h3>
+              <h3 className="text-center text-lg font-semibold uppercase text-gray-800 md:text-left">
+                Ресторан
+              </h3>
+            </article>
+            <div className="flex flex-col gap-6 rounded-lg border border-gray-300 bg-white p-6 shadow-sm transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+              <h3 className="text-center text-xl font-bold uppercase text-gray-800 md:text-left">
+                Унікальний крафтовий магазин
+              </h3>
+              <p className="text-gray-600">
+                В нашому магазині ви знайдете ексклюзивні вироби ручної роботи
+                та унікальні подарунки.
+              </p>
+              <a
+                className={buttonCircleVariants({
+                  circleColor: 'accent',
+                  circleSize: 'md',
+                  circleSpacing: 'default',
+                })}
+                href="https://logindariy.com.ua/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Дізнатися більше
+              </a>
+            </div>
+            <article className="flex flex-col gap-4 transition-transform duration-300 hover:scale-105">
+              <div className="relative h-64 overflow-hidden rounded-lg shadow-md md:h-72 lg:h-80">
+                <Image
+                  alt="Крафтовий магазин"
+                  className="transition-transform duration-300 hover:scale-110"
+                  layout="fill"
+                  objectFit="cover"
+                  sizes="(max-width: 1024px) 50vw, 33vw"
+                  src="/craft-shop.jpg"
+                />
+              </div>
+              <h3 className="text-center text-lg font-semibold uppercase text-gray-800 md:text-left">
+                Крафтовий магазин
+              </h3>
             </article>
           </div>
         </section>

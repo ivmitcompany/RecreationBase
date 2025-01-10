@@ -41,31 +41,28 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
     <>
       <article
         className={cn(
-          'grid w-full max-w-[55.875rem] gap-[1.875rem] border-t border-light pt-2.5 even:ml-auto md:grid-cols-2 md:gap-16 md:pt-5',
+          'md:border-t-3 relative grid w-full max-w-[55.875rem] gap-[1.875rem] border-t border-light pt-2.5 even:ml-auto md:grid-cols-[2fr,3fr] md:gap-16 md:pt-5',
           className
         )}
         {...props}
       >
+        {/* Опис */}
         <div className="relative flex justify-between gap-10">
-          <h3 className="max-w-56 font-medium !leading-[1.2] md:max-w-72 md:text-xl">
+          <h2 className="max-w-56 font-medium !leading-[1.2] md:max-w-72 md:text-lg">
             {description}
-          </h3>
-          <FontAccentSpan
-            className="md:absolute md:bottom-0 md:right-0"
-            size="sm"
-          >
-            {zeroPadSingleDigit(index)}
-          </FontAccentSpan>
+          </h2>
         </div>
+
+        {/* Зображення */}
         <div className="relative aspect-[1.55/1]">
           {imagesArePresent ? (
             <>
               <Image
                 alt={description}
-                className="object-cover object-center"
+                className="object-cover object-center md:h-auto md:w-[120%]"
                 fill
                 quality={80}
-                sizes="(max-width: 767px) 100vw, (max-width: 894x) 50vw, 387px"
+                sizes="(max-width: 767px) 100vw, (max-width: 894px) 50vw, 387px"
                 src={getMainImage(images)}
               />
               {imagesCount > 1 && (
@@ -82,6 +79,8 @@ const AboutSectionItem: FC<AboutSectionItemProps> = ({
           )}
         </div>
       </article>
+
+      {/* Модальне вікно для зображень */}
       <Modal
         isOpen={imagesModalIsOpened}
         onClose={closeImagesModal}

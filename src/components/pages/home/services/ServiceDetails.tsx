@@ -15,29 +15,20 @@ const ServiceDetails: FC<ServiceDetailsProps> = ({
   return (
     <DetailsModal className={className} {...props}>
       <div className="flex h-full flex-col">
-        <h3 className="text-[1.875rem] font-light uppercase leading-[1.35]">
+        <h3 className="text-[1.2rem] font-light uppercase leading-[1.35]">
           {title}
         </h3>
-        <p className="flex items-baseline gap-3 md:items-center">
-          <FontAccentSpan className="leading-[0.5] text-accent" size="xs">
-            {price}
-          </FontAccentSpan>
-          грн за годину
+        <p className="flex items-baseline gap-3 md:mt-10 md:items-center">
+          <h1 className="text-lg leading-[0.5]">{price} грн за годину</h1>
         </p>
-        <div className="mt-[3.75rem] space-y-2.5 md:mt-16">
+        <div className="mt-[3.75rem] space-y-2.5 md:mt-10">
           <p>
-            мінімальне замовлення –{' '}
-            <span className="text-accent" role="text">
-              {min_order_time || 3}
-            </span>{' '}
-            години
+            Мінімальне замовлення –{' '}
+            <span role="text">{min_order_time || 3}</span> години
           </p>
           <p>
-            за четверту та наступні години оплата становить{' '}
-            <span className="text-accent" role="text">
-              {order_excess_price || 1000}
-            </span>{' '}
-            грн/год
+            За четверту та наступні години оплата становить по{' '}
+            <span role="text">{order_excess_price || 1000}</span> грн/год
           </p>
           {note && <p>{note}</p>}
           <p>{description}</p>
@@ -46,8 +37,7 @@ const ServiceDetails: FC<ServiceDetailsProps> = ({
           className="mt-[3.75rem] block pt-5 text-end text-lg uppercase transition-colors hover:text-accent md:mt-auto"
           href="tel:380678279007"
         >
-          бронювання <span className="text-accent">&#91;</span>+380678279007
-          <span className="text-accent">&#93;</span>
+          бронювання +380678279007 +380678379007
         </a>
       </div>
     </DetailsModal>

@@ -1,5 +1,6 @@
+import CompanySocials from '@/components/pages/menu/company/socials/CompanySocials'
 import Link from 'next/link'
-import { AnchorHTMLAttributes, FC } from 'react'
+import React, { AnchorHTMLAttributes, FC } from 'react'
 
 import { Icons } from './Icons'
 
