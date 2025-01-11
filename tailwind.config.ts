@@ -11,9 +11,9 @@ const config: Config = {
     extend: {
       animation: { fadeIn: 'fadeIn 0.2s ease-in-out' },
       colors: {
-        accent: '#a10702',
-        dark: '#231f20',
-        graphite: '#363333',
+        accent: '#ffd9b6',
+        dark: '#122223',
+        graphite: '#122223',
         light: '#f3f3f3',
       },
       fontFamily: {

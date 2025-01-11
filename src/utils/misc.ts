@@ -2,7 +2,7 @@ import ImageInfo from '@/types/ImageInfo'
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
-import { arrayIsNotEmpty, findObjectWithField } from '.'
+import { findObjectWithField } from '.'
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
 

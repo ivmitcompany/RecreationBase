@@ -19,9 +19,7 @@ const ReviewsSliderItem: FC<ReviewsSliderItemProps> = ({
       {...props}
     >
       <h3 className="flex items-center justify-between gap-5 text-lg uppercase">
-        <span>&#91;</span>
         {author}
-        <span>&#93;</span>
       </h3>
       <p
         className="relative mt-[3.75rem] pb-[1.875rem] md:text-lg"

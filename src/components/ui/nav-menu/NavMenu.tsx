@@ -45,8 +45,14 @@ const NavMenu: FC<NavMenuProps> = ({
     <MenuItem href="/#apartments" isUnderline={itemsUnderline}>
       Апартаменти
     </MenuItem>
-    <MenuItem href="/menu" isUnderline={itemsUnderline}>
+    <MenuItem
+      href="https://logindariy.choiceqr.com/online-menu"
+      isUnderline={itemsUnderline}
+    >
       Меню
+    </MenuItem>
+    <MenuItem href="https://logindariy.com.ua/" isUnderline={itemsUnderline}>
+      Крафтовий магазин
     </MenuItem>
   </ul>
 )

@@ -1,7 +1,6 @@
 import Content from '@/components/ui/Content'
 import { buttonCircleVariants } from '@/components/ui/button/Button'
 import { cn } from '@/utils'
-import Image from 'next/image'
 import Link from 'next/link'
 import { FC, HTMLAttributes } from 'react'
 
@@ -11,37 +10,54 @@ interface HeroSectionProps extends HTMLAttributes<HTMLDivElement> {}
 
 const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
   return (
-    <div className={cn('bg-graphite text-light', className)} {...props}>
-      <Content>
-        <section className="pt-10">
+    <div
+      className={cn('relative h-screen bg-graphite text-light', className)}
+      {...props}
+    >
+      <div
+        style={{
+          height: '100%',
+          left: 0,
+          overflow: 'hidden',
+          position: 'absolute',
+          top: 0,
+          width: '100%',
+        }}
+      >
+        <iframe
+          allow="autoplay; fullscreen; picture-in-picture"
+          frameBorder="0"
+          src="https://player.vimeo.com/video/1045461131?autoplay=1&loop=1&muted=1&background=1"
+          style={{
+            height: '100%',
+            left: 0,
+            objectFit: 'cover',
+            position: 'absolute',
+            top: 0,
+            width: '100%',
+          }}
+          title="hero-video"
+        ></iframe>
+      </div>
+
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 text-center">
+        <Content>
           <HeroHeading />
-          <article className="mx-auto max-w-[20.9375rem] md:max-w-[31.25rem]">
-            <div className="relative mx-auto aspect-[0.84/1] max-h-[25rem] md:aspect-square md:max-h-none">
-              <Image
-                alt="База відпочинку Logindariy"
-                className="mx-auto object-cover object-center"
-                fill
-                priority
-                sizes="(max-width: 767px) 335px, 500px"
-                src="/hero-img.jpg"
-              />
-              <Link
-                className={cn(
-                  'absolute bottom-3 right-[0.3125rem] md:bottom-[16%] md:right-0 md:translate-x-1/2',
-                  buttonCircleVariants({ circleColor: 'light' })
-                )}
-                href="/#about"
-              >
-                Детальніше
-              </Link>
-            </div>
-            <p className="mt-5 text-center md:text-xl">
-              Сімейна база відпочинку, розташована посеред мальовничих гір
-              Закарпаття
-            </p>
-          </article>
-        </section>
-      </Content>
+          <p className="mx-auto mt-5 max-w-[40rem] text-lg md:text-xl lg:text-2xl">
+            Сімейний готельно-ресторанний комплекс, розташований посеред
+            мальовничих гір Закарпаття
+          </p>
+          <Link
+            className={cn(
+              'mt-10',
+              buttonCircleVariants({ circleColor: 'light' })
+            )}
+            href="/#about"
+          >
+            Детальніше
+          </Link>
+        </Content>
+      </div>
     </div>
   )
 }

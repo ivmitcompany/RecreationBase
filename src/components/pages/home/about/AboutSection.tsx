@@ -17,7 +17,7 @@ const AboutSection: FC<AboutSectionProps> = async ({ className, ...props }) => {
         <div className={cn('bg-graphite text-light', className)} {...props}>
           <Content>
             <section>
-              <CurlyBraceHeading level={2}>Про нас</CurlyBraceHeading>
+              <CurlyBraceHeading level={4}>Про нас</CurlyBraceHeading>
               <div className="mt-[3.75rem] grid gap-[3.75rem] md:mt-20 md:gap-20">
                 {aboutItems.map((item, index) => (
                   <AboutSectionItem
