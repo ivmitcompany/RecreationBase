@@ -17,27 +17,56 @@ export const buttonVariants = cva(
 )
 
 export const buttonCircleVariants = cva(
-  'flex items-center justify-center text-center break-words border border-accent transition-colors leading-[1.2] rounded-full font-light uppercase',
+  'flex items-center justify-center text-center break-words border transition-colors leading-[1.2] rounded-full font-medium uppercase shadow-lg',
   {
+    compoundVariants: [
+      {
+        circleColor: 'accent',
+        class: 'md:hover:shadow-lg',
+        shadow: 'medium',
+      },
+      {
+        circleColor: 'dark',
+        class: 'md:hover:shadow-md',
+        shadow: 'subtle',
+      },
+    ],
     defaultVariants: {
       circleColor: 'default',
       circleSize: 'default',
       circleSpacing: 'default',
     },
     variants: {
+      borderStyle: {
+        dashed: 'border-dashed',
+        dotted: 'border-dotted',
+        none: 'border-none',
+        solid: 'border-solid',
+      },
       circleColor: {
-        default: 'text-dark md:hover:text-light md:hover:bg-accent',
-        light: 'text-light md:hover:bg-accent',
+        accent: 'text-light bg-accent border-accent md:hover:bg-dark',
+        dark: 'text-light bg-dark border-dark md:hover:bg-accent',
+        default:
+          'text-dark bg-white border-accent md:hover:text-light md:hover:bg-accent',
+        light: 'text-light bg-transparent border-light md:hover:bg-accent',
       },
       circleSize: {
-        default: 'h-32 w-32 md:w-44 md:h-44 px-4 md:px-8 md:text-lg',
-        md: 'w-[8.5rem] h-[8.5rem] md:w-36 md:h-36 px-[1.875rem md:text-lg',
-        sm: 'w-20 h-20 px-5',
-        xs: 'w-10 h-10 px-2.5',
+        default: 'h-32 w-32 md:w-44 md:h-44 px-4 md:px-8 text-base',
+        md: 'w-[8.5rem] h-[8.5rem] md:w-36 md:h-36 px-[1.875rem] text-base',
+        sm: 'w-20 h-20 px-5 text-sm',
+        xs: 'w-10 h-10 px-2.5 text-xs',
       },
       circleSpacing: {
         default: 'ml-5 md:ml-[1.875rem]',
-        tight: 'ml-5',
+        loose: 'ml-8',
+        none: 'ml-0',
+        tight: 'ml-2.5',
+      },
+      shadow: {
+        large: 'shadow-lg',
+        medium: 'shadow-md',
+        none: 'shadow-none',
+        subtle: 'shadow-sm',
       },
     },
   }

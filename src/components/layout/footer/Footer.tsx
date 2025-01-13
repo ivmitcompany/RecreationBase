@@ -3,7 +3,7 @@ import Content from '@/components/ui/Content'
 import Logo from '@/components/ui/Logo'
 import NavMenu from '@/components/ui/nav-menu/NavMenu'
 import { cn } from '@/utils'
-import { FC, HTMLAttributes } from 'react'
+import React, { FC, HTMLAttributes } from 'react'
 
 interface FooterProps extends HTMLAttributes<HTMLDivElement> {}
 

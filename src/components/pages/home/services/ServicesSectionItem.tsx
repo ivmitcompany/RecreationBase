@@ -60,8 +60,7 @@ const ServicesSectionItem: FC<ServicesSectionItemProps> = ({
             )}
             onClick={openDetailsModal}
           >
-            Детальніш
-            <FontAccentSpan size="xxs">e</FontAccentSpan>
+            Детальніше
           </Button>
         </div>
         <h3 className="text-lg uppercase md:text-base">{title}</h3>
