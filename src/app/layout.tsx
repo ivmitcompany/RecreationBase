@@ -54,6 +54,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <GoogleTagManager gtmId="GTM-TCMRDQJ2" />
+        <GoogleTagManager gtmId="GTM-58XM9F4F" />
+
         <Providers>
           <Header />
           <main className="flex-shrink flex-grow basis-0">{children}</main>
