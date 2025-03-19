@@ -46,6 +46,9 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html className="scroll-smooth" lang="ua">
+      <head>
+        <GoogleAnalytics gaId="AW-16912349117" />
+      </head>
       <body
         className={cn(
           'relative flex min-h-screen flex-col font-default text-dark',
@@ -62,7 +65,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Footer />
         </Providers>
       </body>
-      <GoogleAnalytics gaId="G-98MEGPHR50" />
     </html>
   )
 }
