@@ -17,6 +17,10 @@ const reviewsSliderSettings: SwiperProps = {
     1024: { slidesPerView: 3, spaceBetween: 48 },
     1280: { slidesPerView: 3, spaceBetween: 96 },
   },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
   modules: [Pagination],
   pagination: {
     bulletActiveClass: 'text-light',
@@ -29,7 +33,7 @@ const reviewsSliderSettings: SwiperProps = {
       )
     },
   },
-  slidesPerView: 1,
+  slidesPerView: 1
 }
 
 interface ReviewsSliderProps extends SwiperProps {
@@ -48,14 +52,16 @@ const ReviewsSlider: FC<ReviewsSliderProps> = ({
       {!showReviews ? (
         <div className="text-center">
           <button
-            className="rounded-md px-4 py-1 text-sm text-light transition-opacity hover:bg-black/10"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-accent/10 px-8 py-3 text-base font-medium text-light transition-all duration-300 hover:bg-accent/20"
             onClick={() => setShowReviews(true)}
           >
-            Побачити відгуки
+            <span className="relative z-10">Побачити відгуки</span>
+            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
           </button>
         </div>
       ) : (
-        <>
+        <div className="relative">
+          <div className="absolute -inset-4 -z-10 rounded-2xl bg-accent/5 blur-2xl" />
           <Swiper {...reviewsSliderSettings} {...props}>
             {data.map((review) => (
               <SwiperSlide className="h-auto" key={review.id}>
@@ -64,18 +70,19 @@ const ReviewsSlider: FC<ReviewsSliderProps> = ({
             ))}
           </Swiper>
           <div
-            className="mt-[3.75rem] flex justify-center gap-2.5 md:mt-[4.375rem] md:gap-4"
+            className="mt-12 flex justify-center gap-3 md:mt-16 md:gap-4"
             id={bulletsId}
           />
-          <div className="mt-4 text-center">
+          <div className="mt-8 text-center">
             <button
-              className="rounded-md px-4 py-2 text-sm text-light transition-opacity hover:bg-black/10"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-accent/10 px-8 py-3 text-base font-medium text-light transition-all duration-300 hover:bg-accent/20"
               onClick={() => setShowReviews(false)}
             >
-              Сховати відгуки
+              <span className="relative z-10">Сховати відгуки</span>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
             </button>
           </div>
-        </>
+        </div>
       )}
     </div>
   )

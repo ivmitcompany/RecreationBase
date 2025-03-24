@@ -10,7 +10,7 @@ const CompanyRulesItem: FC<CompanyRulesItemProps> = ({
   ...props
 }) => (
   <li className={cn('flex gap-4', className)} {...props}>
-    <Icons.tilda.outline aria-hidden className="mt-1.5 text-accent" />
+    <Icons.tilda.solid aria-hidden className="mt-1.5 text-accent" />
     <p className="text-[0.875rem] font-light leading-5">{children}</p>
   </li>
 )

@@ -1,4 +1,3 @@
-import CompanySocials from '@/components/pages/menu/company/socials/CompanySocials'
 import Link from 'next/link'
 import React, { AnchorHTMLAttributes, FC } from 'react'
 
