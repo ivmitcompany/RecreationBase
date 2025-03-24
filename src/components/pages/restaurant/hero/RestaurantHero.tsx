@@ -22,6 +22,8 @@ const RestaurantHero: FC<RestaurantHeroProps> = ({ className, ...props }) => {
           loop
           muted
           playsInline
+          preload="auto"
+          poster="/restaurant-hero.jpeg"
         >
           <source
             src="https://res.cloudinary.com/db8gndp2b/video/upload/v1742418835/IMG_1996_adebbz.mp4"
