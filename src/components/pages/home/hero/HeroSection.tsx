@@ -63,7 +63,7 @@ const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
       {...props}
     >
       <div
-        className="absolute inset-0 h-full w-full overflow-hidden"
+        className="absolute inset-0 h-full w-full overflow-hidden bg-[url('/restaurant-hero.jpeg')] bg-cover bg-center bg-no-repeat before:absolute before:inset-0 before:bg-black/40"
         ref={videoRef}
       >
         <iframe
