@@ -55,9 +55,9 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
         </div>
         <a
           className="mt-[3.75rem] block pt-5 text-end text-lg uppercase transition-colors hover:text-accent md:mt-auto"
-          href="tel:380678279007"
+          href="tel:380678379007"
         >
-          бронювання +380678279007 +380678379007
+          бронювання +380678379007
         </a>
       </div>
     </DetailsModal>

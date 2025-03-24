@@ -1,6 +1,6 @@
 'use client'
 
-import { cn, isHomePage } from '@/utils'
+import { cn, isHomePage, isPoolsPage, isRestaurantPage } from '@/utils'
 import { usePathname } from 'next/navigation'
 import { FC, HTMLAttributes } from 'react'
 
@@ -15,7 +15,13 @@ const HeaderContainer: FC<HeaderContainerProps> = ({
 
   return (
     <header
-      className={cn(isHomePage(pathname) && 'text-light', className)}
+      className={cn(
+        (isHomePage(pathname) ||
+          isRestaurantPage(pathname) ||
+          isPoolsPage(pathname)) &&
+          'text-light',
+        className
+      )}
       {...props}
     >
       {children}

@@ -1,10 +1,13 @@
+'use client'
+
 import { cn } from '@/utils'
 import { VariantProps, cva } from 'class-variance-authority'
-import { FC, HTMLAttributes } from 'react'
+import { motion } from 'framer-motion'
+import { FC, forwardRef } from 'react'
 
 import MenuItem from './NavMenuItem'
 
-const menuVariants = cva('flex flex-col flex-wrap md:flex-row', {
+const menuVariants = cva('flex flex-col md:flex-row', {
   defaultVariants: {
     align: 'default',
     itemSize: 'default',
@@ -15,19 +18,39 @@ const menuVariants = cva('flex flex-col flex-wrap md:flex-row', {
       center: 'items-center justify-center',
       default: 'items-start md:items-center justify-center md:justify-start',
     },
-    itemSize: { default: '*:text-base', lg: '*:text-2xl *:md:text-base' },
+    itemSize: {
+      default: '*:text-sm',
+      lg: '*:text-xl *:md:text-lg *:font-dark',
+    },
     spacing: {
-      default: 'gap-4 md:gap-x-10 md:gap-y-5',
-      wide: 'gap-[3.75rem] md:gap-x-10 md:gap-y-5',
+      default: 'gap-5 md:gap-x-6 md:gap-y-6',
+      wide: 'gap-7 md:gap-x-10 md:gap-y-10',
     },
   },
 })
 
-interface NavMenuProps
-  extends HTMLAttributes<HTMLUListElement>,
-    VariantProps<typeof menuVariants> {
+type NavMenuProps = VariantProps<typeof menuVariants> & {
+  className?: string
   itemsUnderline?: boolean
 }
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.1,
+    },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, x: -20 },
+  show: { opacity: 1, transition: { stiffness: 100, type: 'spring' }, x: 0 },
+}
+
+const MotionUl = motion.ul
 
 const NavMenu: FC<NavMenuProps> = ({
   align,
@@ -35,26 +58,56 @@ const NavMenu: FC<NavMenuProps> = ({
   itemSize,
   itemsUnderline = false,
   spacing,
-  ...props
 }) => (
-  <ul
+  <MotionUl
+    animate="show"
     className={cn(menuVariants({ align, itemSize, spacing }), className)}
-    {...props}
+    initial="hidden"
+    variants={container}
   >
-    <MenuItem isUnderline={itemsUnderline}>Головна</MenuItem>
-    <MenuItem href="/#apartments" isUnderline={itemsUnderline}>
-      Апартаменти
-    </MenuItem>
-    <MenuItem
-      href="https://logindariy.choiceqr.com/online-menu"
-      isUnderline={itemsUnderline}
-    >
-      Меню
-    </MenuItem>
-    <MenuItem href="https://logindariy.com.ua/" isUnderline={itemsUnderline}>
-      Крафтовий магазин
-    </MenuItem>
-  </ul>
+    <motion.div variants={item}>
+      <MenuItem isUnderline={itemsUnderline}>
+        Головна
+      </MenuItem>
+    </motion.div>
+    <motion.div variants={item}>
+      <MenuItem
+        href="/#apartments"
+        isUnderline={itemsUnderline}
+      >
+        Апартаменти
+      </MenuItem>
+    </motion.div>
+    <motion.div variants={item}>
+      <MenuItem
+        href="https://logindariy.choiceqr.com/online-menu"
+        isUnderline={itemsUnderline}
+      >
+        Меню
+      </MenuItem>
+    </motion.div>
+    <motion.div variants={item}>
+      <MenuItem
+        href="/restaurant"
+        isUnderline={itemsUnderline}
+      >
+        Ресторан
+      </MenuItem>
+    </motion.div>
+    <motion.div variants={item}>
+      <MenuItem href="/pool" isUnderline={itemsUnderline}>
+        Басейни
+      </MenuItem>
+    </motion.div>
+    <motion.div variants={item}>
+      <MenuItem
+        href="https://logindariy.com.ua/"
+        isUnderline={itemsUnderline}
+      >
+        Крафтовий магазин
+      </MenuItem>
+    </motion.div>
+  </MotionUl>
 )
 
 export default NavMenu

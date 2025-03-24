@@ -24,3 +24,54 @@
     @apply hide-scrollbar sticky left-0 right-0 top-0 h-fit max-h-dvh overflow-y-auto;
   }
 }
+
+
+/* Додайте цей CSS до вашого global.css або створіть окремий файл стилів */
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE та Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari та Opera */
+}
+
+/* Додаткові стилі для пагінації */
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background-color: white !important;
+}
+
+/* Покращені стилі для навігаційних кнопок */
+.swiper-button-next,
+.swiper-button-prev {
+  transform: translateY(-50%) !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 12px !important;
+  }
+}

@@ -53,12 +53,15 @@ const DetailsModal: FC<DetailsModalProps> = ({
                 src={getMainImage(images!)}
               />
               {imagesCount > 1 && (
-                <IconButton
-                  className="absolute bottom-5 right-5 md:left-5 md:right-auto"
-                  icon={Icons.photos}
-                  label="Переглянути більше фото"
-                  onClick={openImagesModal}
-                />
+                <div className="absolute bottom-5 right-5 flex items-center gap-2 rounded-lg bg-white bg-opacity-70 p-2 shadow-lg md:left-5 md:right-auto">
+                  <span className="font-medium text-black">Інші фото</span>
+                  <IconButton
+                    className="rounded-full bg-transparent p-1 transition hover:bg-gray-200"
+                    icon={Icons.photos}
+                    label="Переглянути більше фото"
+                    onClick={openImagesModal}
+                  />
+                </div>
               )}
             </>
           ) : (

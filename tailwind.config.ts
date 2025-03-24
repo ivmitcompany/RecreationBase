@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       animation: { fadeIn: 'fadeIn 0.2s ease-in-out' },
       colors: {
-        accent: '#ffd9b6',
+        accent: '#f59e0b',
         dark: '#122223',
         graphite: '#122223',
         light: '#f3f3f3',
@@ -19,6 +19,7 @@ const config: Config = {
       fontFamily: {
         accent: 'var(--font-accent)',
         default: 'var(--font-default)',
+        luxurious: 'var(--font-luxurious)',
       },
       keyframes: {
         fadeIn: {

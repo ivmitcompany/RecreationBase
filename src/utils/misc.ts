@@ -15,6 +15,8 @@ export const getMainImage = (images: ImageInfo[]) =>
   findObjectWithField(images, 'is_main_image', true)?.image || images[0].image
 
 export const isHomePage = (pathname: string) => pathname === '/'
+export const isPoolsPage = (pathname: string) => pathname === '/pool'
+export const isRestaurantPage = (pathname: string) => pathname === '/restaurant'
 
 export const transformLineBreaks = (text: string) => {
   return text.replace(/\r\n/g, '<br />')

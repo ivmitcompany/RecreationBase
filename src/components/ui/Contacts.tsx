@@ -1,4 +1,3 @@
-import CompanySocials from '@/components/pages/menu/company/socials/CompanySocials'
 import { cn } from '@/utils'
 import React, { FC, HTMLAttributes } from 'react'
 
@@ -13,16 +12,22 @@ const Contacts: FC<ContactsProps> = ({
 }) => (
   <address
     className={cn(
-      'flex flex-col justify-center gap-2.5 not-italic md:gap-1.5',
+      'flex flex-col justify-center gap-1 text-sm not-italic md:gap-1',
       className
     )}
     {...props}
   >
     <a
       className="transition-colors md:hover:text-accent"
+      href="tel:380678379007"
+    >
+      Готель +380678379007
+    </a>
+    <a
+      className="transition-colors md:hover:text-accent"
       href="tel:380678279007"
     >
-      +380678279007 +380678379007
+      Ресторан +380678279007
     </a>
     <p className={cn(areShort && 'sr-only')}>с.Рокосово, вул.Виноградна 14</p>
     <a
@@ -31,7 +36,7 @@ const Contacts: FC<ContactsProps> = ({
       rel="noopener noreferrer"
       target="_blank"
     >
-      Переглянути на Google Maps
+      Google Maps
     </a>
   </address>
 )
