@@ -16,10 +16,36 @@ interface ApartmentDetailsProps extends DetailsModalProps {
 
 const ApartmentDetails: FC<ApartmentDetailsProps> = ({
   className,
-  data: { additions, description, people_numbers, price, title },
+  data: { additions, description, id, people_numbers, price, title },
   ...props
 }) => {
   const transformedDescription = transformLineBreaks(description)
+
+  const roomTypes = [
+    {
+      beRoomType: '5042754',
+      roomId: 34
+    },
+    {
+      beRoomType: '5042756',
+      roomId: 42
+    },
+    {
+      beRoomType: '5042758',
+      roomId: 41
+    },
+    {
+      beRoomType: '5042759',
+      roomId: 36
+    },
+    {
+      beRoomType: '5042760',
+      roomId: 35
+    }
+  ];
+
+  const currentRoomtype = roomTypes.find(room => room.roomId === id);
+
 
   return (
     <DetailsModal className={className} {...props}>
@@ -53,11 +79,17 @@ const ApartmentDetails: FC<ApartmentDetailsProps> = ({
           )}
           <p>{transformedDescription}</p>
         </div>
-        <a
+        {/*<a
           className="mt-[3.75rem] block pt-5 text-end text-lg uppercase transition-colors hover:text-accent md:mt-auto"
           href="tel:380678379007"
         >
           бронювання +380678379007
+        </a>*/}
+        <a
+            className="mt-4 block w-fit py-[11px] px-[30px] text-[13.5px] uppercase transition-colors text-white bg-[#d98c09] hover:bg-[#f5a215] rounded-[18px]"
+            href={"/booking?room-type=" + (currentRoomtype ? currentRoomtype.beRoomType : "")}
+        >
+          Забронювати
         </a>
       </div>
     </DetailsModal>

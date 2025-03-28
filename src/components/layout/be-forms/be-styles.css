@@ -1,0 +1,25 @@
+#block-search,
+#block-search * {
+    box-sizing: border-box;
+}
+
+#block-search {
+    background: #132324;
+    border-radius: 0 0 40px 40px;
+}
+
+.be-container {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 10px 30px;
+}
+
+#be-booking-form {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#tl-booking-cart {
+    z-index: 1 !important;
+}

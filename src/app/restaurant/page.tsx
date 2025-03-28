@@ -1,3 +1,4 @@
+import BeSearchForm from "@/components/layout/be-forms/beSearchForm"
 import RestaurantCatering from '@/components/pages/restaurant/catering/RestaurantCatering'
 import RestaurantDelivery from '@/components/pages/restaurant/delivery/RestaurantDelivery'
 import RestaurantExtras from '@/components/pages/restaurant/extras/RestaurantExtras'
@@ -12,6 +13,7 @@ const RestaurantPage: FC = () => {
   return (
     <main>
       <RestaurantHero />
+      <BeSearchForm />
       <RestaurantMenu />
       <RestaurantDelivery />
       <RestaurantFeatures />
