@@ -17,7 +17,6 @@ export default function Home() {
   return (
     <>
       <HeroSection className="pb-[8.625rem] pt-header md:pb-[10.6875rem]" />
-      <BeSearchForm />
       <ApartmentsSection
         className="pb-44 pt-20 md:pb-28 md:pt-[5.6875rem]"
         id="apartments"

@@ -1,5 +1,6 @@
 'use client'
 
+import BeSearchForm from '@/components/layout/be-forms/beSearchForm'
 import Content from '@/components/ui/Content'
 import { buttonCircleVariants } from '@/components/ui/button/Button'
 import { cn } from '@/utils'
@@ -57,7 +58,7 @@ const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
   return (
     <div
       className={cn(
-        'relative h-screen w-full overflow-hidden bg-graphite text-light',
+        'relative h-[110vh] w-full overflow-hidden bg-graphite text-light md:h-screen',
         className
       )}
       {...props}
@@ -84,23 +85,28 @@ const HeroSection: FC<HeroSectionProps> = ({ className, ...props }) => {
         ></iframe>
       </div>
 
-      <div className="z-60 absolute inset-0 flex flex-col items-center justify-center text-center">
+      <div className="z-60 absolute inset-0 flex flex-col items-center justify-center pb-[40vh] text-center md:justify-center md:pb-0">
         <Content>
           <HeroHeading />
-          <p className="mx-auto mt-5 max-w-[40rem] text-lg md:text-xl lg:text-2xl">
+          <p className="mx-auto mt-5 max-w-[40rem] text-base md:text-xl lg:text-2xl">
             Сімейний готельно-ресторанний комплекс, розташований посеред
             мальовничих гір Закарпаття
           </p>
-          <Link
-            className={cn(
-              'mt-10',
-              buttonCircleVariants({ circleColor: 'light' })
-            )}
-            href="/#about"
-          >
-            Детальніше
-          </Link>
+          <p className="hidden md:block">
+            <Link
+              className={cn(
+                'mt-10',
+                buttonCircleVariants({ circleColor: 'light' })
+              )}
+              href="/#about"
+            >
+              Детальніше
+            </Link>
+          </p>
         </Content>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 z-0">
+        <BeSearchForm />
       </div>
     </div>
   )

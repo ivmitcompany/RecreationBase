@@ -20,7 +20,6 @@ export default function Pool() {
   return (
     <>
       <PoolHero className="pb-[1rem] pt-header md:pb-[10.6875rem]" />
-      <BeSearchForm />
       <PoolFeatures
         className="pb-14 pt-[2rem] md:pb-28 md:pt-[5.6875rem]"
         id="features"

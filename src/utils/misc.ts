@@ -17,8 +17,7 @@ export const getMainImage = (images: ImageInfo[]) =>
 export const isHomePage = (pathname: string) => pathname === '/'
 export const isPoolsPage = (pathname: string) => pathname === '/pool'
 export const isRestaurantPage = (pathname: string) => pathname === '/restaurant'
-export const isBookingPage = (pathname: string) => pathname === '/booking'
-
+export const isApartmentsPage = (pathname: string) => pathname === '/booking'
 export const transformLineBreaks = (text: string) => {
   return text.replace(/\r\n/g, '<br />')
 }

@@ -1,9 +1,7 @@
-import { ReactNode } from 'react'
-
-type BookingLayoutProps = Readonly<{
-  children: ReactNode
-}>
-
-export default function BookingLayout({ children }: BookingLayoutProps) {
-  return <>{children}</>
+export default function BookingLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return <main className="flex min-h-screen flex-col">{children}</main>
 }

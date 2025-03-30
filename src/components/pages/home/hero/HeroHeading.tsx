@@ -9,7 +9,7 @@ const HeroHeading: FC<HeroHeadingProps> = ({ className, ...props }) => {
   return (
     <h1
       className={cn(
-        'mx-auto flex max-w-screen-lg flex-col items-center text-center text-5xl uppercase leading-snug tracking-wide text-white',
+        'mx-auto flex max-w-screen-lg flex-col items-center text-center text-4xl uppercase leading-snug tracking-wide text-white',
         'md:flex-row md:gap-x-6 md:text-7xl md:leading-normal',
         className
       )}

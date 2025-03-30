@@ -4,8 +4,10 @@
 }
 
 #block-search {
-    background: #132324;
-    border-radius: 0 0 40px 40px;
+    background: rgba(19, 35, 36, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .be-container {
@@ -22,4 +24,33 @@
 
 #tl-booking-cart {
     z-index: 1 !important;
+}
+
+/* Стилізація елементів форми */
+#block-search input,
+#block-search select,
+#block-search button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+#block-search input:focus,
+#block-search select:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    outline: none;
+}
+
+#block-search button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+#block-search button:hover {
+    background: rgba(255, 255, 255, 0.25);
 }

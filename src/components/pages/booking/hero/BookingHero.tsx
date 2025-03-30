@@ -1,5 +1,6 @@
 'use client'
 
+import BeBookingForm from '@/components/layout/be-forms/beBookingForm'
 import Content from '@/components/ui/Content'
 import { cn } from '@/utils'
 import { motion } from 'framer-motion'
@@ -13,7 +14,7 @@ const BookingHero: FC<BookingHeroProps> = ({ className, ...props }) => {
 
   useEffect(() => {
     const section = sectionRef.current
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -41,48 +42,38 @@ const BookingHero: FC<BookingHeroProps> = ({ className, ...props }) => {
   return (
     <section
       className={cn(
-        'relative min-h-screen overflow-hidden bg-cover bg-center bg-no-repeat',
+        'relative z-0 min-h-[calc(100vh-80px)] overflow-hidden bg-[#122223]',
         className
       )}
       ref={sectionRef}
       {...props}
     >
-      {/* Модернізоване фонове зображення з паралакс ефектом */}
-      <div
-        className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-1000 ease-out will-change-transform"
-        style={{
-          backgroundImage:
-            'url(https://res.cloudinary.com/db8gndp2b/image/upload/v1735937763/media/images/about_app/16_gsiop0.webp)',
-          transform: isVisible ? 'scale(1.05)' : 'scale(1)',
-          transition: 'transform 6s ease-out',
-        }}
-      />
-
-      {/* Зображення для малих екранів */}
-      <div
-        className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-1000 ease-out will-change-transform sm:hidden"
-        style={{
-          backgroundImage:
-            'url(https://res.cloudinary.com/db8gndp2b/image/upload/v1735750844/media/images/about_app/pool_5_trjevv_hyhgdp.webp)',
-          transform: isVisible ? 'scale(1.05)' : 'scale(1)',
-          transition: 'transform 6s ease-out',
-        }}
-      />
-
-      {/* Тонкий градієнт для кращої читабельності */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
-
       {/* Контейнер для контенту */}
-      <Content className="z-60 relative mt-40 flex h-full flex-col items-center justify-center sm:justify-end">
+      <Content className="relative z-10 flex h-full flex-col items-center justify-center py-10">
         <motion.div
-          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
-          className="text-center text-light"
-          initial={{ opacity: 0, y: 30 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          className="w-full max-w-4xl text-center"
+          initial={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.8 }}
         >
-          <h1 className="font-serif text-2xl font-light tracking-wide sm:text-5xl md:text-6xl lg:text-7xl">
-            Бронювання
-          </h1>
+          <motion.h2
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+            className="mt-2 text-base font-light tracking-wide text-white sm:text-lg md:text-xl"
+            initial={{ opacity: 0, y: 30 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            Забронюйте свій незабутній відпочинок
+          </motion.h2>
+
+          {/* Форма бронювання */}
+          <motion.div
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+            className="mt-8 rounded-2xl bg-white/90 p-6 shadow-xl backdrop-blur-sm"
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            <BeBookingForm />
+          </motion.div>
         </motion.div>
       </Content>
     </section>
