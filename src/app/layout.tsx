@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Logindariy',
-    template: `%s | Logindariy`,
+    default: 'Logindariy, Рокосово - Офіційний сайт',
+    template: `%s | Logindariy, Рокосово - Офіційний сайт`,
   },
 }
 
@@ -47,6 +47,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html className="scroll-smooth" lang="ua">
       <head>
+        <meta content="-287Hpqq5HbeNXjGb4VCNoTvt-35gODaizIJTnKSuVo" name="google-site-verification" />
         <GoogleAnalytics gaId="AW-16912349117" />
       </head>
       <body

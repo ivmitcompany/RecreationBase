@@ -75,3 +75,9 @@
     font-size: 12px !important;
   }
 }
+
+/* Стилі для віджета бронювання TravelLine */
+.x-tl-booking-widget-container.x-tl-booking-widget-container_pulled-right {
+  top: 20% !important;
+  transform: translateY(-50%) !important;
+}

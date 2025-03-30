@@ -1,3 +1,4 @@
+import BeSearchForm from "@/components/layout/be-forms/beSearchForm"
 import AboutSection from '@/components/pages/home/about/AboutSection'
 import ApartmentsSection from '@/components/pages/home/apartments/ApartmentsSection'
 import HomeExtras from '@/components/pages/home/extras/HomeExtras'

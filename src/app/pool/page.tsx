@@ -1,3 +1,4 @@
+import BeSearchForm from "@/components/layout/be-forms/beSearchForm"
 import PoolExtras from '@/components/pages/pool/extras/PoolExtras'
 import PoolFeatures from '@/components/pages/pool/features/PoolFeatures'
 import PoolGallery from '@/components/pages/pool/gallery/PoolGallery'
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 export default function Pool() {
   return (
     <>
-      <PoolHero className="mb-[1.625rem] pb-[1rem] pt-header md:mb-2 md:pb-[10.6875rem]" />
+      <PoolHero className="pb-[1rem] pt-header md:pb-[10.6875rem]" />
       <PoolFeatures
         className="pb-14 pt-[2rem] md:pb-28 md:pt-[5.6875rem]"
         id="features"

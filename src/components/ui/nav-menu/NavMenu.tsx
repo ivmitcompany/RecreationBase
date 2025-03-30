@@ -66,16 +66,11 @@ const NavMenu: FC<NavMenuProps> = ({
     variants={container}
   >
     <motion.div variants={item}>
-      <MenuItem isUnderline={itemsUnderline}>
-        Головна
-      </MenuItem>
+      <MenuItem isUnderline={itemsUnderline}>Головна</MenuItem>
     </motion.div>
     <motion.div variants={item}>
-      <MenuItem
-        href="/#apartments"
-        isUnderline={itemsUnderline}
-      >
-        Апартаменти
+      <MenuItem href="/booking" isUnderline={itemsUnderline}>
+        Забронювати
       </MenuItem>
     </motion.div>
     <motion.div variants={item}>
@@ -87,10 +82,7 @@ const NavMenu: FC<NavMenuProps> = ({
       </MenuItem>
     </motion.div>
     <motion.div variants={item}>
-      <MenuItem
-        href="/restaurant"
-        isUnderline={itemsUnderline}
-      >
+      <MenuItem href="/restaurant" isUnderline={itemsUnderline}>
         Ресторан
       </MenuItem>
     </motion.div>
@@ -100,10 +92,7 @@ const NavMenu: FC<NavMenuProps> = ({
       </MenuItem>
     </motion.div>
     <motion.div variants={item}>
-      <MenuItem
-        href="https://logindariy.com.ua/"
-        isUnderline={itemsUnderline}
-      >
+      <MenuItem href="https://logindariy.com.ua/" isUnderline={itemsUnderline}>
         Крафтовий магазин
       </MenuItem>
     </motion.div>
