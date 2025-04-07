@@ -92,6 +92,11 @@ const NavMenu: FC<NavMenuProps> = ({
       </MenuItem>
     </motion.div>
     <motion.div variants={item}>
+      <MenuItem href="/concerts" isUnderline={itemsUnderline}>
+        Концерти
+      </MenuItem>
+    </motion.div>
+    <motion.div variants={item}>
       <MenuItem href="https://logindariy.com.ua/" isUnderline={itemsUnderline}>
         Крафтовий магазин
       </MenuItem>

@@ -27,5 +27,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       url: `${SITE_URL}/booking`,
     },
+    {
+      changeFrequency: 'monthly',
+      lastModified: new Date(),
+      priority: 0.9,
+      url: `${SITE_URL}/concerts`,
+    },
   ]
 }

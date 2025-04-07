@@ -1,6 +1,6 @@
 'use client'
 
-import { cn, isApartmentsPage, isHomePage, isPoolsPage, isRestaurantPage } from '@/utils'
+import { cn, isBookingPage, isConcertPage, isHomePage, isPoolsPage, isRestaurantPage } from '@/utils'
 import { usePathname } from 'next/navigation'
 import { FC, HTMLAttributes } from 'react'
 
@@ -19,7 +19,8 @@ const HeaderContainer: FC<HeaderContainerProps> = ({
         (isHomePage(pathname) ||
           isRestaurantPage(pathname) ||
           isPoolsPage(pathname) ||
-          isApartmentsPage(pathname)) &&
+          isBookingPage(pathname) ||
+          isConcertPage(pathname)) &&
           'text-light',
         className
       )}
