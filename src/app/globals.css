@@ -10,6 +10,11 @@
   @apply overflow-hidden;
 }
 
+/* Приховуємо текст сторінки, коли меню відкрите */
+.no-scroll main {
+  @apply opacity-0 transition-opacity duration-300;
+}
+
 @layer utilities {
   .hide-scrollbar::-webkit-scrollbar {
     @apply hidden;
