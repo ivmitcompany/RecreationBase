@@ -49,7 +49,7 @@ const BookingHero: FC<BookingHeroProps> = ({ className, ...props }) => {
       {...props}
     >
       {/* Контейнер для контенту */}
-      <Content className="relative z-10 flex h-full flex-col items-center justify-center py-10">
+      <Content className="relative z-10 flex h-full flex-col items-center justify-center py-10 px-3">
         <motion.div
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           className="w-full max-w-4xl text-center"
@@ -68,7 +68,7 @@ const BookingHero: FC<BookingHeroProps> = ({ className, ...props }) => {
           {/* Форма бронювання */}
           <motion.div
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-            className="mt-8 rounded-2xl bg-white/90 p-6 shadow-xl backdrop-blur-sm"
+            className="mt-8 rounded-2xl bg-white/90 p-2 sm:p-6 shadow-xl"
             initial={{ opacity: 0, y: 20 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >

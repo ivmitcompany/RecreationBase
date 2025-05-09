@@ -25,7 +25,7 @@ const extras = [
         />
       </svg>
     ),
-    img: 'https://res.cloudinary.com/db8gndp2b/image/upload/v1742732195/photo_2025-03-23_14.12.41_sfmt4c.jpg',
+    img: 'https://res.cloudinary.com/dwocqwqdo/image/upload/v1746822767/photo_2025-05-09_23.28.54_ughlpu.jpg',
     link: '/restaurant',
     title: 'Ресторан',
   },

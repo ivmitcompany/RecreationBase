@@ -61,7 +61,7 @@ const RestaurantMenu: FC<RestaurantMenuProps> = ({ className, ...props }) => {
                     playsInline
                   >
                     <source
-                      src="https://res.cloudinary.com/db8gndp2b/video/upload/v1742415609/IMG_1998_y4mldq.mov"
+                      src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746823090/IMG_1994_ikqphe.mov"
                       type="video/mp4"
                     />
                   </video>

@@ -199,7 +199,7 @@ const ConcertsSection: React.FC = () => {
           loop
           muted
           playsInline
-          src="https://res.cloudinary.com/db8gndp2b/video/upload/v1743453423/4_%D1%80%D1%96%D1%87%D0%BD%D0%B8%D1%86%D1%8F_%D0%9B%D0%BE%D0%B3%D1%96%D0%BD%D0%B4%D0%B0%D1%80%D1%96%D0%B8%CC%86_yhqszo.mov"
+          src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746825266/4_%D1%80%D1%96%D1%87%D0%BD%D0%B8%D1%86%D1%8F_%D0%9B%D0%BE%D0%B3%D1%96%D0%BD%D0%B4%D0%B0%D1%80%D1%96%D0%B8%CC%86_irdctj.mov"
         />
 
         <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-5 text-center md:px-10">
@@ -295,7 +295,7 @@ const ConcertsSection: React.FC = () => {
                   loop
                   muted
                   playsInline
-                  src="https://res.cloudinary.com/db8gndp2b/video/upload/v1743948345/IMG_7748_v43ksv.mov"
+                  src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746825348/IMG_7767_f9uo7n.mov"
                  />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </motion.div>
@@ -314,7 +314,7 @@ const ConcertsSection: React.FC = () => {
                   loop
                   muted
                   playsInline
-                  src="https://res.cloudinary.com/db8gndp2b/video/upload/v1743257885/IMG_7770_zty741.mov"
+                  src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746825349/IMG_7770_mxatfg.mov"
                />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </motion.div>
@@ -333,7 +333,7 @@ const ConcertsSection: React.FC = () => {
                   loop
                   muted
                   playsInline
-                  src="https://res.cloudinary.com/db8gndp2b/video/upload/v1743948227/IMG_7762_1_kvw4m6.mov"
+                  src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746825342/IMG_7769_vuc9m4.mov"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </motion.div>

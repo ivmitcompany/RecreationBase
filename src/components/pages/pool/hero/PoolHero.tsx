@@ -52,7 +52,7 @@ const PoolHero: FC<PoolHeroProps> = ({ className, ...props }) => {
         className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-1000 ease-out will-change-transform"
         style={{
           backgroundImage:
-            'url(https://res.cloudinary.com/db8gndp2b/image/upload/v1735937763/media/images/about_app/16_gsiop0.webp)',
+            'url(https://res.cloudinary.com/dwocqwqdo/image/upload/v1746824658/%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F_viber_2024-03-25_16-56-02-269_xfxomr.jpg)',
           transform: isVisible ? 'scale(1.05)' : 'scale(1)',
           transition: 'transform 6s ease-out',
         }}
@@ -63,7 +63,7 @@ const PoolHero: FC<PoolHeroProps> = ({ className, ...props }) => {
         className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-1000 ease-out will-change-transform sm:hidden"
         style={{
           backgroundImage:
-            'url(https://res.cloudinary.com/db8gndp2b/image/upload/v1735750844/media/images/about_app/pool_5_trjevv_hyhgdp.webp)',
+            'url(https://res.cloudinary.com/dwocqwqdo/image/upload/v1746824658/%D0%91%D0%B0%D1%81%D0%B5%D0%B8%CC%86%D0%BD_2_cukcr5.jpg)',
           transform: isVisible ? 'scale(1.05)' : 'scale(1)',
           transition: 'transform 6s ease-out',
         }}
