@@ -65,7 +65,7 @@ const PoolFeatures: FC<PoolFeaturesProps> = ({ className, ...props }) => {
                 playsInline
                 poster="https://res.cloudinary.com/db8gndp2b/image/upload/v1735750533/media/images/about_app/pool_1_guqemq_g1crpq.webp"
               >
-                <source src="https://res.cloudinary.com/db8gndp2b/video/upload/v1742416821/IMG_7942_gfp10r.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746823734/IMG_7767_n4nb1v.mov" type="video/mp4" />
                 Ваш браузер не підтримує відео тег.
               </video>
             </div>

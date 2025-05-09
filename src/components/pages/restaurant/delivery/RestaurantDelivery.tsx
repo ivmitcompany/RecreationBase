@@ -23,7 +23,7 @@ const RestaurantDelivery: FC<RestaurantDeliveryProps> = ({
                 playsInline
               >
                 <source
-                  src="https://res.cloudinary.com/db8gndp2b/video/upload/v1742416010/IMG_8716_y2yc12.mp4"
+                  src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746823386/IMG_8716_gnur9q.mp4"
                   type="video/mp4"
                 />
               </video>

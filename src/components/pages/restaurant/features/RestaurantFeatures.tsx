@@ -83,7 +83,7 @@ const RestaurantFeatures: FC<RestaurantFeaturesProps> = ({
                 playsInline
               >
                 <source
-                  src="https://res.cloudinary.com/db8gndp2b/video/upload/v1742416821/IMG_7942_gfp10r.mp4"
+                  src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746823734/IMG_7767_n4nb1v.mov"
                   type="video/mp4"
                 />
               </video>

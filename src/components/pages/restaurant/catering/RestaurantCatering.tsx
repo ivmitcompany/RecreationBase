@@ -11,7 +11,7 @@ const cateringOptions = [
       'Повне обслуговування офіціантами для вашого святкового заходу з індивідуальним підходом до кожного гостя.',
     icon: '🍽️',
     image:
-      'https://res.cloudinary.com/db8gndp2b/image/upload/v1711385016/media/images/about_app/%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F_viber_2024-03-25_17-00-06-920_zenidc.jpg', // Add appropriate image path
+      'https://res.cloudinary.com/dwocqwqdo/image/upload/v1746824501/photo_2025-05-09_23.58.14_eqlftl.jpg', // Add appropriate image path
     title: 'Банкет',
   },
   {
@@ -19,7 +19,7 @@ const cateringOptions = [
       'Самообслуговування з широким асортиментом вишуканих закусок та напоїв для неформальних заходів.',
     icon: '🥂',
     image:
-      'https://res.cloudinary.com/db8gndp2b/image/upload/v1741809033/photo_2025-03-12_21.49.12_naylan.jpg', // Add appropriate image path
+      'https://res.cloudinary.com/dwocqwqdo/image/upload/v1746824051/photo_2025-05-09_23.52.57_egmoyf.jpg', // Add appropriate image path
     title: 'Фуршет без обслуговування',
   },
   {
@@ -27,7 +27,7 @@ const cateringOptions = [
       'Елегантне обслуговування вашого фуршету нашими професійними офіціантами для особливих подій.',
     icon: '👨‍🍳',
     image:
-      'https://res.cloudinary.com/db8gndp2b/image/upload/v1716061223/media/images/drinks_images/%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F_viber_2024-05-18_12-51-48-777_ihtsnq.jpg', // Add appropriate image path
+      'https://res.cloudinary.com/dwocqwqdo/image/upload/v1746824052/photo_2025-05-09_23.53.07_arf47m.jpg', // Add appropriate image path
     title: 'Фуршет з обслуговуванням',
   },
 ]
@@ -54,7 +54,7 @@ const RestaurantCatering: FC<RestaurantCateringProps> = ({
           playsInline
         >
           <source
-            src="https://res.cloudinary.com/db8gndp2b/video/upload/v1741727501/IMG_1999_cqhoxx.mov"
+            src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746823103/IMG_1998_lm3gja.mov"
             type="video/mp4"
           />
         </video>
