@@ -299,14 +299,14 @@ const ConcertsSection: React.FC = () => {
               естради
             </p>
 
-            <a
+            <LinkButton
+              className="text-m mx-auto bg-accent px-8 py-5 font-medium uppercase text-light  transition-colors hover:bg-accent/80"
               href="https://khust.karabas.com/ru/anna-trincher-17/order/?fbclid=PAZXh0bgNhZW0CMTEAAafqxvwiD8psbrZePG2pI5hdFeITfyPibZFZg7ufO0j_cbtu6f2BZJZKaKXt5w_aem_Bg3_I2h2XiOyHXtaRUmGIA"
               rel="noopener noreferrer"
               target="_blank"
-              className="text-m mx-auto bg-accent px-8 py-5 font-medium uppercase text-light  transition-colors hover:bg-accent/80"
             >
               Купити квитки
-            </a>
+            </LinkButton>
           </div>
 
           {/* Секція з відео */}
