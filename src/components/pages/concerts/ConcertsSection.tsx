@@ -297,10 +297,10 @@ const ConcertsSection: React.FC = () => {
             </p>
 
               <a
+                className="mx-auto px-8 py-5 text-m font-medium uppercase text-light bg-accent  hover:bg-accent/80 transition-colors"
                 href="https://khust.karabas.com/ru/anna-trincher-17/order/?fbclid=PAZXh0bgNhZW0CMTEAAafqxvwiD8psbrZePG2pI5hdFeITfyPibZFZg7ufO0j_cbtu6f2BZJZKaKXt5w_aem_Bg3_I2h2XiOyHXtaRUmGIA"
                 rel="noopener noreferrer"
                 target="_blank"
-                className="mx-auto px-8 py-5 text-m font-medium uppercase text-light bg-accent  hover:bg-accent/80 transition-colors"
               >
                 Купити квитки
               </a>
