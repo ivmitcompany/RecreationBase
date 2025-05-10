@@ -269,6 +269,43 @@ const ConcertsSection: React.FC = () => {
             </AnimatePresence>
           </div>
 
+          <div className="mt-24 rounded-3xl border border-light/10 bg-light/5 p-8 text-center backdrop-blur-sm md:mt-32 md:p-12">
+            <CurlyBraceHeading
+              className="mb-6 text-light"
+              level={2}
+              position="center"
+              size="sm"
+            >
+              Найближчий концерт
+            </CurlyBraceHeading>
+            
+            <div className="mb-8">
+              <video
+                autoPlay
+                className="mx-auto w-full max-w-xl rounded-xl object-contain"
+                loop
+                muted
+                playsInline
+                preload="auto"
+                src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746902341/telegram-cloud-document-2-5260319804899748481_1_._qg4r4p.mp4"
+              />
+            </div>
+
+            <h3 className="mb-4 text-2xl font-medium text-accent">Анна Трінчер</h3>
+            <p className="mx-auto mb-8 max-w-xl text-base font-light text-light/70 md:text-lg">
+              Не пропустіть виступ однієї з найяскравіших зірок української естради
+            </p>
+
+              <a
+                href="https://khust.karabas.com/ru/anna-trincher-17/order/?fbclid=PAZXh0bgNhZW0CMTEAAafqxvwiD8psbrZePG2pI5hdFeITfyPibZFZg7ufO0j_cbtu6f2BZJZKaKXt5w_aem_Bg3_I2h2XiOyHXtaRUmGIA"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="mx-auto px-8 py-5 text-m font-medium uppercase text-light bg-accent  hover:bg-accent/80 transition-colors"
+              >
+                Купити квитки
+              </a>
+          </div>
+
           {/* Секція з відео */}
           <div className="mt-24 md:mt-32">
             <CurlyBraceHeading
