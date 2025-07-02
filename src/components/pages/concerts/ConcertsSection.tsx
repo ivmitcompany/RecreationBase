@@ -34,6 +34,8 @@ const LinkButton: React.FC<LinkButtonProps> = ({
 const ConcertsSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [isSoundOn, setIsSoundOn] = useState(false)
+  const [is100lytsyaSoundOn, setIs100lytsyaSoundOn] = useState(false)
   const { scrollYProgress } = useScroll({
     offset: ['start start', 'end start'],
     target: containerRef,
@@ -66,6 +68,16 @@ const ConcertsSection: React.FC = () => {
   }, [])
 
   const artists = [
+    {
+      description:
+        'Запалили сцену своєю харизмою, змушуючи публіку стрибати від захвату."',
+      name: 'Анна Трінчер',
+    },
+    {
+      description:
+        'Подарували вибухову енергію та драйв, змушуючи зал танцювати й аплодувати стоячи.',
+      name: 'Анна Трінчер',
+    },
     {
       description:
         'Подарували вибухову енергію та драйв, змушуючи зал танцювати й аплодувати стоячи.',
@@ -282,31 +294,110 @@ const ConcertsSection: React.FC = () => {
             <div className="mb-8">
               <video
                 autoPlay
-                className="mx-auto w-full max-w-xl rounded-xl object-contain"
+                className="video-100lytsya mx-auto w-full max-w-xl rounded-xl object-contain"
                 loop
                 muted
                 playsInline
                 preload="auto"
-                src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1746902341/telegram-cloud-document-2-5260319804899748481_1_._qg4r4p.mp4"
+                src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1751437008/IMG_5283_k8lj7e.mov"
               />
             </div>
 
+            <button
+              className="mx-auto mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-accent/20 text-accent transition-all hover:bg-accent hover:text-light"
+              onClick={() => {
+                const video = document.querySelector('.video-100lytsya') as HTMLVideoElement
+                const annaVideo = document.querySelector('.anna-trincher-video') as HTMLVideoElement
+                
+                if (video) {
+                  video.muted = !video.muted
+                  setIs100lytsyaSoundOn(!video.muted)
+                  
+                  if (!video.muted) {
+                    if (annaVideo) {
+                      annaVideo.muted = true
+                      setIsSoundOn(false)
+                    }
+                  }
+                }
+              }}
+              title={is100lytsyaSoundOn ? 'Вимкнути звук' : 'Включити звук'}
+            >
+              {is100lytsyaSoundOn ? (
+                <Icons.volume className="h-6 w-6" />
+              ) : (
+                <Icons.volumeX className="h-6 w-6" />
+              )}
+            </button>
+
             <h3 className="mb-4 text-2xl font-medium text-accent">
-              Анна Трінчер
+              100лиця
             </h3>
             <p className="mx-auto mb-8 max-w-xl text-base font-light text-light/70 md:text-lg">
-              Не пропустіть виступ однієї з найяскравіших зірок української
-              естради
+              Не пропустіть літній концерт біля басейну! Неймовірна атмосфера, жива музика та незабутні емоції чекають саме на вас
             </p>
 
             <LinkButton
               className="text-m mx-auto bg-accent px-8 py-5 font-medium uppercase text-light  transition-colors hover:bg-accent/80"
-              href="https://khust.karabas.com/ru/anna-trincher-17/order/?fbclid=PAZXh0bgNhZW0CMTEAAafqxvwiD8psbrZePG2pI5hdFeITfyPibZFZg7ufO0j_cbtu6f2BZJZKaKXt5w_aem_Bg3_I2h2XiOyHXtaRUmGIA"
+              href="https://khust.karabas.com/100lytsya-75/"
               rel="noopener noreferrer"
               target="_blank"
             >
               Купити квитки
             </LinkButton>
+          </div>
+
+          <div className="mt-24 rounded-3xl border border-light/10 bg-light/5 p-8 text-center backdrop-blur-sm md:mt-32 md:p-12">
+            <CurlyBraceHeading
+              className="mb-6 text-light"
+              level={2}
+              position="center"
+              size="sm"
+            >
+              Минулий концерт Анни Трінчер
+            </CurlyBraceHeading>
+
+            <div className="mb-8">
+              <video
+                autoPlay
+                className="anna-trincher-video mx-auto w-full max-w-xl rounded-xl object-contain"
+                loop
+                muted
+                playsInline
+                preload="auto"
+                src="https://res.cloudinary.com/dwocqwqdo/video/upload/v1751437914/IMG_8353_k0smmv.mov"
+              />
+            </div>
+            <p className="mx-auto mb-8 max-w-xl text-base font-light text-light/70 md:text-lg">
+              Анна Трінчер запалила сцену своєю харизмою, змушуючи публіку стрибати від захвату
+            </p>
+
+            <button
+              className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/20 text-accent transition-all hover:bg-accent hover:text-light"
+              onClick={() => {
+                const video = document.querySelector('.anna-trincher-video') as HTMLVideoElement
+                const lytsyaVideo = document.querySelector('.video-100lytsya') as HTMLVideoElement
+                
+                if (video) {
+                  video.muted = !video.muted
+                  setIsSoundOn(!video.muted)
+                  
+                  if (!video.muted) {
+                    if (lytsyaVideo) {
+                      lytsyaVideo.muted = true
+                      setIs100lytsyaSoundOn(false)
+                    }
+                  }
+                }
+              }}
+              title={isSoundOn ? 'Вимкнути звук' : 'Включити звук'}
+            >
+              {isSoundOn ? (
+                <Icons.volume className="h-6 w-6" />
+              ) : (
+                <Icons.volumeX className="h-6 w-6" />
+              )}
+            </button>
           </div>
 
           {/* Секція з відео */}
