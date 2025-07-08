@@ -28,12 +28,12 @@ const PoolInfo: FC = () => {
           <div className="mt-6 rounded-lg bg-[#1a2f30] p-4">
             <div className="flex justify-between text-lg font-medium">
               <span className="text-[#f3f3f3]">Будні</span>
-              <span className="font-bold text-[#f3f3f3]">250 грн</span>
+              <span className="font-bold text-[#f3f3f3]">400 грн</span>
             </div>
             <div className="my-3 h-px bg-gradient-to-r from-transparent via-[#f3f3f3]/30 to-transparent"></div>
             <div className="flex justify-between text-lg font-medium">
               <span className="text-[#f3f3f3]">Вихідні</span>
-              <span className="font-bold text-[#f3f3f3]">300 грн</span>
+              <span className="font-bold text-[#f3f3f3]">500 грн</span>
             </div>
           </div>
 
