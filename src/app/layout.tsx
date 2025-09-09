@@ -67,7 +67,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </Providers>
         
         <script
-          type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
               (function(d, w, s) {
@@ -77,6 +76,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               })(document, window, 'script');
             `,
           }}
+          type="text/javascript"
         />
       </body>
     </html>
