@@ -65,6 +65,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <main className="flex-shrink flex-grow basis-0">{children}</main>
           <Footer />
         </Providers>
+        
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(d, w, s) {
+                var widgetHash = 'mhje2w0ios30am14x5qt', gcw = d.createElement(s); gcw.type = 'text/javascript'; gcw.async = true;
+                gcw.src = '//widgets.binotel.com/getcall/widgets/'+ widgetHash +'.js';
+                var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn);
+              })(document, window, 'script');
+            `,
+          }}
+        />
       </body>
     </html>
   )
