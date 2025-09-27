@@ -1,14 +1,58 @@
 'use client'
 
-import ColorAccentSpan from '@/components/ui/ColorAccentSpan'
 import Content from '@/components/ui/Content'
 import CurlyBraceHeading from '@/components/ui/CurlyBraceHeading'
 import { Icons } from '@/components/ui/Icons'
-import Button from '@/components/ui/button/Button'
 import { cn } from '@/utils'
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import Head from 'next/head'
 import React, { useEffect, useRef, useState } from 'react'
+
+const artists = [
+  {
+    description:
+      'Запалили сцену своєю харизмою, змушуючи публіку стрибати від захвату.',
+    name: 'Анна Трінчер',
+  },
+  {
+    description:
+      'Подарували вибухову енергію та драйв, змушуючи зал танцювати й аплодувати стоячи.',
+    name: 'Марина і компанія',
+  },
+  {
+    description:
+      'Своєю щирістю та романтичними хітами захопив зал атмосферою ніжності й кохання.',
+    name: 'Роман Скорпіон',
+  },
+  {
+    description:
+      'Легендарний виконавець вразив глибиною свого голосу та харизмою.',
+    name: 'Віктор Павлік',
+  },
+  {
+    description: 'Фольклорна енергія нагадала про силу українських традицій.',
+    name: 'Остра Тернина',
+  },
+  {
+    description: 'Чарівна виконавиця полонила слухачів своїм потужним вокалом.',
+    name: 'Катерина Бужинська',
+  },
+  {
+    description:
+      'Зворушливі й душевні пісні стали справжнім подарунком для всіх шанувальників живої музики.',
+    name: 'Михайло Грицкан',
+  },
+  {
+    description:
+      'Яскравий і харизматичний виконавець додав до концертної програми сучасного звучання та ритму.',
+    name: 'Вулканов',
+  },
+  {
+    description:
+      'Харизматичний виконавець, який своїм виступом ще раз довів, що українська музика — це щось більше, ніж просто пісні.',
+    name: 'Віталій Лобач',
+  },
+]
 
 interface LinkButtonProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -66,53 +110,6 @@ const ConcertsSection: React.FC = () => {
 
     return () => observer.disconnect()
   }, [])
-
-  const artists = [
-    {
-      description:
-        'Запалили сцену своєю харизмою, змушуючи публіку стрибати від захвату.',
-      name: 'Анна Трінчер',
-    },
-    {
-      description:
-        'Подарували вибухову енергію та драйв, змушуючи зал танцювати й аплодувати стоячи.',
-      name: 'Марина і компанія',
-    },
-    {
-      description:
-        'Своєю щирістю та романтичними хітами захопив зал атмосферою ніжності й кохання.',
-      name: 'Роман Скорпіон',
-    },
-    {
-      description:
-        'Легендарний виконавець вразив глибиною свого голосу та харизмою.',
-      name: 'Віктор Павлік',
-    },
-    {
-      description: 'Фольклорна енергія нагадала про силу українських традицій.',
-      name: 'Остра Тернина',
-    },
-    {
-      description:
-        'Чарівна виконавиця полонила слухачів своїм потужним вокалом.',
-      name: 'Катерина Бужинська',
-    },
-    {
-      description:
-        'Зворушливі й душевні пісні стали справжнім подарунком для всіх шанувальників живої музики.',
-      name: 'Михайло Грицкан',
-    },
-    {
-      description:
-        'Яскравий і харизматичний виконавець додав до концертної програми сучасного звучання та ритму.',
-      name: 'Вулканов',
-    },
-    {
-      description:
-        'Харизматичний виконавець, який своїм виступом ще раз довів, що українська музика — це щось більше, ніж просто пісні.',
-      name: 'Віталій Лобач',
-    },
-  ]
 
   return (
     <>
@@ -301,13 +298,18 @@ const ConcertsSection: React.FC = () => {
             <button
               className="mx-auto mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-accent/20 text-accent transition-all hover:bg-accent hover:text-light"
               onClick={() => {
-                const video = document.querySelector('.video-100lytsya') as HTMLVideoElement
-                const annaVideo = document.querySelector('.anna-trincher-video') as HTMLVideoElement
-                
+                const video = document.querySelector(
+                  '.video-100lytsya'
+                ) as HTMLVideoElement
+
+                const annaVideo = document.querySelector(
+                  '.anna-trincher-video'
+                ) as HTMLVideoElement
+
                 if (video) {
                   video.muted = !video.muted
                   setIs100lytsyaSoundOn(!video.muted)
-                  
+
                   if (!video.muted) {
                     if (annaVideo) {
                       annaVideo.muted = true
@@ -325,11 +327,10 @@ const ConcertsSection: React.FC = () => {
               )}
             </button>
 
-            <h3 className="mb-4 text-2xl font-medium text-accent">
-              100лиця
-            </h3>
+            <h3 className="mb-4 text-2xl font-medium text-accent">100лиця</h3>
             <p className="mx-auto mb-8 max-w-xl text-base font-light text-light/70 md:text-lg">
-              Не пропустіть літній концерт біля басейну! Неймовірна атмосфера, жива музика та незабутні емоції чекають саме на вас
+              Не пропустіть літній концерт біля басейну! Неймовірна атмосфера,
+              жива музика та незабутні емоції чекають саме на вас
             </p>
 
             <LinkButton
@@ -364,19 +365,25 @@ const ConcertsSection: React.FC = () => {
               />
             </div>
             <p className="mx-auto mb-8 max-w-xl text-base font-light text-light/70 md:text-lg">
-              Анна Трінчер запалила сцену своєю харизмою, змушуючи публіку стрибати від захвату
+              Анна Трінчер запалила сцену своєю харизмою, змушуючи публіку
+              стрибати від захвату
             </p>
 
             <button
               className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/20 text-accent transition-all hover:bg-accent hover:text-light"
               onClick={() => {
-                const video = document.querySelector('.anna-trincher-video') as HTMLVideoElement
-                const lytsyaVideo = document.querySelector('.video-100lytsya') as HTMLVideoElement
-                
+                const video = document.querySelector(
+                  '.anna-trincher-video'
+                ) as HTMLVideoElement
+
+                const lytsyaVideo = document.querySelector(
+                  '.video-100lytsya'
+                ) as HTMLVideoElement
+
                 if (video) {
                   video.muted = !video.muted
                   setIsSoundOn(!video.muted)
-                  
+
                   if (!video.muted) {
                     if (lytsyaVideo) {
                       lytsyaVideo.muted = true
