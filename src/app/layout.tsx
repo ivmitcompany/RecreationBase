@@ -66,6 +66,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Footer />
         </Providers>
         
+        {/* GetCall widget script */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
